@@ -12,6 +12,7 @@ page = ("<!doctype html><html lang='ru'><head><meta charset='utf-8'>"
 # для локальной проверки подменяем CDN на файлы репозитория
 page = re.sub(r'https://cdn\.jsdelivr\.net/gh/\S*?/landing/img/', '../img/', page)
 page = re.sub(r'https://cdn\.jsdelivr\.net/gh/\S*?/landing/fonts/', '../fonts/', page)
+page = re.sub(r'https://cdn\.jsdelivr\.net/gh/\S*?/landing/video/', '../video/', page)
 assert 'jsdelivr.net/gh' not in page, 'остались ссылки на файлы CDN'
 (R/'_test.html').write_text(page, encoding='utf-8')
 print('_test.html собран, картинки локальные')

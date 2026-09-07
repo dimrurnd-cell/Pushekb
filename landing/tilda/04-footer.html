@@ -88,6 +88,24 @@
     for (var i = 0; i < targets.length; i++) io.observe(targets[i]);
   }
 
+  /* ---------- 3b. Ожившее фото: Пушкин снимает шляпу ---------- */
+  function heroVideo() {
+    var v = root.querySelector('.pz-arch__vid');
+    if (!v) return;
+    if (calm) { v.removeAttribute('autoplay'); return; }
+    v.addEventListener('loadeddata', function () { v.classList.add('is-on'); });
+    var go = function () {
+      var play = v.play();
+      if (play && play.catch) play.catch(function () { v.classList.add('is-on'); });
+    };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { go(); io.disconnect(); } });
+      }, { threshold: 0.4 });
+      io.observe(v);
+    } else { go(); }
+  }
+
   /* ---------- 4. Параллакс и шапка при прокрутке ---------- */
   function scrollFx() {
     var layers = [].slice.call(root.querySelectorAll('[data-par]'));
@@ -152,6 +170,7 @@
     splitTitle();
     makeSnow();
     observe();
+    heroVideo();
     scrollFx();
     anchors();
     requestAnimationFrame(function () {
