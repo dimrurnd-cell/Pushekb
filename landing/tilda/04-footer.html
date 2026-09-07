@@ -1,0 +1,168 @@
+<!-- ============================================================
+     «Пушкин. Живой» — анимация
+     Tilda: Настройки сайта → Ещё → HTML-код для вставки
+            в BODY (перед закрывающим тегом </body>)
+
+     Чистый JS, без библиотек — с Tilda и её jQuery не конфликтует.
+     Если у посетителя включено «уменьшить движение» в системе,
+     скрипт сам всё выключает.
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  var root = document.getElementById('pz');
+  if (!root) return;
+
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- 1. Заголовок «ПУШКИН.» по буквам ---------- */
+  function splitTitle() {
+    var el = root.querySelector('[data-split]');
+    if (!el || el.dataset.done) return;
+    var text = el.textContent;
+    el.textContent = '';
+    for (var i = 0; i < text.length; i++) {
+      var s = document.createElement('span');
+      s.textContent = text[i] === ' ' ? ' ' : text[i];
+      s.style.setProperty('--i', i);
+      el.appendChild(s);
+    }
+    el.dataset.done = '1';
+  }
+
+  /* ---------- 2. Снег в прологе ---------- */
+  function makeSnow() {
+    var box = document.getElementById('pzSnow');
+    if (!box || calm) return;
+    var n = window.innerWidth < 640 ? 14 : 26;
+    var html = '';
+    for (var i = 0; i < n; i++) {
+      var size = (Math.random() * 2.6 + 1.4).toFixed(1);
+      html += '<i style="left:' + (Math.random() * 100).toFixed(1) + '%;' +
+              'width:' + size + 'px;height:' + size + 'px;' +
+              'opacity:' + (Math.random() * 0.5 + 0.35).toFixed(2) + ';' +
+              'animation-duration:' + (Math.random() * 12 + 11).toFixed(1) + 's;' +
+              'animation-delay:-' + (Math.random() * 20).toFixed(1) + 's"></i>';
+    }
+    box.innerHTML = html;
+  }
+
+  /* ---------- 3. Появление блоков и Ken Burns ---------- */
+  var counted = [];
+
+  function runCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target) || counted.indexOf(el) > -1) return;
+    counted.push(el);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (calm) { el.textContent = target + suffix; return; }
+    var dur = 1100, t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function observe() {
+    var targets = root.querySelectorAll('[data-rv], .pz-tile, [data-count]');
+    if (!('IntersectionObserver' in window)) {
+      for (var j = 0; j < targets.length; j++) {
+        targets[j].classList.add('is-in');
+        if (targets[j].hasAttribute('data-count')) runCounter(targets[j]);
+      }
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        if (e.target.hasAttribute('data-count')) runCounter(e.target);
+        if (!e.target.classList.contains('pz-tile')) io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+    for (var i = 0; i < targets.length; i++) io.observe(targets[i]);
+  }
+
+  /* ---------- 4. Параллакс и шапка при прокрутке ---------- */
+  function scrollFx() {
+    var layers = [].slice.call(root.querySelectorAll('[data-par]'));
+    var bar = document.getElementById('pzBar');
+    var prog = document.getElementById('pzProg');
+    var hero = root.querySelector('.pz-hero');
+    var ticking = false;
+
+    function frame() {
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (!calm) {
+        for (var i = 0; i < layers.length; i++) {
+          var l = layers[i];
+          var box = l.parentNode.getBoundingClientRect();
+          if (box.bottom < -200 || box.top > window.innerHeight + 200) continue;
+          var power = parseFloat(l.getAttribute('data-par')) || 0.5;
+          var vh = window.innerHeight;
+          var mid = box.top + box.height / 2;
+          var ratio = (vh / 2 - mid) / (vh / 2 + box.height / 2);
+          ratio = Math.max(-1, Math.min(1, ratio));
+          var shift = ratio * box.height * 0.09 * power;
+          l.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
+        }
+      }
+
+      if (bar && hero) {
+        var past = y > hero.offsetHeight * 0.75;
+        bar.classList.toggle('is-on', past);
+      }
+      if (prog) {
+        var max = root.scrollHeight - window.innerHeight;
+        prog.style.width = max > 0 ? (Math.min(y / max, 1) * 100).toFixed(2) + '%' : '0';
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    frame();
+  }
+
+  /* ---------- 5. Плавная прокрутка по якорям ---------- */
+  function anchors() {
+    root.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a) return;
+      var id = a.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      var dest = document.querySelector(id);
+      if (!dest) return;
+      e.preventDefault();
+      dest.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+    });
+  }
+
+  /* ---------- запуск ---------- */
+  function start() {
+    splitTitle();
+    makeSnow();
+    observe();
+    scrollFx();
+    anchors();
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { root.classList.add('pz--ready'); });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>

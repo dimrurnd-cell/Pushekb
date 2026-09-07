@@ -1,0 +1,330 @@
+<!-- ============================================================
+     «Пушкин. Живой» — разметка лендинга
+     Tilda: блок T123 «HTML-код» на пустой странице.
+     Стили — в 02-styles.css, скрипт анимации — в 04-footer.html.
+     Заполнить: всё, что в [КВАДРАТНЫХ СКОБКАХ], и href="#" у ссылок.
+     ============================================================ -->
+
+<div class="pz" id="pz">
+
+  <!-- шапка, выезжающая при прокрутке -->
+  <div class="pz-bar" id="pzBar">
+    <span class="pz-bar__title">Пушкин. Живой — 5 октября — 29 ноября 2026</span>
+    <a href="#" class="pz-btn pz-btn--gold pz-bar__cta pz-eyebrow">Купить билет</a>
+    <span class="pz-bar__prog" id="pzProg"></span>
+  </div>
+
+  <!-- ========== 1. ПЕРВЫЙ ЭКРАН ========== -->
+  <section class="pz-hero">
+    <div class="pz-hero__bg" data-par="0.7"></div>
+    <div class="pz-hero__vig"></div>
+    <div class="pz-hero__frame"></div>
+    <div class="pz-hero__frame"></div>
+
+    <div class="pz-quill pz-quill--a">Я памятник себе воздвиг нерукотворный, к нему не зарастёт народная тропа</div>
+    <div class="pz-quill pz-quill--b">И долго буду тем любезен я народу, что чувства добрые я лирой пробуждал</div>
+
+    <div class="pz__wrap">
+      <div class="pz-nav">
+        <div class="pz-logo">
+          <b>R&#8239;·&#8239;ART</b>
+          <span class="pz-eyebrow" style="color:#7d6c52">креативная студия</span>
+        </div>
+        <nav class="pz-nav__links">
+          <a href="#pz-film" class="pz-eyebrow">Фильм</a>
+          <a href="#pz-alive" class="pz-eyebrow">Оживление</a>
+          <a href="#pz-eps" class="pz-eyebrow">Эпизоды</a>
+          <a href="#pz-hall" class="pz-eyebrow">Зал</a>
+          <a href="#pz-visit" class="pz-eyebrow">Как прийти</a>
+          <a href="#" class="pz-eyebrow pz-nav__cta">Билеты</a>
+        </nav>
+      </div>
+
+      <div class="pz-hero__grid">
+        <div class="pz-hero__col">
+          <div class="pz-eyebrow" style="color:var(--gold);margin-bottom:clamp(18px,2.2vw,30px)">27 января 1837 · 15:30 · мгновение до выстрела</div>
+
+          <h1 class="pz-h1" data-split>ПУШКИН.</h1>
+          <div class="pz-hero__script">Живой</div>
+
+          <div class="pz-rule"></div>
+
+          <p class="pz-lead" style="max-width:560px;color:#38301f">Мультимедийный фильм на трёх экранах. Сорок минут, десять эпизодов и сто оживлённых картин — от московского детства до последнего снега на Чёрной речке.</p>
+
+          <div class="pz-hero__actions">
+            <a href="#" class="pz-btn pz-eyebrow">Купить билет</a>
+            <a href="#" class="pz-play pz-eyebrow">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="17" cy="17" r="16"/><path d="M14 11.5 L23 17 L14 22.5 Z" fill="currentColor" stroke="none"/></svg>
+              Смотреть трейлер
+            </a>
+          </div>
+        </div>
+
+        <figure class="pz-arch">
+          <span class="pz-arch__glow"></span>
+          <div class="pz-arch__frame">
+            <div class="pz-arch__img" role="img" aria-label="Александр Пушкин"></div>
+            <span class="pz-arch__shade"></span>
+            <span class="pz-arch__sweep"></span>
+            <figcaption class="pz-arch__quote">И с отвращением читая жизнь мою, я трепещу и проклинаю…</figcaption>
+          </div>
+        </figure>
+      </div>
+
+      <div class="pz-hero__strip">
+        <div>
+          <div class="pz-dates">5 октября — 29 ноября 2026</div>
+          <div class="pz-eyebrow" style="color:var(--ink3);margin-top:11px">Свердловская киностудия · Екатеринбург</div>
+        </div>
+        <div class="pz-stats">
+          <div><div class="pz-stats__n" data-count="40">40</div><div class="pz-eyebrow pz-stats__l">минут</div></div>
+          <div><div class="pz-stats__n" data-count="3">3</div><div class="pz-eyebrow pz-stats__l">экрана</div></div>
+          <div><div class="pz-stats__n" data-count="10">10</div><div class="pz-eyebrow pz-stats__l">эпизодов</div></div>
+          <div><div class="pz-stats__n" data-count="100" data-suffix="+">100+</div><div class="pz-eyebrow pz-stats__l">картин</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2. ПРОЛОГ ========== -->
+  <section class="pz-prologue">
+    <div class="pz-prologue__bg" data-par="1"></div>
+    <div class="pz-prologue__veil"></div>
+    <div class="pz-snow" id="pzSnow" aria-hidden="true"></div>
+
+    <div class="pz__wrap">
+      <div class="pz-cols">
+        <div class="pz-cols__aside" data-rv="left">
+          <div class="pz-eyebrow" style="color:var(--gold2);margin-bottom:22px">Пролог</div>
+          <div class="pz-bigdate">27 января<br>1837 года</div>
+          <div class="pz-eyebrow" style="color:#9a8b70;margin-top:16px">15:30 · набережная</div>
+        </div>
+        <div class="pz-cols__main">
+          <h2 class="pz-h2" style="color:var(--cream);max-width:720px;margin-bottom:28px" data-rv>Выставка начинается за час до выстрела</h2>
+          <p class="pz-text" style="color:var(--cream2);max-width:700px;margin-bottom:26px;--d:80ms" data-rv>Полная темнота. Из черноты медленно проступает зернистая белизна метели — как если бы плёнка проявлялась на морозе. Тёмный экипаж идёт по зимнему Петербургу; камера не показывает его целиком — только колесо, обледенелый бок, рывок лошади.</p>
+          <p class="pz-quote" style="max-width:720px;margin-bottom:32px" data-rv>«О люди! жалкий род, достойный слёз и смеха!»</p>
+          <p class="pz-text" style="color:var(--cream2);max-width:700px" data-rv>А потом снег превращается в холст, на белом расплывается капля чернил — и следующие сорок минут Пушкин проживает всю свою жизнь заново. Мы заканчиваем не выстрелом. Мы заканчиваем тем, что он остаётся живым.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. ТРИ ЭКРАНА ========== -->
+  <section class="pz-screens" id="pz-film">
+    <div class="pz__wrap">
+      <div class="pz-eyebrow" style="color:var(--gold);margin-bottom:20px" data-rv>Как устроен фильм</div>
+      <h2 class="pz-h2" style="max-width:840px;margin-bottom:22px" data-rv>Три экрана работают как одно пространство</h2>
+      <p class="pz-text" style="color:var(--ink2);max-width:720px;margin-bottom:clamp(32px,4vw,62px)" data-rv>Зритель не смотрит на картину — он стоит внутри неё. Левый экран подаёт линию, центр втягивает, правый продолжает; в финале весь зал превращается в единый круговорот.</p>
+
+      <div class="pz-cards">
+        <article class="pz-card" data-rv style="--d:0ms">
+          <div class="pz-card__n">ЛЕВЫЙ</div>
+          <h3 class="pz-card__t">Деталь</h3>
+          <p class="pz-card__p">Рука в перчатке на колене. Облако пара от дыхания. Колесо в снегу. То, что обычно не помещается в кадр.</p>
+        </article>
+        <article class="pz-card pz-card--dark" data-rv style="--d:110ms">
+          <div class="pz-card__n">ЦЕНТР</div>
+          <h3 class="pz-card__t">Сцена</h3>
+          <p class="pz-card__p">Оживлённая картина целиком: Москва Фёдора Алексеева, лицейский зал, болдинская осень, набережная перед дуэлью.</p>
+        </article>
+        <article class="pz-card" data-rv style="--d:220ms">
+          <div class="pz-card__n">ПРАВЫЙ</div>
+          <h3 class="pz-card__t">Документ</h3>
+          <p class="pz-card__p">Письмо Бенкендорфа. Страница дневника. Анонимный пасквиль. Почерк, из которого всё и начинается.</p>
+        </article>
+      </div>
+
+      <div class="pz-foot-note">
+        <p class="pz-text" style="color:var(--ink2)" data-rv>Звук — пространственный: голоса читают со всех сторон зала. К финалу это уже не четыре человека, а целый хор — ребёнок, подросток, пожилой голос, шёпот.</p>
+        <div data-rv style="--d:100ms">
+          <div class="pz-eyebrow" style="color:var(--ink3);margin-bottom:8px">Продолжительность</div>
+          <div class="pz-dates" style="font-size:clamp(26px,2.9vw,40px)">40 минут</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. ОЖИВЛЕНИЕ ========== -->
+  <section class="pz-alive" id="pz-alive">
+    <div class="pz__wrap">
+      <div class="pz-alive__head">
+        <div>
+          <div class="pz-eyebrow" style="color:var(--gold2);margin-bottom:20px" data-rv>Оживление</div>
+          <h2 class="pz-h2" style="color:var(--cream);margin-bottom:22px" data-rv>Сто картин, которые начинают двигаться</h2>
+          <p class="pz-text" style="color:#c0b499" data-rv>Полотна Беггрова, Брюллова, Кипренского, Белюкина и рисунки Нади Рушевой приходят в движение: падает снег, дрожит пламя свечи, поднимается грудь, ветер листает рукопись. Ни одного дорисованного лица — только движение, которого художник не мог показать.</p>
+        </div>
+        <div style="text-align:right" data-rv="right">
+          <div class="pz-bignum" data-count="100" data-suffix="+">100+</div>
+          <div class="pz-eyebrow" style="color:#8f8268;margin-top:8px">оживлённых полотен</div>
+        </div>
+      </div>
+
+      <div class="pz-alive__grid">
+        <figure class="pz-tile" data-rv="zoom">
+          <div class="pz-tile__img" style="background-image:var(--img-nevsky-gold);background-position:50% 42%" role="img" aria-label="Осенняя набережная Петербурга"></div>
+          <span class="pz-tile__shade"></span>
+          <figcaption class="pz-tile__cap">
+            <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px">
+              <span class="pz-dot"></span>
+              <span class="pz-eyebrow" style="color:#e7d6b2">в движении</span>
+            </div>
+            <div class="pz-tile__title">Набережная. Листья, вода, свет фонаря</div>
+          </figcaption>
+        </figure>
+
+        <div class="pz-alive__side">
+          <figure class="pz-tile" data-rv="zoom" style="--d:110ms">
+            <div class="pz-tile__img" style="background-image:var(--img-nevsky)" role="img" aria-label="Невский проспект у кондитерской Вольфа и Беранже"></div>
+            <span class="pz-tile__shade"></span>
+            <figcaption class="pz-eyebrow pz-tile__cap" style="color:#e7d6b2">Белюкин · Невский проспект</figcaption>
+          </figure>
+          <figure class="pz-tile" data-rv="zoom" style="--d:220ms">
+            <div class="pz-tile__img" style="background-image:var(--img-duel)" role="img" aria-label="Дуэль Пушкина. Протаптывают тропинку"></div>
+            <span class="pz-tile__shade"></span>
+            <figcaption class="pz-eyebrow pz-tile__cap" style="color:#e7d6b2">Белюкин · Чёрная речка</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. ЭПИЗОДЫ ========== -->
+  <section class="pz-eps" id="pz-eps">
+    <div class="pz__wrap">
+      <div class="pz-eyebrow" style="color:var(--gold);margin-bottom:20px" data-rv>Десять эпизодов</div>
+      <h2 class="pz-h2" style="max-width:820px;margin-bottom:clamp(30px,3.8vw,56px)" data-rv>Вся жизнь — за сорок минут</h2>
+
+      <div class="pz-eps__list">
+        <div class="pz-ep" data-rv><div class="pz-ep__n">00</div><div><div class="pz-ep__t">Мгновение до выстрела</div><div class="pz-eyebrow pz-ep__m">Пролог · 1837</div></div></div>
+        <div class="pz-ep" data-rv style="--d:60ms"><div class="pz-ep__n">01</div><div><div class="pz-ep__t">Детство</div><div class="pz-eyebrow pz-ep__m">Москва · 1799–1811</div></div></div>
+        <div class="pz-ep" data-rv><div class="pz-ep__n">02</div><div><div class="pz-ep__t">Лицейское братство</div><div class="pz-eyebrow pz-ep__m">Царское Село · 1811–1817</div></div></div>
+        <div class="pz-ep" data-rv style="--d:60ms"><div class="pz-ep__n">03</div><div><div class="pz-ep__t">Петербург цитирует Пушкина</div><div class="pz-eyebrow pz-ep__m">1817–1820</div></div></div>
+        <div class="pz-ep" data-rv><div class="pz-ep__n">04</div><div><div class="pz-ep__t">Юг. Изгнание как свобода</div><div class="pz-eyebrow pz-ep__m">1820–1824</div></div></div>
+        <div class="pz-ep" data-rv style="--d:60ms"><div class="pz-ep__n">05</div><div><div class="pz-ep__t">Михайловское</div><div class="pz-eyebrow pz-ep__m">1824–1826</div></div></div>
+        <div class="pz-ep" data-rv><div class="pz-ep__n">06</div><div><div class="pz-ep__t">Поэт и император</div><div class="pz-eyebrow pz-ep__m">Возвращение в столицу · 1826–1830</div></div></div>
+        <div class="pz-ep" data-rv style="--d:60ms"><div class="pz-ep__n">07</div><div><div class="pz-ep__t">Болдино</div><div class="pz-eyebrow pz-ep__m">1830</div></div></div>
+        <div class="pz-ep" data-rv><div class="pz-ep__n">08</div><div><div class="pz-ep__t">Натали</div><div class="pz-eyebrow pz-ep__m">1830–1836</div></div></div>
+        <div class="pz-ep" data-rv style="--d:60ms"><div class="pz-ep__n">09</div><div><div class="pz-ep__t">Финал</div><div class="pz-eyebrow pz-ep__m">1837</div></div></div>
+      </div>
+
+      <div class="pz-strip">
+        <figure class="pz-tile" data-rv="zoom">
+          <div class="pz-tile__img" style="background-image:var(--img-child);background-position:50% 30%" role="img" aria-label="Пушкин-ребёнок, К. де Местр"></div>
+          <span class="pz-tile__shade"></span>
+          <figcaption class="pz-eyebrow pz-strip__lbl">Детство</figcaption>
+        </figure>
+        <figure class="pz-tile" data-rv="zoom" style="--d:90ms">
+          <div class="pz-tile__img" style="background-image:var(--img-lycee)" role="img" aria-label="Открытие Лицея, 19 октября 1811"></div>
+          <span class="pz-tile__shade"></span>
+          <figcaption class="pz-eyebrow pz-strip__lbl">Лицей</figcaption>
+        </figure>
+        <figure class="pz-tile" data-rv="zoom" style="--d:180ms">
+          <div class="pz-tile__img" style="background-image:var(--img-lamp)" role="img" aria-label="Зелёная лампа"></div>
+          <span class="pz-tile__shade"></span>
+          <figcaption class="pz-eyebrow pz-strip__lbl">Зелёная лампа</figcaption>
+        </figure>
+        <figure class="pz-tile" data-rv="zoom" style="--d:270ms">
+          <div class="pz-tile__img" style="background-image:var(--img-anichkov)" role="img" aria-label="Аничков мост в сумерках"></div>
+          <span class="pz-tile__shade"></span>
+          <figcaption class="pz-eyebrow pz-strip__lbl">Столица</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. ЗАЛ ========== -->
+  <section class="pz-hall" id="pz-hall">
+    <div class="pz__wrap">
+      <div class="pz-hall__head">
+        <div>
+          <div class="pz-eyebrow" style="color:var(--gold);margin-bottom:20px" data-rv>Зал</div>
+          <h2 class="pz-h2" style="margin-bottom:20px" data-rv>Как выглядит мультимедийная выставка</h2>
+          <p class="pz-text" style="color:var(--ink2)" data-rv>Панорамные экраны во всю стену, мягкие места в темноте, интерактивные картины, к которым можно подойти вплотную. Кадры с прошлых проектов Креативной студии R&#8239;·&#8239;ART.</p>
+        </div>
+        <a href="#" class="pz-eyebrow pz-ghost" data-rv="right">Все проекты студии</a>
+      </div>
+
+      <div class="pz-hall__grid">
+        <figure class="pz-tile pz-tile--wide" data-rv="zoom"><div class="pz-tile__img" style="background-image:var(--img-hall-1)" role="img" aria-label="Зал мультимедийной выставки R-ART"></div></figure>
+        <figure class="pz-tile pz-tile--tall" data-rv="zoom" style="--d:100ms"><div class="pz-tile__img" style="background-image:var(--img-hall-2)" role="img" aria-label="Портрет на панорамном экране"></div></figure>
+        <figure class="pz-tile pz-tile--third" data-rv="zoom"><div class="pz-tile__img" style="background-image:var(--img-hall-3)" role="img" aria-label="Интерактивный экран"></div></figure>
+        <figure class="pz-tile pz-tile--third" data-rv="zoom" style="--d:100ms"><div class="pz-tile__img" style="background-image:var(--img-hall-4)" role="img" aria-label="Изогнутый экран с картиной"></div></figure>
+        <figure class="pz-tile pz-tile--third" data-rv="zoom" style="--d:200ms"><div class="pz-tile__img" style="background-image:var(--img-hall-5)" role="img" aria-label="Галерея выставки"></div></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. ГОЛОСА ========== -->
+  <section class="pz-voices">
+    <div class="pz__wrap pz-voices__in">
+      <div class="pz-voices__aside">
+        <div class="pz-eyebrow" style="color:var(--gold);margin-bottom:20px" data-rv>Голоса</div>
+        <h2 class="pz-h2" style="font-size:clamp(30px,4vw,58px);margin-bottom:22px" data-rv>Пять голосов на весь зал</h2>
+        <p class="pz-text" style="color:var(--ink2)" data-rv>Звук идёт со всех сторон. Пушкин говорит своими письмами и дневником, Натали — своими, Муза произносит то, что он не решался сказать вслух.</p>
+        <p style="font-size:15px;line-height:1.6;color:#7d6c52;margin-top:22px" data-rv>Артисты — по итогам кастинга: [ИМЕНА АРТИСТОВ]</p>
+      </div>
+      <div class="pz-voices__grid">
+        <article class="pz-voice" data-rv style="--d:0ms"><h3>Пушкин</h3><p>Только подлинные строки: письма, дневник, стихи. Ни одной придуманной реплики.</p></article>
+        <article class="pz-voice" data-rv style="--d:90ms"><h3>Натали</h3><p>Женщина, которую двести лет судили заочно, — впервые говорит своими письмами.</p></article>
+        <article class="pz-voice" data-rv style="--d:180ms"><h3>Муза</h3><p>Мысли в голове поэта: «Честь. Свет. Слух. Насмешка. Приговор».</p></article>
+        <article class="pz-voice" data-rv style="--d:270ms"><h3>Диктор и хор</h3><p>В финале «Памятник» читают все: ребёнок семи лет, подросток, взрослые голоса, шёпот.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. КАК ПРИЙТИ ========== -->
+  <section class="pz-visit" id="pz-visit">
+    <div class="pz__wrap">
+      <div class="pz-eyebrow" style="color:var(--gold2);margin-bottom:20px" data-rv>Как прийти</div>
+      <h2 class="pz-h2" style="color:var(--cream);margin-bottom:clamp(32px,4vw,58px)" data-rv>Екатеринбург, Свердловская киностудия</h2>
+
+      <div class="pz-visit__grid">
+        <div data-rv><div class="pz-eyebrow pz-visit__l">Даты</div><div class="pz-visit__v">5 октября —<br>29 ноября 2026</div></div>
+        <div data-rv style="--d:80ms"><div class="pz-eyebrow pz-visit__l">Адрес</div><div class="pz-visit__p">Свердловская киностудия<br>[АДРЕС ПЛОЩАДКИ]</div></div>
+        <div data-rv style="--d:160ms"><div class="pz-eyebrow pz-visit__l">Сеансы</div><div class="pz-visit__p">[РАСПИСАНИЕ СЕАНСОВ]<br>Длительность 40 минут</div></div>
+        <div data-rv style="--d:240ms"><div class="pz-eyebrow pz-visit__l">Билет</div><div class="pz-visit__v" style="color:var(--gold2)">[ЦЕНА] ₽</div><div style="font-size:16px;line-height:1.5;color:#a2957b;margin-top:8px">Школьникам и студентам — [ЛЬГОТНАЯ ЦЕНА] ₽</div></div>
+      </div>
+
+      <div class="pz-visit__foot">
+        <p class="pz-text" style="color:#b8ac93;max-width:620px" data-rv>Школьные классы и семейные группы — отдельные сеансы с сопровождением: [ТЕЛЕФОН ДЛЯ ГРУПП]</p>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap" data-rv="right">
+          <span class="pz-eyebrow pz-age">6+</span>
+          <a href="#" class="pz-btn pz-btn--gold pz-eyebrow">Купить билет</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. ФИНАЛ ========== -->
+  <section class="pz-final">
+    <div class="pz-final__bg"></div>
+    <div class="pz-final__quill">Слух обо мне пройдёт по всей Руси великой, и назовёт меня всяк сущий в ней язык</div>
+    <div class="pz__wrap">
+      <div class="pz-final__l" data-rv>Пушкин вечен. Пушкин живой.</div>
+      <div class="pz-eyebrow" style="position:relative;color:#7d6c52;margin-bottom:clamp(32px,4vw,52px);--d:80ms" data-rv>Муза · финальный кадр фильма</div>
+      <a href="#" class="pz-btn pz-eyebrow" style="position:relative" data-rv>Купить билет</a>
+    </div>
+  </section>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="pz-footer">
+    <div class="pz__wrap pz-footer__in">
+      <div>
+        <div style="font-family:Troover,serif;font-size:clamp(21px,2vw,26px);color:#ece2cc;letter-spacing:.04em;margin-bottom:10px">R&#8239;·&#8239;ART</div>
+        <div style="font-size:16px;line-height:1.6">Креативная студия — организатор выставки<br>«Пушкин. Живой», Екатеринбург, 2026</div>
+      </div>
+      <div class="pz-footer__cols">
+        <div class="pz-footer__col">
+          <a href="#pz-film">Фильм</a><a href="#pz-eps">Эпизоды</a><a href="#pz-hall">Зал</a>
+        </div>
+        <div class="pz-footer__col">
+          <a href="#">Билеты</a><a href="#">Группам</a><a href="#">Прессе</a>
+        </div>
+        <div class="pz-footer__col">
+          <span>[ТЕЛЕФОН]</span><span>[E-MAIL]</span><span>[СОЦСЕТИ]</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
