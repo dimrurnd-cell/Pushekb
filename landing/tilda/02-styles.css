@@ -3,30 +3,34 @@
    Tilda: блок T123 → вставьте, обернув в парный тег style
           (или Настройки сайта → HTML-код внутрь HEAD)
 
-   ВСЕ КАРТИНКИ перечислены один раз в блоке :root ниже.
-   Чтобы перевести сайт на Tilda CDN — загрузите файлы из
-   landing/img/ в Файловый менеджер и замените ссылки здесь.
+   ВСЕ КАРТИНКИ перечислены один раз в блоке .pz ниже и раздаются
+   через jsDelivr — CDN, который отдаёт файлы прямо из GitHub.
    Больше нигде адреса картинок не встречаются.
+
+   Ссылка запинена на коммит, поэтому кешируется навсегда:
+   .../Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/…
+
+   Обновили картинки в репозитории — замените этот хвост после «@»
+   одной автозаменой по файлу (см. tilda/README.md).
    ============================================================ */
 
 .pz {
-  /* ---------- картинки ---------- */
-  --img-base: url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/");
-  --img-parchment:  url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/parchment.jpg");
-  --img-hero:       url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/pushkin-hero.jpg");
-  --img-winter:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-winter.jpg");
-  --img-nevsky-gold:url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/nevsky-gold.jpg");
-  --img-nevsky:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-nevsky.jpg");
-  --img-duel:       url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-duel.jpg");
-  --img-child:      url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-child.jpg");
-  --img-lycee:      url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-lycee.jpg");
-  --img-lamp:       url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-lamp.jpg");
-  --img-anichkov:   url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/p-anichkov.jpg");
-  --img-hall-1:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/hall-1.jpg");
-  --img-hall-2:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/hall-2.jpg");
-  --img-hall-3:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/hall-3.jpg");
-  --img-hall-4:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/hall-4.jpg");
-  --img-hall-5:     url("https://raw.githubusercontent.com/dimrurnd-cell/Pushekb/claude/pushkin-exhibition-landing-mmlmyj/landing/img/hall-5.jpg");
+  /* ---------- картинки (jsDelivr → GitHub) ---------- */
+  --img-parchment:  url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/parchment.jpg");
+  --img-hero:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/pushkin-hero.jpg");
+  --img-winter:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-winter.jpg");
+  --img-nevsky-gold:url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/nevsky-gold.jpg");
+  --img-nevsky:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-nevsky.jpg");
+  --img-duel:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-duel.jpg");
+  --img-child:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-child.jpg");
+  --img-lycee:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-lycee.jpg");
+  --img-lamp:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-lamp.jpg");
+  --img-anichkov:   url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-anichkov.jpg");
+  --img-hall-1:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-1.jpg");
+  --img-hall-2:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-2.jpg");
+  --img-hall-3:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-3.jpg");
+  --img-hall-4:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-4.jpg");
+  --img-hall-5:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-5.jpg");
 
   /* ---------- цвет ---------- */
   --paper:  #efe6d4;

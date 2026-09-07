@@ -9,7 +9,7 @@ with sync_playwright() as p:
         errs = []
         pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
         pg.on("pageerror", lambda e: errs.append("PAGEERROR: " + str(e)))
-        pg.goto((R / "_test.html").as_uri(), wait_until="domcontentloaded", timeout=60000)
+        pg.goto("http://127.0.0.1:8765/tilda/_test.html", wait_until="domcontentloaded", timeout=60000)
         pg.wait_for_timeout(2500)
         # прокрутить всю страницу, чтобы сработали IntersectionObserver-анимации
         pg.evaluate("""async () => {

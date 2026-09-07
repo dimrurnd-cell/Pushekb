@@ -9,8 +9,9 @@ page = ("<!doctype html><html lang='ru'><head><meta charset='utf-8'>"
         "<title>Пушкин. Живой</title>" + head +
         "<style>body{margin:0}</style><style>" + css + "</style></head><body>"
         + body + foot + "</body></html>")
-# локальные картинки: raw.githubusercontent из этой среды недоступен
-page = re.sub(r'https://raw\.githubusercontent\.com/\S*?/landing/img/', '../img/', page)
-assert 'raw.githubusercontent' not in page, 'остались внешние ссылки'
+# для локальной проверки подменяем CDN на файлы репозитория
+page = re.sub(r'https://cdn\.jsdelivr\.net/gh/\S*?/landing/img/', '../img/', page)
+page = re.sub(r'https://cdn\.jsdelivr\.net/gh/\S*?/landing/fonts/', '../fonts/', page)
+assert 'jsdelivr.net/gh' not in page, 'остались ссылки на файлы CDN'
 (R/'_test.html').write_text(page, encoding='utf-8')
 print('_test.html собран, картинки локальные')
