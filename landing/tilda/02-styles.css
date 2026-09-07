@@ -8,7 +8,7 @@
    Больше нигде адреса картинок не встречаются.
 
    Ссылка запинена на коммит, поэтому кешируется навсегда:
-   .../Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/…
+   .../Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/…
 
    Обновили картинки в репозитории — замените этот хвост после «@»
    одной автозаменой по файлу (см. tilda/README.md).
@@ -16,21 +16,21 @@
 
 .pz {
   /* ---------- картинки (jsDelivr → GitHub) ---------- */
-  --img-parchment:  url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/parchment.jpg");
-  --img-hero:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/pushkin-hero.jpg");
-  --img-winter:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-winter.jpg");
-  --img-nevsky-gold:url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/nevsky-gold.jpg");
-  --img-nevsky:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-nevsky.jpg");
-  --img-duel:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-duel.jpg");
-  --img-child:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-child.jpg");
-  --img-lycee:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-lycee.jpg");
-  --img-lamp:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-lamp.jpg");
-  --img-anichkov:   url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/p-anichkov.jpg");
-  --img-hall-1:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-1.jpg");
-  --img-hall-2:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-2.jpg");
-  --img-hall-3:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-3.jpg");
-  --img-hall-4:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-4.jpg");
-  --img-hall-5:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@da3345d4a1752f98b205eaaff93f6f2d98b1d387/landing/img/hall-5.jpg");
+  --img-parchment:  url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/parchment.jpg");
+  --img-hero:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/pushkin-hero.jpg");
+  --img-winter:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-winter.jpg");
+  --img-nevsky-gold:url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/nevsky-gold.jpg");
+  --img-nevsky:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-nevsky.jpg");
+  --img-duel:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-duel.jpg");
+  --img-child:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-child.jpg");
+  --img-lycee:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-lycee.jpg");
+  --img-lamp:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-lamp.jpg");
+  --img-anichkov:   url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/p-anichkov.jpg");
+  --img-hall-1:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/hall-1.jpg");
+  --img-hall-2:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/hall-2.jpg");
+  --img-hall-3:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/hall-3.jpg");
+  --img-hall-4:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/hall-4.jpg");
+  --img-hall-5:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/img/hall-5.jpg");
 
   /* ---------- зерно бумаги (рисуется, а не картинка) ---------- */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");

@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@КОММИТ/landing/img/pushk
 в `02-styles.css` и `01-head.html`. Строка одна и та же во всех ссылках:
 
 ```
-da3345d4a1752f98b205eaaff93f6f2d98b1d387   →   новый хеш коммита
+f38cc8f291a4a88871b926c952d1da9fe367ed9b   →   новый хеш коммита
 ```
 
 **Читаемые ссылки вместо хеша.** На GitHub (Releases → Create a new tag)
@@ -70,16 +70,12 @@ Pages (Settings → Pages → Deploy from a branch → `main` / root) — фай
 взгляд. Сделан из `Пушкин.jpg` моделью **Wan 2.2 I2V** через Hugging Face Space
 [`zerogpu-aoti/wan2-2-fp8da-aoti-faster`](https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster).
 
-Ролик пока раздаётся из хранилища Higgsfield:
+Файл лежит в репозитории — `landing/video/pushkin-hat.mp4` (560×746, H.264,
+без звука, 85 КБ) — и раздаётся с того же CDN, что картинки и шрифты:
 
 ```
-https://d2ol7oe51mr4n9.cloudfront.net/user_3IomiYrQuWHDjUMF8hmz5n7cE7n/c3a50f01-ea20-430f-8ec9-6e6332e91ebc.mp4
+https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/video/pushkin-hat.mp4
 ```
-
-**Перед публикацией перенесите его к остальным файлам:** скачайте по ссылке,
-положите в `landing/video/pushkin-hat.mp4`, закоммитьте — и замените `src`
-у тега `video` в `03-body-t123.html` на адрес jsDelivr (он подписан
-комментарием прямо в коде). Тогда всё будет раздаваться с одного CDN.
 
 Видео запускается один раз, когда первый экран попадает в поле зрения,
 и останавливается на последнем кадре — шляпа снята. Со звуком не играет,
