@@ -18,11 +18,13 @@ footer = (SOURCE / '04-footer.html').read_text(encoding='utf-8')
 def render(text, assets):
     return (text.replace('@@ASSET@@', assets)
             .replace('@@PORTRAIT_VIDEO@@', assets + '/pushkin-hat.mp4')
-            .replace('@@AUTUMN_VIDEO@@', assets + '/embankment.mp4'))
+            .replace('@@AUTUMN_VIDEO@@', assets + '/embankment.mp4')
+            .replace('@@INTERACTIVE_IMAGE@@', 'assets/hall-3.jpg' if assets == 'assets' else
+                     'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@7fee67a907c420dabe948af76a8c5575ad5c0fe2/landing/img/hall-3.jpg'))
 
 meta = ('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
         '<meta name="description" content="Пушкин. Живой — мультимедийная выставка в Екатеринбурге. '
-        '5 октября — 29 ноября 2026. 40 минут, три экрана, десять эпизодов жизни поэта.">'
+        'Мультимедийный фильм и интерактивная зона. 5 октября — 29 ноября 2026, Свердловская киностудия.">'
         '<title>Пушкин. Живой — мультимедийная выставка в Екатеринбурге</title>')
 
 def page(content, script=footer):
