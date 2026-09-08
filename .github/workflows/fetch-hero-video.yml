@@ -1,32 +1,31 @@
 name: fetch-hero-video
 
 on:
-  workflow_dispatch:
-    inputs:
-      url:
-        description: Source URL of the clip
-        required: true
-      dest:
-        description: Path inside the repository
-        required: true
-        default: landing/video/pushkin-hat.mp4
+  push:
+    branches:
+      - claude/pushkin-exhibition-landing-mmlmyj
 
 jobs:
   fetch:
+    if: "!contains(github.event.head_commit.message, '[skip fetch]')"
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: claude/pushkin-exhibition-landing-mmlmyj
       - name: Download the clip
         run: |
-          curl -fsSL -o "${{ github.event.inputs.dest }}" "${{ github.event.inputs.url }}"
-          ls -l "${{ github.event.inputs.dest }}"
-          file "${{ github.event.inputs.dest }}"
+          mkdir -p landing/video
+          curl -fsSL -o landing/video/pushkin-hat.mp4 \
+            "https://d2ol7oe51mr4n9.cloudfront.net/user_3IomiYrQuWHDjUMF8hmz5n7cE7n/9ea79988-7b1b-483b-9607-e9894f4993d3.mp4"
+          ls -l landing/video/pushkin-hat.mp4
+          md5sum landing/video/pushkin-hat.mp4
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "${{ github.event.inputs.dest }}"
-          git commit -m "Загружен ролик первого экрана" || echo "nothing to commit"
+          git add landing/video/pushkin-hat.mp4
+          git commit -m "Ролик первого экрана загружен в репозиторий [skip fetch]" || echo "nothing to commit"
           git push
