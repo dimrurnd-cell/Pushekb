@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@КОММИТ/landing/img/pushk
 в `02-styles.css` и `01-head.html`. Строка одна и та же во всех ссылках:
 
 ```
-f38cc8f291a4a88871b926c952d1da9fe367ed9b   →   новый хеш коммита
+6759bc79de70b93ecab46ae0270f3e118852ef08   →   новый хеш коммита
 ```
 
 **Читаемые ссылки вместо хеша.** На GitHub (Releases → Create a new tag)
@@ -67,14 +67,20 @@ Pages (Settings → Pages → Deploy from a branch → `main` / root) — фай
 ## Ожившее фото на первом экране
 
 В арке первого экрана лежит короткий ролик: Пушкин снимает шляпу и поднимает
-взгляд. Сделан из `Пушкин.jpg` моделью **Wan 2.2 I2V** через Hugging Face Space
-[`zerogpu-aoti/wan2-2-fp8da-aoti-faster`](https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster).
+взгляд.
 
-Файл лежит в репозитории — `landing/video/pushkin-hat.mp4` (560×746, H.264,
-без звука, 85 КБ) — и раздаётся с того же CDN, что картинки и шрифты:
+Ролик собран по двум опорным кадрам, чтобы лицо не «уплывало». Первый кадр —
+ровно `pushkin-hero.jpg`, то есть заставка и первый кадр видео совпадают. Последний
+кадр собран отдельно: та же поза, тот же фон и сюртук, но шляпа поднята, а лицо
+взято с эталонного портрета. Движение между кадрами сгенерировано моделью
+**Wan 2.2 I2V** и смонтировано так, чтобы ролик заканчивался именно на эталонном
+кадре — лицо в финале зафиксировано, а не додумано моделью.
+
+Файл лежит в репозитории — `landing/video/pushkin-hat.mp4` (560×728, H.264,
+без звука, 86 КБ) — и раздаётся с того же CDN, что картинки и шрифты:
 
 ```
-https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@f38cc8f291a4a88871b926c952d1da9fe367ed9b/landing/video/pushkin-hat.mp4
+https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/video/pushkin-hat.mp4
 ```
 
 Видео запускается один раз, когда первый экран попадает в поле зрения,
