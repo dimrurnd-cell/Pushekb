@@ -1,0 +1,32 @@
+name: fetch-hero-video
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Source URL of the clip
+        required: true
+      dest:
+        description: Path inside the repository
+        required: true
+        default: landing/video/pushkin-hat.mp4
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the clip
+        run: |
+          curl -fsSL -o "${{ github.event.inputs.dest }}" "${{ github.event.inputs.url }}"
+          ls -l "${{ github.event.inputs.dest }}"
+          file "${{ github.event.inputs.dest }}"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ github.event.inputs.dest }}"
+          git commit -m "Загружен ролик первого экрана" || echo "nothing to commit"
+          git push
