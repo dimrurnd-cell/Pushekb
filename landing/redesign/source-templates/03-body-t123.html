@@ -1,0 +1,82 @@
+<!-- Вставьте в один блок T123. Все стили ограничены #pushkin-exhibit. -->
+<div id="pushkin-exhibit" lang="ru">
+  <a class="px-skip" href="#px-main">Перейти к содержанию</a>
+  <header class="px-header">
+    <a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a>
+    <button class="px-menu-toggle" type="button" aria-expanded="false" aria-controls="px-nav"><span>Меню</span><span class="px-menu-icon" aria-hidden="true"></span></button>
+    <nav id="px-nav" aria-label="Основная навигация">
+      <a href="#px-experience">О выставке</a><a href="#px-alive">Ожившие картины</a><a href="#px-story">История</a><a href="#px-visit">Как посетить</a>
+    </nav>
+    <a class="px-header-ticket" href="#px-visit" data-ticket-link>Билеты и посещение <span aria-hidden="true">↗</span></a>
+    <div class="px-progress" aria-hidden="true"></div>
+  </header>
+  <main id="px-main">
+    <section class="px-hero px-wrap" id="px-top" aria-labelledby="px-title">
+      <div class="px-hero-meta"><p>Мультимедийная выставка <span class="px-dot" aria-hidden="true"></span> Екатеринбург</p><p>05 октября — 29 ноября <span class="px-year">2026</span></p></div>
+      <div class="px-hero-grid">
+        <div class="px-hero-copy">
+          <h1 id="px-title"><span class="px-title-print">ПУШКИН.</span><span class="px-title-script">Живой</span></h1>
+          <p class="px-hero-line">Увидеть поэта.<br>Почувствовать человека.</p>
+          <p class="px-hero-description">Живопись, музыка и голос складываются в историю, которая окружает вас с трёх сторон.</p>
+          <div class="px-hero-actions"><a class="px-button" href="#px-visit" data-ticket-link>Билеты и посещение <span aria-hidden="true">↗</span></a><a class="px-text-link" href="#px-experience">Заглянуть внутрь <span aria-hidden="true">↓</span></a></div>
+          <p class="px-location"><span class="px-location-cross" aria-hidden="true">+</span> Свердловская киностудия</p>
+        </div>
+        <figure class="px-portrait">
+          <div class="px-portrait-paper" aria-hidden="true"><img src="@@ASSET@@/p-winter.jpg" alt="" width="900" height="600"></div>
+          <div class="px-portrait-frame" data-media="portrait">
+            <img class="px-media-poster" src="@@ASSET@@/pushkin-hero.jpg" alt="Художественный образ Пушкина: поэт в цилиндре с пером и рукописью" width="760" height="1000" fetchpriority="high">
+            <video class="px-video" muted playsinline preload="none" aria-label="Короткая анимация: Пушкин снимает цилиндр" data-src="@@PORTRAIT_VIDEO@@"></video>
+            <button class="px-media-button" type="button" data-play="portrait" aria-label="Оживить портрет Пушкина"><span class="px-play-icon" aria-hidden="true">▶</span><span data-play-label>Оживить портрет</span></button>
+            <p class="px-media-status px-sr-only" role="status"></p>
+          </div>
+          <figcaption><span>Поэт. Друг. Влюблённый.</span><span>Знакомый — и незнакомый.</span></figcaption>
+          <span class="px-portrait-note" aria-hidden="true">Встреча через<br>два столетия</span>
+        </figure>
+      </div>
+      <div class="px-facts" aria-label="Выставка в цифрах"><div><strong>40</strong><span>минут<br>погружения</span></div><div><strong>3</strong><span>экрана — одна<br>история</span></div><div><strong>10</strong><span>эпизодов<br>жизни</span></div><div><strong>100<span>+</span></strong><span>картин<br>в фильме</span></div><a href="#px-experience" aria-label="Далее: внутри выставки"><span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="px-experience px-section" id="px-experience" aria-labelledby="px-experience-title">
+      <div class="px-wrap">
+        <div class="px-section-kicker"><span>01 / Внутри выставки</span><span>Искусство быть рядом</span></div>
+        <div class="px-section-intro"><h2 id="px-experience-title">Картины вокруг.<br>История — <em>рядом.</em></h2><div><p class="px-lead">Знакомые строки обретают голос.<br>Знакомый портрет — характер.</p><p>Один 40-минутный фильм на трёх экранах. Перед вами разворачивается жизнь Пушкина: дружба, любовь, свобода, творчество. Картины переходят в движение, письма звучат вслух, а музыка связывает их в единый рассказ.</p></div></div>
+        <figure class="px-panorama" data-reveal><img src="@@ASSET@@/hall-1.jpg" alt="Зрители в мультимедийном зале R·ART, окружённые большими проекциями" width="1200" height="630" loading="lazy"><div class="px-panorama-label" aria-hidden="true"><span>Три экрана.</span><i>Одно пространство.</i></div><figcaption>Как выглядит формат: фото предыдущей выставки R·ART.</figcaption></figure>
+        <div class="px-experience-notes"><article><span>01</span><h3>Увидеть больше</h3><p>Центральная сцена, крупная деталь, строчка письма. Каждый экран добавляет свой взгляд.</p></article><article><span>02</span><h3>Услышать личное</h3><p>Пушкин, Натали, Муза и Диктор ведут рассказ. В финале к ним присоединяется хор.</p></article><article><span>03</span><h3>Прожить историю</h3><p>От московского детства до последней зимы. Десять эпизодов, объединённых одним сеансом.</p></article></div>
+      </div>
+    </section>
+
+    <section class="px-alive px-section px-wrap" id="px-alive" aria-labelledby="px-alive-title">
+      <div class="px-section-kicker"><span>02 / Изображение оживает</span><span>Прикоснитесь к истории</span></div>
+      <div class="px-alive-grid">
+        <div class="px-alive-copy"><span class="px-script-note" aria-hidden="true">Смотрите ближе</span><h2 id="px-alive-title">Искусство<br>в движении.</h2><p>Вода ловит свет. Листья кружатся над набережной. Из неподвижного изображения рождается маленькая сцена.</p><p class="px-small">Включите движение, чтобы почувствовать настроение выставки.</p><div class="px-scene-options" role="group" aria-label="Выбрать изображение"><button type="button" class="is-selected" data-scene="autumn" aria-pressed="true"><span>01</span> Осенняя набережная <span aria-hidden="true">↗</span></button><button type="button" data-scene="winter" aria-pressed="false"><span>02</span> Зимний Петербург <span aria-hidden="true">↗</span></button></div></div>
+        <div class="px-gallery" data-scene-view="autumn">
+          <figure class="px-scene px-scene-autumn" data-media="autumn">
+            <div class="px-scene-visual"><img class="px-media-poster" src="@@ASSET@@/nevsky-gold.jpg" alt="Осенняя набережная: золотые листья, вода, фонарь и рукописи" width="760" height="1000" loading="lazy"><video class="px-video" muted loop playsinline preload="none" data-src="@@AUTUMN_VIDEO@@" aria-label="Анимационный этюд: листья, свет и вода на осенней набережной"></video><button class="px-media-button" type="button" data-play="autumn" aria-label="Оживить осеннюю набережную"><span class="px-play-icon" aria-hidden="true">▶</span><span data-play-label>Оживить картину</span></button><p class="px-media-status px-sr-only" role="status"></p></div>
+            <figcaption><span>Осенняя набережная</span><span>Анимационный этюд для сайта</span></figcaption>
+          </figure>
+          <figure class="px-scene px-scene-winter" hidden>
+            <div class="px-scene-visual"><img src="@@ASSET@@/p-winter.jpg" alt="Александр Беггров. Зимний Петербург: городская площадь под снегом" width="900" height="600" loading="lazy"><div class="px-snow" aria-hidden="true"></div><button class="px-media-button" type="button" data-snow aria-pressed="false"><span aria-hidden="true">✳</span><span data-snow-label>Добавить снег</span></button></div>
+            <figcaption><span>Александр Беггров. Зимний Петербург</span><span>Картина с эффектом снега</span></figcaption>
+          </figure>
+          <div class="px-gallery-number" aria-hidden="true">01 / 02</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-story px-section" id="px-story" aria-labelledby="px-story-title"><div class="px-wrap">
+      <div class="px-section-kicker"><span>03 / Десять эпизодов</span><span>1799 — 1837</span></div>
+      <div class="px-story-heading"><h2 id="px-story-title">Целая жизнь.<br><em>Сорок минут.</em></h2><p>История начинается за мгновение до выстрела — и возвращает нас к самому началу.<br><span class="px-small">Выберите главу, чтобы узнать больше.</span></p></div>
+      <div class="px-chapters" role="tablist" aria-label="Эпизоды выставки"><button role="tab" id="px-tab-0" aria-controls="px-chapter-panel" aria-selected="true" tabindex="0" data-chapter="0"><span>00</span> Пролог</button><button role="tab" id="px-tab-1" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="1"><span>01</span> Детство</button><button role="tab" id="px-tab-2" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="2"><span>02</span> Лицей</button><button role="tab" id="px-tab-3" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="3"><span>03</span> Петербург</button><button role="tab" id="px-tab-4" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="4"><span>04</span> Юг</button><button role="tab" id="px-tab-5" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="5"><span>05</span> Михайловское</button><button role="tab" id="px-tab-6" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="6"><span>06</span> Император</button><button role="tab" id="px-tab-7" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="7"><span>07</span> Болдино</button><button role="tab" id="px-tab-8" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="8"><span>08</span> Натали</button><button role="tab" id="px-tab-9" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="9"><span>09</span> Финал</button></div>
+      <div id="px-chapter-panel" class="px-chapter-panel" role="tabpanel" tabindex="0" aria-labelledby="px-tab-0"><figure><img id="px-chapter-image" src="@@ASSET@@/p-duel.jpg" alt="Дмитрий Белюкин. Дуэль Пушкина. Протаптывают тропинку" width="900" height="600" loading="lazy"><figcaption id="px-chapter-credit">Дмитрий Белюкин. «Дуэль Пушкина. Протаптывают тропинку»</figcaption></figure><div class="px-chapter-copy"><span id="px-chapter-date" class="px-eyebrow">Петербург / 1837</span><h3 id="px-chapter-title">Мгновение<br>до выстрела</h3><p id="px-chapter-text">Зимний город, дорога к Чёрной речке, снег. Из последнего дня история делает шаг назад — к детству, дружбе и первым стихам.</p><div class="px-chapter-bottom"><span id="px-chapter-count">Пролог / 10 эпизодов</span><button type="button" class="px-round-button" data-next-chapter aria-label="Следующий эпизод"><span aria-hidden="true">→</span></button></div></div></div>
+      <noscript><p>Продолжение истории: Детство → Лицей → Петербург → Юг → Михайловское → Поэт и император → Болдино → Натали → Финал.</p></noscript>
+    </div></section>
+
+    <section class="px-quote-section px-wrap" aria-label="Слова Пушкина"><span class="px-quote-star" aria-hidden="true">✳</span><blockquote>И долго буду тем любезен я народу,<br>Что чувства добрые я лирой пробуждал.</blockquote><p>Александр Пушкин · 1836</p></section>
+
+    <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title"><div class="px-wrap"><div class="px-section-kicker"><span>04 / Ваша встреча с Пушкиным</span><span>Екатеринбург</span></div><div class="px-visit-grid"><div><h2 id="px-visit-title">Увидимся<br><em>на выставке.</em></h2><div class="px-visit-dates"><span>05.10</span><i>—</i><span>29.11</span><small>2026</small></div><p class="px-venue">Свердловская киностудия</p><p class="px-small">Мультимедийная выставка «Пушкин. Живой»<br>Продолжительность фильма — 40 минут.</p></div><div class="px-visit-ticket"><span class="px-eyebrow">Билеты и расписание</span><h3 data-ticket-title>Встреча<br>скоро состоится.</h3><p data-ticket-description>Стоимость билетов и расписание сеансов уточняются. Информация появится здесь после согласования.</p><a class="px-button" data-buy-button hidden>Купить билет <span aria-hidden="true">↗</span></a><div class="px-ticket-note" data-ticket-note><span class="px-dot" aria-hidden="true"></span> Даты выставки: 5 октября — 29 ноября</div><a class="px-text-link" href="#px-faq">Что нужно знать о посещении <span aria-hidden="true">↓</span></a></div></div></div></section>
+
+    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><span class="px-eyebrow">Перед посещением</span><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Мультимедийный фильм о Пушкине на трёх экранах. В нём соединяются более ста картин, анимация, музыка и голоса героев. Десять эпизодов складываются в одну историю.</p></details><details><summary>Сколько длится сеанс?<span aria-hidden="true">+</span></summary><p>Фильм длится 40 минут. Точное время начала сеансов будет указано в расписании после его согласования.</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Условия детского и группового посещения, возрастная рекомендация и льготные категории уточняются. Они появятся вместе с информацией о билетах.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Согласованный прайс и ссылка на продажу появятся в разделе «Билеты и расписание» на этой странице.</p></details></div></section>
+  </main>
+  <footer class="px-footer px-wrap"><div class="px-footer-top"><a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a><p>Пушкин вечен.<br><span>Пушкин живой.</span></p><a class="px-to-top" href="#px-top">Наверх <span aria-hidden="true">↑</span></a></div><div class="px-footer-bottom"><span>© 2026 · Креативная студия R·ART</span><span>Екатеринбург · Свердловская киностудия</span><button type="button" class="px-motion-toggle" aria-pressed="false">Остановить анимацию</button></div></footer>
+</div>
+
