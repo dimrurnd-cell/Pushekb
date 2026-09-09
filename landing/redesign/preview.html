@@ -201,6 +201,52 @@
 @media(max-width:900px){#pushkin-exhibit h1{height:192px}#pushkin-exhibit .px-title-script{font-size:103px;top:96px;left:45px}}
 @media(max-width:650px){#pushkin-exhibit h1{height:187px}#pushkin-exhibit .px-title-print{font-size:clamp(60px,18.5vw,110px)}#pushkin-exhibit .px-title-script{font-size:clamp(72px,22vw,130px);top:96px;left:43px}#pushkin-exhibit:not(.px-enhanced) .px-header{height:auto;min-height:72px;flex-wrap:wrap;padding-block:18px}#pushkin-exhibit:not(.px-enhanced) #px-nav{position:static;display:flex;width:100%;box-shadow:none;font-size:16px;padding:12px 0 0}}
 @media(max-width:360px){#pushkin-exhibit h1{height:166px}#pushkin-exhibit .px-title-script{top:84px;left:28px;font-size:72px}}
+/* Рукописные строки, бумага и живопись: мотивы исходной версии Claude. */
+#pushkin-exhibit .px-hero{position:relative;isolation:isolate;background:radial-gradient(ellipse at 90% 36%,#ede6d780,transparent 65%)}
+#pushkin-exhibit .px-hero::before,#pushkin-exhibit .px-quote-section::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+#pushkin-exhibit .px-manuscript{position:absolute;pointer-events:none;user-select:none;font:400 clamp(45px,5vw,78px)/1.45 'PXMonplesir',cursive;color:#8b735a;white-space:nowrap;z-index:-1}
+#pushkin-exhibit .px-manuscript span{display:block}
+#pushkin-exhibit .px-manuscript-hero{top:92px;left:35%;opacity:.14;transform:rotate(-11deg)}
+#pushkin-exhibit .px-manuscript-hero span+span{margin-left:-100px;margin-top:360px}
+#pushkin-exhibit .px-hero-meta,#pushkin-exhibit .px-facts{position:relative}
+#pushkin-exhibit .px-atmosphere{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+#pushkin-exhibit .px-atmosphere img{width:100%;height:100%;object-fit:cover;object-position:center}
+#pushkin-exhibit .px-story{position:relative;isolation:isolate}
+#pushkin-exhibit .px-story-atmosphere{bottom:auto;height:440px;opacity:.12;mask-image:linear-gradient(to bottom,#000,transparent);-webkit-mask-image:linear-gradient(to bottom,#000,transparent)}
+#pushkin-exhibit .px-story-atmosphere img{object-position:center 58%;filter:grayscale(.6)}
+#pushkin-exhibit .px-quote-section{position:relative;isolation:isolate;padding:66px var(--px-gutter);background:#f5f1e7;overflow:hidden}
+#pushkin-exhibit .px-quote-atmosphere{opacity:.18;mask-image:linear-gradient(to bottom,transparent,#000);-webkit-mask-image:linear-gradient(to bottom,transparent,#000)}
+#pushkin-exhibit .px-quote-atmosphere img{object-position:center 67%;filter:grayscale(.7)}
+#pushkin-exhibit .px-quote-frame{position:relative;max-width:1390px;padding:48px 24px 45px;border:1px solid #a89b7c66}
+#pushkin-exhibit .px-quote-frame::before{content:'';position:absolute;inset:7px;border:1px solid #a89b7c33;pointer-events:none}
+#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:11px;color:var(--px-muted)}
+#pushkin-exhibit .px-quote-star{display:block;margin-top:20px;font-size:26px}
+#pushkin-exhibit .px-quote-section blockquote{font:400 clamp(32px,3.9vw,57px)/1.35 'PXMonplesir',cursive;letter-spacing:0;margin:17px auto 23px;max-width:1050px}
+#pushkin-exhibit .px-quote-frame>p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--px-muted)}
+/* Тарифы из предоставленного прайса: все условия рядом с ценой. */
+#pushkin-exhibit .px-ticket-prices{display:grid;grid-template-columns:1fr 1fr;margin:0 0 25px;gap:25px}
+#pushkin-exhibit .px-ticket-prices>div+div{padding-left:25px;border-left:1px solid var(--px-line)}
+#pushkin-exhibit .px-ticket-prices span{display:block;color:var(--px-muted);font-size:15px;margin-bottom:7px}
+#pushkin-exhibit .px-ticket-prices strong{font:400 62px/1 'PXInserat','PXAkrobat',sans-serif;letter-spacing:-.025em}
+#pushkin-exhibit .px-ticket-prices small{font:400 27px/1 'PXAkrobat',sans-serif;color:var(--px-red)}
+#pushkin-exhibit .px-prices{margin-top:75px;padding-top:46px;border-top:1px solid #bcc3b3}
+#pushkin-exhibit .px-prices-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+#pushkin-exhibit .px-prices-heading .px-eyebrow{font-size:11px;color:var(--px-red)}
+#pushkin-exhibit .px-prices-heading h3{font:400 clamp(34px,3.4vw,48px)/1.1 'PXTroover',Georgia,serif;margin-top:12px;letter-spacing:-.025em}
+#pushkin-exhibit .px-prices-heading p{font-size:16px;line-height:1.5;color:var(--px-muted);text-align:right}
+#pushkin-exhibit .px-price-table{width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:0;text-align:left;background:#faf9f58c}
+#pushkin-exhibit .px-price-category{width:58%}
+#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:22px 28px;border-bottom:1px solid #cdd2c4;vertical-align:middle}
+#pushkin-exhibit .px-price-table thead th{font-size:13px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;background:#dce1d4;color:var(--px-ink);padding-block:17px}
+#pushkin-exhibit .px-price-table tbody th{font-size:23px;line-height:1.25;font-weight:600}
+#pushkin-exhibit .px-price-table tbody th span{display:block;font-size:16px;font-weight:400;line-height:1.4;color:var(--px-muted);margin-top:7px;max-width:500px}
+#pushkin-exhibit .px-price-table td{font:400 29px/1.2 'PXInserat','PXAkrobat',sans-serif;white-space:nowrap}
+#pushkin-exhibit .px-price-table td.px-price-unavailable{font:400 16px/1.3 'PXAkrobat',sans-serif;color:var(--px-muted);white-space:normal}
+#pushkin-exhibit .px-price-table td.px-price-free{font:600 20px/1.3 'PXAkrobat',sans-serif}
+#pushkin-exhibit .px-price-note{font-size:15px;line-height:1.5;color:var(--px-muted);margin-top:18px;max-width:760px}
+@media(max-width:900px){#pushkin-exhibit .px-price-category{width:54%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:20px}#pushkin-exhibit .px-price-table tbody th{font-size:21px}#pushkin-exhibit .px-ticket-prices{gap:16px}#pushkin-exhibit .px-ticket-prices>div+div{padding-left:16px}#pushkin-exhibit .px-ticket-prices strong{font-size:53px}}
+@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{top:550px;left:-120px;font-size:43px;opacity:.17}#pushkin-exhibit .px-manuscript-hero span+span{margin-top:255px;margin-left:0}#pushkin-exhibit .px-story-atmosphere{height:380px;opacity:.1}#pushkin-exhibit .px-quote-section{padding:32px 18px}#pushkin-exhibit .px-quote-frame{padding:36px 21px 32px}#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:10px}#pushkin-exhibit .px-quote-section blockquote{font-size:35px;line-height:1.45;margin-block:12px 20px}#pushkin-exhibit .px-quote-frame>p{font-size:10px}#pushkin-exhibit .px-quote-star{margin-top:16px}#pushkin-exhibit .px-prices{margin-top:45px;padding-top:33px}#pushkin-exhibit .px-prices-heading{display:block;margin-bottom:24px}#pushkin-exhibit .px-prices-heading p{text-align:left;font-size:15px;margin-top:17px}#pushkin-exhibit .px-price-category{width:48%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:18px 9px}#pushkin-exhibit .px-price-table thead th{font-size:10px;letter-spacing:.03em;padding-block:14px}#pushkin-exhibit .px-price-table tbody th{font-size:18px;overflow-wrap:anywhere}#pushkin-exhibit .px-price-table tbody th span{font-size:14px;margin-top:6px}#pushkin-exhibit .px-price-table td{font-size:23px}#pushkin-exhibit .px-price-table td.px-price-unavailable{font-size:14px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:16px;letter-spacing:-.02em}#pushkin-exhibit .px-price-note{font-size:14px}#pushkin-exhibit .px-ticket-prices strong{font-size:60px}}
+@media(max-width:360px){#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:6px}#pushkin-exhibit .px-price-table tbody th{font-size:17px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:14px}}
 /* Интерактивная зона — самостоятельная часть выставки. */
 #pushkin-exhibit .px-interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:stretch}
 #pushkin-exhibit .px-interactive-photo{display:grid;grid-template-rows:1fr auto;min-height:0}
@@ -229,18 +275,19 @@
     <nav id="px-nav" aria-label="Основная навигация">
       <a href="#px-experience">О выставке</a><a href="#px-interactive">Интерактивная зона</a><a href="#px-alive">Картины</a><a href="#px-story">История</a><a href="#px-visit">Как посетить</a>
     </nav>
-    <a class="px-header-ticket" href="#px-visit" data-ticket-link>Билеты и посещение <span aria-hidden="true">↗</span></a>
+    <a class="px-header-ticket" href="#px-prices" data-ticket-link>Билеты и цены <span aria-hidden="true">↗</span></a>
     <div class="px-progress" aria-hidden="true"></div>
   </header>
   <main id="px-main">
     <section class="px-hero px-wrap" id="px-top" aria-labelledby="px-title">
+      <div class="px-manuscript px-manuscript-hero" aria-hidden="true"><span>Я памятник себе воздвиг нерукотворный,</span><span>К нему не зарастёт народная тропа…</span></div>
       <div class="px-hero-meta"><p>Мультимедийная выставка <span class="px-dot" aria-hidden="true"></span> Екатеринбург</p><p>05 октября — 29 ноября <span class="px-year">2026</span></p></div>
       <div class="px-hero-grid">
         <div class="px-hero-copy">
           <h1 id="px-title"><span class="px-title-print">ПУШКИН.</span><span class="px-title-script">Живой</span></h1>
           <p class="px-hero-line">Увидеть поэта.<br>Почувствовать человека.</p>
           <p class="px-hero-description">Мультимедийный фильм на трёх экранах и интерактивная зона. Смотрите, исследуйте, задавайте вопросы — открывайте своего Пушкина.</p>
-          <div class="px-hero-actions"><a class="px-button" href="#px-visit" data-ticket-link>Билеты и посещение <span aria-hidden="true">↗</span></a><a class="px-text-link" href="#px-experience">Заглянуть внутрь <span aria-hidden="true">↓</span></a></div>
+          <div class="px-hero-actions"><a class="px-button" href="#px-prices" data-ticket-link>Билеты и цены <span aria-hidden="true">↗</span></a><a class="px-text-link" href="#px-experience">Заглянуть внутрь <span aria-hidden="true">↓</span></a></div>
           <p class="px-location"><span class="px-location-cross" aria-hidden="true">+</span> Свердловская киностудия</p>
         </div>
         <figure class="px-portrait">
@@ -299,7 +346,7 @@
       </div>
     </section>
 
-    <section class="px-story px-section" id="px-story" aria-labelledby="px-story-title"><div class="px-wrap">
+    <section class="px-story px-section" id="px-story" aria-labelledby="px-story-title"><div class="px-atmosphere px-story-atmosphere" aria-hidden="true"><img src="assets/p-winter.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-wrap">
       <div class="px-section-kicker"><span>04 / Десять эпизодов</span><span>1799 — 1837</span></div>
       <div class="px-story-heading"><h2 id="px-story-title">Целая жизнь.<br><em>Сорок минут.</em></h2><p>История начинается за мгновение до выстрела — и возвращает нас к самому началу.<br><span class="px-small">Выберите главу, чтобы узнать больше.</span></p></div>
       <div class="px-chapters" role="tablist" aria-label="Эпизоды выставки"><button role="tab" id="px-tab-0" aria-controls="px-chapter-panel" aria-selected="true" tabindex="0" data-chapter="0"><span>00</span> Пролог</button><button role="tab" id="px-tab-1" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="1"><span>01</span> Детство</button><button role="tab" id="px-tab-2" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="2"><span>02</span> Лицей</button><button role="tab" id="px-tab-3" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="3"><span>03</span> Петербург</button><button role="tab" id="px-tab-4" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="4"><span>04</span> Юг</button><button role="tab" id="px-tab-5" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="5"><span>05</span> Михайловское</button><button role="tab" id="px-tab-6" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="6"><span>06</span> Император</button><button role="tab" id="px-tab-7" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="7"><span>07</span> Болдино</button><button role="tab" id="px-tab-8" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="8"><span>08</span> Натали</button><button role="tab" id="px-tab-9" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="9"><span>09</span> Финал</button></div>
@@ -307,11 +354,33 @@
       <noscript><p>Продолжение истории: Детство → Лицей → Петербург → Юг → Михайловское → Поэт и император → Болдино → Натали → Финал.</p></noscript>
     </div></section>
 
-    <section class="px-quote-section px-wrap" aria-label="Слова Пушкина"><span class="px-quote-star" aria-hidden="true">✳</span><blockquote>И долго буду тем любезен я народу,<br>Что чувства добрые я лирой пробуждал.</blockquote><p>Александр Пушкин · 1836</p></section>
+    <section class="px-quote-section" aria-label="Слова Пушкина"><div class="px-atmosphere px-quote-atmosphere" aria-hidden="true"><img src="assets/p-nevsky.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-quote-frame px-wrap"><span class="px-eyebrow">Строки, которые остаются</span><span class="px-quote-star" aria-hidden="true">✳</span><blockquote>И долго буду тем любезен я народу,<br> Что чувства добрые я лирой пробуждал.</blockquote><p>Александр Пушкин · 1836</p></div></section>
 
-    <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title"><div class="px-wrap"><div class="px-section-kicker"><span>05 / Ваша встреча с Пушкиным</span><span>Екатеринбург</span></div><div class="px-visit-grid"><div><h2 id="px-visit-title">Увидимся<br><em>на выставке.</em></h2><div class="px-visit-dates"><span>05.10</span><i>—</i><span>29.11</span><small>2026</small></div><p class="px-venue">Свердловская киностудия</p><p class="px-small">Фильм — 40 минут.<br>На интерактивную зону запланируйте дополнительное время.</p></div><div class="px-visit-ticket"><span class="px-eyebrow">Билеты и расписание</span><h3 data-ticket-title>Встреча<br>скоро состоится.</h3><p data-ticket-description>Стоимость билетов и расписание сеансов уточняются. Информация появится здесь после согласования.</p><a class="px-button" data-buy-button hidden>Купить билет <span aria-hidden="true">↗</span></a><div class="px-ticket-note" data-ticket-note><span class="px-dot" aria-hidden="true"></span> Даты выставки: 5 октября — 29 ноября</div><a class="px-text-link" href="#px-faq">Что нужно знать о посещении <span aria-hidden="true">↓</span></a></div></div></div></section>
+    <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title">
+      <div class="px-wrap">
+        <div class="px-section-kicker"><span>05 / Ваша встреча с Пушкиным</span><span>Екатеринбург</span></div>
+        <div class="px-visit-grid">
+          <div><h2 id="px-visit-title">Увидимся<br><em>на выставке.</em></h2><div class="px-visit-dates"><span>05.10</span><i>—</i><span>29.11</span><small>2026</small></div><p class="px-venue">Свердловская киностудия</p><p class="px-small">Фильм — 40 минут.<br>На интерактивную зону запланируйте дополнительное время.</p></div>
+          <div class="px-visit-ticket"><span class="px-eyebrow">Билеты на выставку</span><h3>Полный билет</h3><div class="px-ticket-prices"><div><span>Будни</span><strong>700 <small>₽</small></strong></div><div><span>Выходные</span><strong>800 <small>₽</small></strong></div></div><p data-ticket-description>Расписание сеансов и ссылка на покупку появятся здесь позже.</p><a class="px-button" data-buy-button hidden>Купить билет <span aria-hidden="true">↗</span></a><div class="px-ticket-note" data-ticket-note><span class="px-dot" aria-hidden="true"></span> Даты выставки: 5 октября — 29 ноября</div><a class="px-text-link" href="#px-prices">Все цены и льготы <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <section class="px-prices" id="px-prices" aria-labelledby="px-prices-title">
+          <div class="px-prices-heading"><div><span class="px-eyebrow">Выберите свой билет</span><h3 id="px-prices-title">Билеты и цены</h3></div><p>5 октября — 29 ноября 2026<br>Стоимость указана за одного посетителя.</p></div>
+          <table class="px-price-table" aria-describedby="px-price-note"><caption class="px-sr-only">Стоимость посещения выставки «Пушкин. Живой» в будни и выходные</caption><colgroup><col class="px-price-category"><col><col></colgroup><thead><tr><th scope="col">Категория</th><th scope="col">Будни</th><th scope="col">Выходные</th></tr></thead><tbody>
+            <tr><th scope="row">Полный билет</th><td>700 ₽</td><td>800 ₽</td></tr>
+            <tr><th scope="row">Семейный<span>От 3 человек · цена за один билет</span></th><td>600 ₽</td><td class="px-price-unavailable">Не действует</td></tr>
+            <tr><th scope="row">Льготный<span>Пенсионеры, инвалиды всех групп, школьники от 7 до 14 лет, студенты</span></th><td>600 ₽</td><td class="px-price-unavailable">Не действует</td></tr>
+            <tr><th scope="row">Организованные и школьные экскурсии<span>От 10 человек</span></th><td>400 ₽</td><td class="px-price-unavailable">Не действует</td></tr>
+            <tr><th scope="row">Счастливый сеанс<span>Первый и последний сеанс в понедельник и вторник</span></th><td>400 ₽</td><td class="px-price-unavailable">Не действует</td></tr>
+            <tr><th scope="row">Сопровождающие школьных экскурсий<span>1 сопровождающий на 10 человек</span></th><td class="px-price-free">Бесплатно</td><td class="px-price-unavailable">Не действует</td></tr>
+            <tr><th scope="row">Дети до 6 лет включительно</th><td class="px-price-free">Бесплатно</td><td class="px-price-free">Бесплатно</td></tr>
+            <tr><th scope="row">Крупным компаниям и заводам<span>Специальная цена</span></th><td>500 ₽</td><td>600 ₽</td></tr>
+          </tbody></table>
+          <p class="px-price-note" id="px-price-note">«Не действует» — специальный тариф недоступен в выходные. Вы можете приобрести полный билет.</p>
+        </section>
+      </div>
+    </section>
 
-    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><span class="px-eyebrow">Перед посещением</span><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: мультимедийный фильм на трёх экранах и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, разговор с цифровым Пушкиным, 3D-голограммы и фотозоны.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Фильм длится 40 минут. На исследование интерактивной зоны понадобится дополнительное время — здесь вы сами выбираете, на чём остановиться. Точное время начала сеансов будет указано в расписании после его согласования.</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Условия детского и группового посещения, возрастная рекомендация и льготные категории уточняются. Они появятся вместе с информацией о билетах.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Согласованный прайс и ссылка на продажу появятся в разделе «Билеты и расписание» на этой странице.</p></details></div></section>
+    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><span class="px-eyebrow">Перед посещением</span><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: мультимедийный фильм на трёх экранах и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, разговор с цифровым Пушкиным, 3D-голограммы и фотозоны.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Фильм длится 40 минут. На исследование интерактивной зоны понадобится дополнительное время — здесь вы сами выбираете, на чём остановиться. Точное время начала сеансов будет указано в расписании после его согласования.</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Дети до 6 лет включительно проходят бесплатно в будни и выходные. Для школьных и организованных экскурсий от 10 человек билет в будни стоит 400 ₽. Один сопровождающий школьной экскурсии на 10 человек проходит в будни бесплатно. Семейный билет для группы от 3 человек — 600 ₽ за посетителя в будни.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Все тарифы и условия льгот указаны выше, в разделе «Билеты и цены». Расписание сеансов и ссылка на покупку появятся в разделе посещения.</p></details></div></section>
   </main>
   <footer class="px-footer px-wrap"><div class="px-footer-top"><a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a><p>Пушкин вечен.<br><span>Пушкин живой.</span></p><a class="px-to-top" href="#px-top">Наверх <span aria-hidden="true">↑</span></a></div><div class="px-footer-bottom"><span>© 2026 · Креативная студия R·ART</span><span>Екатеринбург · Свердловская киностудия</span><button type="button" class="px-motion-toggle" aria-pressed="false">Остановить анимацию</button></div></footer>
 </div>
@@ -500,8 +569,7 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
         if(ticketUrl.protocol==='https:' && !ticketUrl.username && !ticketUrl.password){
           qa('[data-ticket-link]').forEach(function(link){link.href=ticketUrl.href;link.textContent='Купить билет ↗';});
           q('[data-buy-button]').href=ticketUrl.href;q('[data-buy-button]').hidden=false;
-          q('[data-ticket-title]').textContent='Выберите свой сеанс.';
-          q('[data-ticket-description]').textContent='Актуальное расписание и стоимость билетов — на странице продажи. Переходите, чтобы выбрать удобный сеанс.';
+          q('[data-ticket-description]').textContent='Расписание сеансов — на странице продажи. Переходите, чтобы выбрать удобное время.';
           q('[data-ticket-note]').hidden=true;
         }
       }catch(ignore){}

@@ -194,6 +194,52 @@
 @media(max-width:900px){#pushkin-exhibit h1{height:192px}#pushkin-exhibit .px-title-script{font-size:103px;top:96px;left:45px}}
 @media(max-width:650px){#pushkin-exhibit h1{height:187px}#pushkin-exhibit .px-title-print{font-size:clamp(60px,18.5vw,110px)}#pushkin-exhibit .px-title-script{font-size:clamp(72px,22vw,130px);top:96px;left:43px}#pushkin-exhibit:not(.px-enhanced) .px-header{height:auto;min-height:72px;flex-wrap:wrap;padding-block:18px}#pushkin-exhibit:not(.px-enhanced) #px-nav{position:static;display:flex;width:100%;box-shadow:none;font-size:16px;padding:12px 0 0}}
 @media(max-width:360px){#pushkin-exhibit h1{height:166px}#pushkin-exhibit .px-title-script{top:84px;left:28px;font-size:72px}}
+/* Рукописные строки, бумага и живопись: мотивы исходной версии Claude. */
+#pushkin-exhibit .px-hero{position:relative;isolation:isolate;background:radial-gradient(ellipse at 90% 36%,#ede6d780,transparent 65%)}
+#pushkin-exhibit .px-hero::before,#pushkin-exhibit .px-quote-section::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+#pushkin-exhibit .px-manuscript{position:absolute;pointer-events:none;user-select:none;font:400 clamp(45px,5vw,78px)/1.45 'PXMonplesir',cursive;color:#8b735a;white-space:nowrap;z-index:-1}
+#pushkin-exhibit .px-manuscript span{display:block}
+#pushkin-exhibit .px-manuscript-hero{top:92px;left:35%;opacity:.14;transform:rotate(-11deg)}
+#pushkin-exhibit .px-manuscript-hero span+span{margin-left:-100px;margin-top:360px}
+#pushkin-exhibit .px-hero-meta,#pushkin-exhibit .px-facts{position:relative}
+#pushkin-exhibit .px-atmosphere{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+#pushkin-exhibit .px-atmosphere img{width:100%;height:100%;object-fit:cover;object-position:center}
+#pushkin-exhibit .px-story{position:relative;isolation:isolate}
+#pushkin-exhibit .px-story-atmosphere{bottom:auto;height:440px;opacity:.12;mask-image:linear-gradient(to bottom,#000,transparent);-webkit-mask-image:linear-gradient(to bottom,#000,transparent)}
+#pushkin-exhibit .px-story-atmosphere img{object-position:center 58%;filter:grayscale(.6)}
+#pushkin-exhibit .px-quote-section{position:relative;isolation:isolate;padding:66px var(--px-gutter);background:#f5f1e7;overflow:hidden}
+#pushkin-exhibit .px-quote-atmosphere{opacity:.18;mask-image:linear-gradient(to bottom,transparent,#000);-webkit-mask-image:linear-gradient(to bottom,transparent,#000)}
+#pushkin-exhibit .px-quote-atmosphere img{object-position:center 67%;filter:grayscale(.7)}
+#pushkin-exhibit .px-quote-frame{position:relative;max-width:1390px;padding:48px 24px 45px;border:1px solid #a89b7c66}
+#pushkin-exhibit .px-quote-frame::before{content:'';position:absolute;inset:7px;border:1px solid #a89b7c33;pointer-events:none}
+#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:11px;color:var(--px-muted)}
+#pushkin-exhibit .px-quote-star{display:block;margin-top:20px;font-size:26px}
+#pushkin-exhibit .px-quote-section blockquote{font:400 clamp(32px,3.9vw,57px)/1.35 'PXMonplesir',cursive;letter-spacing:0;margin:17px auto 23px;max-width:1050px}
+#pushkin-exhibit .px-quote-frame>p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--px-muted)}
+/* Тарифы из предоставленного прайса: все условия рядом с ценой. */
+#pushkin-exhibit .px-ticket-prices{display:grid;grid-template-columns:1fr 1fr;margin:0 0 25px;gap:25px}
+#pushkin-exhibit .px-ticket-prices>div+div{padding-left:25px;border-left:1px solid var(--px-line)}
+#pushkin-exhibit .px-ticket-prices span{display:block;color:var(--px-muted);font-size:15px;margin-bottom:7px}
+#pushkin-exhibit .px-ticket-prices strong{font:400 62px/1 'PXInserat','PXAkrobat',sans-serif;letter-spacing:-.025em}
+#pushkin-exhibit .px-ticket-prices small{font:400 27px/1 'PXAkrobat',sans-serif;color:var(--px-red)}
+#pushkin-exhibit .px-prices{margin-top:75px;padding-top:46px;border-top:1px solid #bcc3b3}
+#pushkin-exhibit .px-prices-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+#pushkin-exhibit .px-prices-heading .px-eyebrow{font-size:11px;color:var(--px-red)}
+#pushkin-exhibit .px-prices-heading h3{font:400 clamp(34px,3.4vw,48px)/1.1 'PXTroover',Georgia,serif;margin-top:12px;letter-spacing:-.025em}
+#pushkin-exhibit .px-prices-heading p{font-size:16px;line-height:1.5;color:var(--px-muted);text-align:right}
+#pushkin-exhibit .px-price-table{width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:0;text-align:left;background:#faf9f58c}
+#pushkin-exhibit .px-price-category{width:58%}
+#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:22px 28px;border-bottom:1px solid #cdd2c4;vertical-align:middle}
+#pushkin-exhibit .px-price-table thead th{font-size:13px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;background:#dce1d4;color:var(--px-ink);padding-block:17px}
+#pushkin-exhibit .px-price-table tbody th{font-size:23px;line-height:1.25;font-weight:600}
+#pushkin-exhibit .px-price-table tbody th span{display:block;font-size:16px;font-weight:400;line-height:1.4;color:var(--px-muted);margin-top:7px;max-width:500px}
+#pushkin-exhibit .px-price-table td{font:400 29px/1.2 'PXInserat','PXAkrobat',sans-serif;white-space:nowrap}
+#pushkin-exhibit .px-price-table td.px-price-unavailable{font:400 16px/1.3 'PXAkrobat',sans-serif;color:var(--px-muted);white-space:normal}
+#pushkin-exhibit .px-price-table td.px-price-free{font:600 20px/1.3 'PXAkrobat',sans-serif}
+#pushkin-exhibit .px-price-note{font-size:15px;line-height:1.5;color:var(--px-muted);margin-top:18px;max-width:760px}
+@media(max-width:900px){#pushkin-exhibit .px-price-category{width:54%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:20px}#pushkin-exhibit .px-price-table tbody th{font-size:21px}#pushkin-exhibit .px-ticket-prices{gap:16px}#pushkin-exhibit .px-ticket-prices>div+div{padding-left:16px}#pushkin-exhibit .px-ticket-prices strong{font-size:53px}}
+@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{top:550px;left:-120px;font-size:43px;opacity:.17}#pushkin-exhibit .px-manuscript-hero span+span{margin-top:255px;margin-left:0}#pushkin-exhibit .px-story-atmosphere{height:380px;opacity:.1}#pushkin-exhibit .px-quote-section{padding:32px 18px}#pushkin-exhibit .px-quote-frame{padding:36px 21px 32px}#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:10px}#pushkin-exhibit .px-quote-section blockquote{font-size:35px;line-height:1.45;margin-block:12px 20px}#pushkin-exhibit .px-quote-frame>p{font-size:10px}#pushkin-exhibit .px-quote-star{margin-top:16px}#pushkin-exhibit .px-prices{margin-top:45px;padding-top:33px}#pushkin-exhibit .px-prices-heading{display:block;margin-bottom:24px}#pushkin-exhibit .px-prices-heading p{text-align:left;font-size:15px;margin-top:17px}#pushkin-exhibit .px-price-category{width:48%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:18px 9px}#pushkin-exhibit .px-price-table thead th{font-size:10px;letter-spacing:.03em;padding-block:14px}#pushkin-exhibit .px-price-table tbody th{font-size:18px;overflow-wrap:anywhere}#pushkin-exhibit .px-price-table tbody th span{font-size:14px;margin-top:6px}#pushkin-exhibit .px-price-table td{font-size:23px}#pushkin-exhibit .px-price-table td.px-price-unavailable{font-size:14px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:16px;letter-spacing:-.02em}#pushkin-exhibit .px-price-note{font-size:14px}#pushkin-exhibit .px-ticket-prices strong{font-size:60px}}
+@media(max-width:360px){#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:6px}#pushkin-exhibit .px-price-table tbody th{font-size:17px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:14px}}
 /* Интерактивная зона — самостоятельная часть выставки. */
 #pushkin-exhibit .px-interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:stretch}
 #pushkin-exhibit .px-interactive-photo{display:grid;grid-template-rows:1fr auto;min-height:0}

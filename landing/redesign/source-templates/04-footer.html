@@ -182,8 +182,7 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
         if(ticketUrl.protocol==='https:' && !ticketUrl.username && !ticketUrl.password){
           qa('[data-ticket-link]').forEach(function(link){link.href=ticketUrl.href;link.textContent='Купить билет ↗';});
           q('[data-buy-button]').href=ticketUrl.href;q('[data-buy-button]').hidden=false;
-          q('[data-ticket-title]').textContent='Выберите свой сеанс.';
-          q('[data-ticket-description]').textContent='Актуальное расписание и стоимость билетов — на странице продажи. Переходите, чтобы выбрать удобный сеанс.';
+          q('[data-ticket-description]').textContent='Расписание сеансов — на странице продажи. Переходите, чтобы выбрать удобное время.';
           q('[data-ticket-note]').hidden=true;
         }
       }catch(ignore){}
