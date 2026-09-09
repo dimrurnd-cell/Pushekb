@@ -492,9 +492,13 @@
 .pz-arch__vid {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: 50% 18%; display: block;
-  opacity: 0; transition: opacity 1.2s ease;
+  opacity: 1;
 }
-.pz-arch__vid.is-on { opacity: 1; }
+/* Пока ролик не загрузился, тег показывает poster — ту же фотографию,
+   поэтому первый экран выглядит одинаково и без видео. */
+@media (prefers-reduced-motion: reduce) {
+  .pz-arch__vid { display: none; }
+}
 
 /* ============================================================
    О ВЫСТАВКЕ
