@@ -98,14 +98,32 @@
 
     if (calm) { v.pause(); v.removeAttribute('autoplay'); return; }
 
+    /* Сначала зритель видит неподвижный кадр — Пушкин с опущенной головой,
+       и только потом он снимает шляпу. */
+    var HOLD = 1800;
+    var allowed = false, timer = null;
+
     var tryPlay = function () {
-      if (!v.paused || v.ended) return;
+      if (!allowed || !v.paused || v.ended) return;
       var p = v.play();
       if (p && p.catch) p.catch(function () {});
     };
+    var begin = function () {
+      if (timer) return;
+      timer = setTimeout(function () { allowed = true; tryPlay(); }, HOLD);
+    };
 
-    tryPlay();
+    /* Пока пауза не вышла, autoplay браузера тут же останавливаем. */
+    v.pause();
+    v.addEventListener('play', function () { if (!allowed) v.pause(); });
     v.addEventListener('canplay', tryPlay);
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { begin(); io.disconnect(); } });
+      }, { threshold: .35 });
+      io.observe(v);
+    } else { begin(); }
 
     var once = function () {
       tryPlay();
