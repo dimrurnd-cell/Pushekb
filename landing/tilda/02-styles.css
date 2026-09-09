@@ -502,6 +502,20 @@
   .pz-int__strip figure:nth-child(n+3) { display: none; }
 }
 
+/* ---------- Карта площадки ---------- */
+.pz-map { margin: clamp(34px, 4vw, 54px) 0 0; }
+.pz-map__frame {
+  display: block; width: 100%; height: clamp(280px, 32vw, 460px);
+  border: 1px solid rgba(236, 226, 204, .16); border-radius: 3px;
+  background: #12100d; filter: grayscale(.2) contrast(.96);
+}
+.pz-map__cap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-top: 14px; color: #8f8268;
+}
+#pz .pz-map__link { color: var(--gold2); border-bottom: 1px solid rgba(203,158,72,.4); }
+#pz .pz-map__link:hover { color: var(--cream); }
+
 /* ============================================================
    АДАПТИВ (сетка Tilda: 1200 / 960 / 640 / 480 / 320)
    ============================================================ */

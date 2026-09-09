@@ -2,7 +2,8 @@
      «Пушкин. Живой» — разметка лендинга
      Tilda: блок T123 «HTML-код» на пустой странице.
      Стили — в 02-styles.css, скрипт анимации — в 04-footer.html.
-     Заполнить: всё, что в [КВАДРАТНЫХ СКОБКАХ], и href="#" у ссылок.
+     Осталось заполнить: href="#" у кнопок «Купить билет», «Смотреть трейлер»
+     и у ссылок «Группам» / «Прессе» в подвале.
      ============================================================ -->
 
 <div class="pz" id="pz">
@@ -421,7 +422,7 @@
           <p class="pz-text" style="color:var(--ink2);max-width:520px" data-rv>Фильм идёт 40 минут без перерыва. Билет действует на конкретный сеанс — приходите за десять минут до начала.</p>
         </div>
         <ul class="pz-sched__note" style="list-style:none;margin:0;padding:0" data-rv="right">
-          <li>Зал на [ВМЕСТИМОСТЬ] мест с проекцией на три стены</li>
+          <li>Зал с проекцией на три стены</li>
           <li>Выставка работает ежедневно с 10:00 до 21:00</li>
           <li>Билеты — онлайн и в кассе на площадке</li>
           <li>Школьные и семейные группы — по отдельной записи</li>
@@ -454,10 +455,22 @@
 
       <div class="pz-visit__grid">
         <div data-rv><div class="pz-eyebrow pz-visit__l">Даты</div><div class="pz-visit__v">5 октября —<br>29 ноября 2026</div></div>
-        <div data-rv style="--d:80ms"><div class="pz-eyebrow pz-visit__l">Адрес</div><div class="pz-visit__p">Свердловская киностудия<br>[АДРЕС ПЛОЩАДКИ]</div></div>
+        <div data-rv style="--d:80ms"><div class="pz-eyebrow pz-visit__l">Адрес</div><div class="pz-visit__p">Свердловская киностудия<br>Екатеринбург, просп. Ленина, 50Ж</div></div>
         <div data-rv style="--d:160ms"><div class="pz-eyebrow pz-visit__l">Сеансы</div><div class="pz-visit__p">Ежедневно 10:00—21:00<br>13 сеансов, с 10:10 до 20:10<br>Длительность 40 минут</div></div>
         <div data-rv style="--d:240ms"><div class="pz-eyebrow pz-visit__l">Билет</div><div class="pz-visit__v" style="color:var(--gold2);font-size:clamp(24px,2.4vw,34px)">Скоро<br>в продаже</div></div>
       </div>
+
+      <figure class="pz-map" data-rv>
+        <iframe class="pz-map__frame"
+                src="https://yandex.ru/map-widget/v1/?text=%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2050%D0%96&amp;z=17&amp;lang=ru_RU"
+                title="Свердловская киностудия на Яндекс.Картах: Екатеринбург, проспект Ленина, 50Ж"
+                loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <figcaption class="pz-map__cap">
+          <span class="pz-eyebrow">Екатеринбург, просп. Ленина, 50Ж</span>
+          <a class="pz-eyebrow pz-map__link" target="_blank" rel="noopener"
+             href="https://yandex.ru/maps/?text=%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2050%D0%96">Открыть в Яндекс.Картах</a>
+        </figcaption>
+      </figure>
 
       <div class="pz-visit__foot">
         <p class="pz-text" style="color:#b8ac93;max-width:620px" data-rv>Школьные классы и семейные группы — отдельные сеансы с сопровождением: <a href="tel:+79826967758">+7&#8239;(982)&#8239;696-77-58</a></p>
