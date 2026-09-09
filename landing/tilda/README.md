@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@КОММИТ/landing/img/pushk
 в `02-styles.css` и `01-head.html`. Строка одна и та же во всех ссылках:
 
 ```
-147f57567453396dd2b78176f73c01affa530c6b   →   новый хеш коммита
+0cb2a28   →   новый хеш коммита
 ```
 
 **Читаемые ссылки вместо хеша.** На GitHub (Releases → Create a new tag)
@@ -80,7 +80,7 @@ Pages (Settings → Pages → Deploy from a branch → `main` / root) — фай
 без звука, 86 КБ) — и раздаётся с того же CDN, что картинки и шрифты:
 
 ```
-https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@147f57567453396dd2b78176f73c01affa530c6b/landing/video/pushkin-hat.mp4
+https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@0cb2a2835cb80a662652d2a308d50d20f28ac1ad/landing/video/pushkin-hat.mp4
 ```
 
 Ролик запускает сам браузер: `autoplay muted playsinline` — без звука, инлайном,
