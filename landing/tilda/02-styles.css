@@ -8,7 +8,7 @@
    Больше нигде адреса картинок не встречаются.
 
    Ссылка запинена на коммит, поэтому кешируется навсегда:
-   .../Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/…
+   .../Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/…
 
    Обновили картинки в репозитории — замените этот хвост после «@»
    одной автозаменой по файлу (см. tilda/README.md).
@@ -16,21 +16,29 @@
 
 .pz {
   /* ---------- картинки (jsDelivr → GitHub) ---------- */
-  --img-parchment:  url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/parchment.jpg");
-  --img-hero:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/pushkin-hero.jpg");
-  --img-winter:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-winter.jpg");
-  --img-nevsky-gold:url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/nevsky-gold.jpg");
-  --img-nevsky:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-nevsky.jpg");
-  --img-duel:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-duel.jpg");
-  --img-child:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-child.jpg");
-  --img-lycee:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-lycee.jpg");
-  --img-lamp:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-lamp.jpg");
-  --img-anichkov:   url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/p-anichkov.jpg");
-  --img-hall-1:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/hall-1.jpg");
-  --img-hall-2:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/hall-2.jpg");
-  --img-hall-3:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/hall-3.jpg");
-  --img-hall-4:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/hall-4.jpg");
-  --img-hall-5:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/img/hall-5.jpg");
+  --img-parchment:  url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/parchment.jpg");
+  --img-hero:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/pushkin-hero.jpg");
+  --img-winter:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-winter.jpg");
+  --img-nevsky-gold:url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/nevsky-gold.jpg");
+  --img-nevsky:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-nevsky.jpg");
+  --img-duel:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-duel.jpg");
+  --img-child:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-child.jpg");
+  --img-lycee:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-lycee.jpg");
+  --img-lamp:       url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-lamp.jpg");
+  --img-anichkov:   url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/p-anichkov.jpg");
+  --img-hall-1:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/hall-1.jpg");
+  --img-hall-2:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/hall-2.jpg");
+  --img-hall-3:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/hall-3.jpg");
+  --img-hall-4:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/hall-4.jpg");
+  --img-hall-5:     url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/hall-5.jpg");
+  --img-int-1:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/int-1.jpg");
+  --img-int-2:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/int-2.jpg");
+  --img-int-3:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/int-3.jpg");
+  --img-int-4:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/int-4.jpg");
+  --img-int-5:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/int-5.jpg");
+  --img-int-6:      url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/int-6.jpg");
+  --img-logo-dark:  url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/logo-rart-dark.png");
+  --img-logo-light: url("https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@3309845bbcb9f2c12c0a89e4c6cc772c707ac60d/landing/img/logo-rart-light.png");
 
   /* ---------- зерно бумаги (рисуется, а не картинка) ---------- */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
@@ -152,10 +160,26 @@
 .pz-quill--a { left: -40px; top: 190px; width: min(780px, 62vw); font-size: clamp(24px, 3.4vw, 46px); animation: pz-driftA 34s ease-in-out infinite alternate; }
 .pz-quill--b { right: -70px; top: 560px; width: min(700px, 58vw); font-size: clamp(22px, 3vw, 40px); text-align: right; animation: pz-driftB 41s ease-in-out infinite alternate; }
 
-.pz-nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: clamp(24px, 3.4vw, 54px); }
-.pz-logo { display: flex; align-items: baseline; gap: 12px; }
-.pz-logo b { font-family: Troover, serif; font-weight: 400; font-size: clamp(19px, 1.9vw, 25px); letter-spacing: .04em; color: var(--ink); }
-.pz-nav__links { display: flex; align-items: center; gap: clamp(18px, 2.6vw, 38px); }
+.pz-nav {
+  position: relative; display: flex; align-items: center; justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px); padding-top: clamp(24px, 3.4vw, 54px); flex-wrap: nowrap;
+}
+/* Логотип организатора: ссылка на сайт студии */
+.pz-logo { flex: 0 0 auto; display: block; line-height: 0; }
+#pz a.pz-logo { border: 0 !important; text-decoration: none; }
+#pz .pz-footer a.pz-logo img { opacity: 1; }
+.pz-logo img {
+  display: block; width: auto; height: clamp(26px, 2.4vw, 34px);
+  opacity: .9; transition: opacity .3s ease;
+}
+#pz .pz-logo:hover img { opacity: 1; }
+
+/* Меню всегда в одну строку: сжимаются отступы, а не слова */
+.pz-nav__links {
+  display: flex; align-items: center; flex-wrap: nowrap; min-width: 0;
+  gap: clamp(11px, 1.75vw, 30px);
+}
+#pz .pz-nav__links a { white-space: nowrap; }
 #pz .pz-nav__links a { color: var(--ink2); }
 #pz .pz-nav__links a:hover { color: var(--ink); }
 #pz .pz-nav__cta { border: 1px solid rgba(27,22,17,.45); padding: 11px 22px; color: var(--ink) !important; transition: background .3s ease, color .3s ease; }
@@ -425,6 +449,50 @@
 @keyframes pz-fall    { from { transform: translate3d(0, -20px, 0); opacity: 0; }
                         10% { opacity: .85; }
                         to { transform: translate3d(70px, 700px, 0); opacity: 0; } }
+
+/* ============================================================
+   ИНТЕРАКТИВНАЯ ВЫСТАВКА
+   ============================================================ */
+.pz-int { padding: var(--sec) 0; background: var(--paper2); }
+.pz-int__head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: clamp(24px, 4vw, 60px); margin-bottom: clamp(34px, 4.4vw, 58px);
+}
+.pz-int__head > div:first-child { max-width: 680px; }
+
+.pz-int__grid {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.2vw, 30px); align-items: stretch;
+}
+.pz-int__hero { position: relative; overflow: hidden; border-radius: 3px; min-height: clamp(320px, 40vw, 520px); }
+.pz-int__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 1.7vw, 22px); }
+.pz-int__card {
+  background: var(--paper); border: 1px solid rgba(27, 22, 17, .1);
+  padding: clamp(20px, 2vw, 28px); display: flex; flex-direction: column; gap: 10px;
+}
+.pz-int__num { font-family: Inserat, Impact, sans-serif; font-size: 15px; letter-spacing: .06em; color: var(--gold); }
+.pz-int__t { font-family: Akrobat, sans-serif; font-weight: 600; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.25; color: var(--ink); }
+.pz-int__d { font-size: clamp(14px, 1.05vw, 15px); line-height: 1.62; color: var(--ink2); }
+
+.pz-int__strip {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 18px); margin-top: clamp(18px, 2.2vw, 30px);
+}
+.pz-int__strip .pz-tile { height: clamp(130px, 13vw, 190px); }
+.pz-int__note { margin-top: clamp(26px, 2.8vw, 36px); color: var(--ink3); line-height: 1.8; }
+
+@media (max-width: 960px) {
+  .pz-int__head { flex-direction: column; align-items: flex-start; }
+  .pz-int__grid { grid-template-columns: 1fr; }
+  .pz-int__hero { min-height: clamp(240px, 52vw, 360px); }
+  .pz-int__strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pz-int__strip figure:nth-child(n+4) { display: none; }
+}
+@media (max-width: 640px) {
+  .pz-int__cards { grid-template-columns: 1fr; }
+  .pz-int__strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pz-int__strip figure:nth-child(n+3) { display: none; }
+}
 
 /* ============================================================
    АДАПТИВ (сетка Tilda: 1200 / 960 / 640 / 480 / 320)
