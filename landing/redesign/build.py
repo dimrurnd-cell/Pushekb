@@ -30,7 +30,13 @@ def page(content, script=footer):
             + '<style>html{scroll-behavior:auto}body{margin:0}' + css
             + '</style></head><body>' + content + script + '</body></html>')
 
+font_match = re.search(r'<style[^>]*>([\s\S]*?)</style>', head, re.I)
+assert font_match, 'Missing font stylesheet'
+font_css = font_match.group(1).strip() + '\n'
+assert '<style' not in font_css and '<!--' not in font_css
+
 files = {
+    'fonts.css': font_css,
     '02-styles.css': css,
     '02-styles-T123.html': '<style>\n' + css + '\n</style>',
     '03-body-t123.html': render(body, CDN),
