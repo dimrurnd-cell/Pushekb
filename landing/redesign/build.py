@@ -5,10 +5,11 @@ Python standard library only. Run: python landing/redesign/build.py
 from pathlib import Path
 import base64
 import json
+import re
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE / 'source-templates'
-MEDIA_VERSION = '6dbaa4f14c202c7a95aa088b4da3f0a49b6c88f9'
+MEDIA_VERSION = '7bbab1066b4cd21a54925640dce669cc364ebee0'
 CDN = f'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@{MEDIA_VERSION}/landing/redesign/assets'
 head = (HERE / '01-head.html').read_text(encoding='utf-8')
 css = (SOURCE / '02-styles.css').read_text(encoding='utf-8')
@@ -17,10 +18,7 @@ footer = (SOURCE / '04-footer.html').read_text(encoding='utf-8')
 
 def render(text, assets):
     return (text.replace('@@ASSET@@', assets)
-            .replace('@@PORTRAIT_VIDEO@@', assets + '/pushkin-hat.mp4')
-            .replace('@@AUTUMN_VIDEO@@', assets + '/embankment.mp4')
-            .replace('@@INTERACTIVE_IMAGE@@', 'assets/hall-3.jpg' if assets == 'assets' else
-                     'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@7fee67a907c420dabe948af76a8c5575ad5c0fe2/landing/img/hall-3.jpg'))
+            .replace('@@AUTUMN_VIDEO@@', assets + '/embankment.mp4'))
 
 meta = ('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
         '<meta name="description" content="Пушкин. Живой — мультимедийная выставка в Екатеринбурге. '
@@ -42,13 +40,16 @@ files = {
 }
 single = render(body, 'assets')
 images = {}
+chapter_files = set(re.findall(r"'([^']+\.jpg)'", footer))
 for asset in (HERE / 'assets').iterdir():
-    if asset.suffix not in ('.jpg', '.mp4'):
+    if asset.suffix not in ('.jpg', '.png', '.mp4'):
         continue
-    mime = 'image/jpeg' if asset.suffix == '.jpg' else 'video/mp4'
+    if ('assets/' + asset.name) not in single and asset.name not in chapter_files:
+        continue
+    mime = {'.jpg':'image/jpeg', '.png':'image/png', '.mp4':'video/mp4'}[asset.suffix]
     data = f'data:{mime};base64,' + base64.b64encode(asset.read_bytes()).decode()
     single = single.replace('assets/' + asset.name, data)
-    if asset.suffix == '.jpg':
+    if asset.name in chapter_files:
         images[asset.name] = data
 single_footer = footer.replace('chapterImage.src=assetBase+data[3];',
                               'chapterImage.src=' + json.dumps(images) + '[data[3]];')

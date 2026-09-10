@@ -193,6 +193,29 @@
 @media(max-width:900px){#pushkin-exhibit h1{height:192px}#pushkin-exhibit .px-title-script{font-size:103px;top:96px;left:45px}}
 @media(max-width:650px){#pushkin-exhibit h1{height:187px}#pushkin-exhibit .px-title-print{font-size:clamp(60px,18.5vw,110px)}#pushkin-exhibit .px-title-script{font-size:clamp(72px,22vw,130px);top:96px;left:43px}#pushkin-exhibit:not(.px-enhanced) .px-header{height:auto;min-height:72px;flex-wrap:wrap;padding-block:18px}#pushkin-exhibit:not(.px-enhanced) #px-nav{position:static;display:flex;width:100%;box-shadow:none;font-size:16px;padding:12px 0 0}}
 @media(max-width:360px){#pushkin-exhibit h1{height:166px}#pushkin-exhibit .px-title-script{top:84px;left:28px;font-size:72px}}
+/* Фотографии и интерактив объединены; произведения показаны без обрезки. */
+#pushkin-exhibit .px-panorama>img{height:auto;aspect-ratio:1672/941;object-fit:contain;filter:none}
+#pushkin-exhibit .px-panorama-label{font-size:30px;top:24px;left:28px}
+#pushkin-exhibit .px-panorama-label i{font-size:40px}
+#pushkin-exhibit .px-panorama figcaption{max-width:960px;margin-left:auto;line-height:1.45}
+#pushkin-exhibit .px-interactive-hero{margin-bottom:48px}
+#pushkin-exhibit .px-interactive-hero img{height:auto;aspect-ratio:1.7;object-fit:cover;object-position:50% 52%}
+#pushkin-exhibit .px-interactive-hero figcaption{font-size:13px;line-height:1.4;color:var(--px-muted);margin-top:11px}
+#pushkin-exhibit .px-interactive-demo{margin-top:62px;padding:42px 0 0;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-demo-heading{display:flex;justify-content:space-between;gap:22px;margin-bottom:32px}
+#pushkin-exhibit .px-demo-heading>.px-eyebrow{color:var(--px-red);font-size:11px}
+#pushkin-exhibit .px-demo-heading>.px-small{font-size:13px}
+#pushkin-exhibit .px-interactive-demo .px-alive-grid{grid-template-columns:1fr 1fr;gap:65px}
+#pushkin-exhibit .px-alive h3{font:400 clamp(35px,3.8vw,53px)/1.1 'PXTroover',Georgia,serif;letter-spacing:-.025em;margin-bottom:25px}
+#pushkin-exhibit .px-interactive-demo .px-gallery{max-width:550px;width:100%;justify-self:end}
+#pushkin-exhibit .px-chapter-panel figure>img{height:430px;aspect-ratio:auto;object-fit:contain;object-position:center;background:#e7e5de}
+#pushkin-exhibit .px-chapter-panel.px-chapter-portrait figure>img{background:#fff}
+#pushkin-exhibit .px-chapter-copy h3{max-width:10em;text-wrap:balance}
+#pushkin-exhibit .px-chapter-copy{min-width:0}
+#pushkin-exhibit .px-portrait-frame>img{animation:none!important;transition:none!important;transform:none!important}
+@media(max-width:900px){#pushkin-exhibit .px-interactive-demo .px-alive-grid{gap:30px}#pushkin-exhibit .px-chapter-panel figure>img{height:360px}#pushkin-exhibit .px-interactive-demo .px-gallery{padding:24px}#pushkin-exhibit .px-panorama-label{font-size:26px}#pushkin-exhibit .px-panorama-label i{font-size:34px}}
+@media(max-width:650px){#pushkin-exhibit .px-panorama>img{height:auto;aspect-ratio:1672/941}#pushkin-exhibit .px-panorama-label{display:none}#pushkin-exhibit .px-interactive-hero{margin:0 -4px 30px}#pushkin-exhibit .px-interactive-hero img{aspect-ratio:1.32;object-position:50% 50%}#pushkin-exhibit .px-interactive-hero figcaption{font-size:11px}#pushkin-exhibit .px-interactive-demo{margin-top:34px;padding-top:28px}#pushkin-exhibit .px-demo-heading{margin-bottom:25px}#pushkin-exhibit .px-demo-heading>.px-small{display:none}#pushkin-exhibit .px-interactive-demo .px-alive-grid{grid-template-columns:1fr;gap:26px}#pushkin-exhibit .px-alive h3{font-size:37px;margin-bottom:20px}#pushkin-exhibit .px-interactive-demo .px-gallery{max-width:none;width:auto;justify-self:stretch}#pushkin-exhibit .px-chapter-panel figure>img{height:280px;aspect-ratio:auto;object-fit:contain;object-position:center}#pushkin-exhibit .px-chapter-panel.px-chapter-portrait figure>img{height:390px}}
+@media(max-width:650px){#pushkin-exhibit .px-panorama{margin-inline:calc(-1 * var(--px-gutter))}}
 /* Рукописные строки, бумага и живопись: мотивы исходной версии Claude. */
 #pushkin-exhibit .px-hero{position:relative;isolation:isolate;background:radial-gradient(ellipse at 90% 36%,#ede6d780,transparent 65%)}
 #pushkin-exhibit .px-hero::before,#pushkin-exhibit .px-quote-section::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}

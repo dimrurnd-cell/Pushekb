@@ -21,18 +21,18 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
     var media = {};
     qa('[data-media]').forEach(function (box) {
       var id = box.getAttribute('data-media');
-      media[id] = {box:box, video:box.querySelector('video'), button:box.querySelector('[data-play]'), requested:false, visible:false, autoTried:false};
+      media[id] = {box:box, video:box.querySelector('video'), button:box.querySelector('[data-play]'), requested:false, visible:false};
     });
     function label(item, text, icon) {
       item.button.querySelector('[data-play-label]').textContent = text;
       item.button.querySelector('.px-play-icon').textContent = icon || '▶';
-      item.button.setAttribute('aria-label', text + (item === media.portrait ? ' — портрет Пушкина' : ' — осенняя набережная'));
+      item.button.setAttribute('aria-label', text + ' — осенняя набережная');
     }
     function pause(item, user) {
       item.video.pause();
       if (user) item.requested = false;
       if (item.video.ended) label(item, 'Посмотреть ещё раз', '↻');
-      else label(item, item.video.currentTime > 0 ? 'Продолжить' : (item === media.portrait ? 'Оживить портрет' : 'Оживить картину'));
+      else label(item, item.video.currentTime > 0 ? 'Продолжить' : 'Оживить картину');
     }
     function play(item, explicit) {
       if (!item || (!explicit && calm())) return;
@@ -45,7 +45,7 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
       var result = video.play();
       if (result && result.catch) result.catch(function () {
         if (video.error) return;
-        if (video.paused) label(item, item === media.portrait ? 'Оживить портрет' : 'Оживить картину');
+        if (video.paused) label(item, 'Оживить картину');
       });
     }
     Object.keys(media).forEach(function (key) {
@@ -67,9 +67,7 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
           var item = media[entry.target.dataset.media];
           item.visible = entry.isIntersecting;
           if (!entry.isIntersecting) { pause(item, false); return; }
-          if (item === media.portrait && !item.autoTried && !calm() && !(navigator.connection && navigator.connection.saveData)) {
-            item.autoTried = true; play(item, false);
-          } else if (item.requested && !calm() && !document.hidden) play(item, false);
+          if (item.requested && !calm() && !document.hidden) play(item, false);
         });
       }, {threshold:.2});
       Object.keys(media).forEach(function (key) { mediaObserver.observe(media[key].box); });
@@ -128,11 +126,11 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
     });
     var chapters = [
       ['Петербург / 1837','Мгновение до выстрела','Зимний город, дорога к Чёрной речке, снег. Из последнего дня история делает шаг назад — к детству, дружбе и первым стихам.','p-duel.jpg','Дмитрий Белюкин. «Дуэль Пушкина. Протаптывают тропинку»'],
-      ['Москва / 1799–1811','Мир начинается с детства','Семья, первые впечатления и первые слова. На светлой странице проступает мир, в котором рождается будущий поэт.','p-child.jpg','Ксавье де Местр. «Пушкин-ребёнок»'],
+      ['Москва / 1799–1811','Мир начинается с детства','Семья, первые впечатления и первые слова. На светлой странице проступает мир, в котором рождается будущий поэт.','p-child-full.jpg','Ксавье де Местр. «Пушкин-ребёнок»'],
       ['Царское Село / 1811–1817','Лицейское братство','Друзья, стихи и чувство свободы. Лицей становится целой вселенной — и остаётся с Пушкиным на всю жизнь.','p-lycee.jpg','Лицейский зал. Иллюстрация из материалов выставки'],
       ['Петербург / 1817–1820','Город произносит его имя','Литературные салоны, разговоры о свободе, молодость. Стихи расходятся по Петербургу, а поэт находит собственный голос.','p-lamp.jpg','«Зелёная лампа». Из материалов выставки'],
-      ['Юг / 1820–1824','Изгнание как свобода','Вдали от столицы открывается другой мир. Южный свет, море и дорога становятся частью новой поэзии.','nevsky-gold.jpg','Атмосферный этюд. Из материалов проекта'],
-      ['Михайловское / 1824–1826','Тишина, в которой слышно','Время уединения. Сказки, память, работа — и рождение строк, которым предстоит пережить свою эпоху.','p-child.jpg','Ксавье де Местр. «Пушкин-ребёнок». Деталь'],
+      ['Юг / 1820–1824','Изгнание как свобода','Вдали от столицы открывается другой мир. Южный свет, море и дорога становятся частью новой поэзии.','p-south.jpg','Иван Айвазовский. «Пушкин на берегу Чёрного моря»'],
+      ['Михайловское / 1824–1826','Тишина, в которой слышно','Время уединения. Сказки, память, работа — и рождение строк, которым предстоит пережить свою эпоху.','p-mikhailovskoe.jpg','Николай Ге. «Александр Сергеевич Пушкин в селе Михайловском». 1875'],
       ['Возвращение / 1826–1830','Поэт и император','Встреча с властью и возвращение в столицу. Разговор о свободе продолжается — теперь на другом расстоянии.','p-winter.jpg','Александр Беггров. «Зимний Петербург»'],
       ['Болдино / 1830','Осень, ставшая вечностью','Внешний мир замирает, внутренний — набирает силу. Болдинская осень становится временем необычайного творческого подъёма.','nevsky-gold.jpg','Осенняя набережная. Атмосферный этюд из материалов проекта'],
       ['Любовь / 1830–1836','Натали','За знакомыми портретами — двое живых людей. Письма и голоса открывают личную сторону истории Пушкина и Натали.','p-nevsky.jpg','Дмитрий Белюкин. «Невский проспект у кондитерской Вольфа и Беранже»'],
@@ -148,7 +146,8 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
       chapterTabs.forEach(function (tab,i) {tab.setAttribute('aria-selected',String(i===chapterIndex));tab.tabIndex=i===chapterIndex?0:-1;});
       q('#px-chapter-date').textContent=data[0];q('#px-chapter-title').textContent=data[1];q('#px-chapter-text').textContent=data[2];
       chapterImage.src=assetBase+data[3];chapterImage.alt=data[4];
-      chapterImage.style.objectPosition=chapterIndex===1 || chapterIndex===5 ? '50% 30%' : '50% 45%';
+      chapterImage.style.objectPosition='50% 50%';
+      q('#px-chapter-panel').classList.toggle('px-chapter-portrait',chapterIndex===1);
       q('#px-chapter-credit').textContent=data[4];
       q('#px-chapter-count').textContent=chapterIndex===0?'Пролог / 10 эпизодов':String(chapterIndex).padStart(2,'0')+' / 10 эпизодов';
       q('#px-chapter-panel').setAttribute('aria-labelledby','px-tab-'+chapterIndex);
