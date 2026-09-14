@@ -1,0 +1,560 @@
+<!-- ============================================================
+     СТРАНИЦА КОНКУРСА — готовый блок для Tilda (T123 / HTML)
+     Вставлять целиком: Библиотека блоков → "Другое" → T123.
+     Все стили изолированы префиксом .kn — с темой Tilda не конфликтуют.
+     Текст в фигурных скобках {{...}} — заменить на реальный.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+.kn, .kn *, .kn *::before, .kn *::after { box-sizing: border-box; }
+.kn {
+  --ink:      #1a2238;
+  --ink-soft: #45506b;
+  --muted:    #78819b;
+  --gold:     #a67c3d;
+  --gold-lt:  #c9a35f;
+  --paper:    #fbf8f2;
+  --paper-2:  #f3ede1;
+  --line:     #e3dbcb;
+  --white:    #ffffff;
+  --ok:       #2f6f4e;
+
+  --r:   14px;
+  --r-l: 22px;
+  --pad: clamp(20px, 5vw, 40px);
+
+  --serif: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.kn img { max-width: 100%; display: block; }
+.kn a { color: inherit; }
+
+/* ---------- сетка ---------- */
+.kn__wrap { max-width: 1140px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 32px); }
+.kn__sec  { padding-block: clamp(48px, 7vw, 88px); }
+.kn__sec--tint { background: var(--paper-2); }
+
+/* ---------- типографика ---------- */
+.kn h1, .kn h2, .kn h3 { font-family: var(--serif); font-weight: 600; line-height: 1.12; margin: 0; letter-spacing: -0.01em; }
+.kn h1 { font-size: clamp(38px, 6.4vw, 76px); }
+.kn h2 { font-size: clamp(28px, 4vw, 46px); }
+.kn h3 { font-size: clamp(20px, 2.2vw, 25px); }
+.kn p  { margin: 0 0 1em; }
+.kn p:last-child { margin-bottom: 0; }
+
+.kn__kicker {
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
+  margin: 0 0 14px;
+}
+.kn__lead { font-size: clamp(18px, 2vw, 21px); color: var(--ink-soft); max-width: 62ch; }
+.kn__head { max-width: 62ch; margin-bottom: clamp(28px, 4vw, 48px); }
+.kn__head h2 + p { margin-top: 16px; }
+
+/* ---------- кнопки ---------- */
+.kn__btns { display: flex; flex-wrap: wrap; gap: 14px; }
+.kn__btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 0 32px; border-radius: 100px;
+  font-family: var(--sans); font-size: 16px; font-weight: 600; text-decoration: none;
+  border: 1.5px solid transparent; cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+.kn__btn--main { background: var(--ink); color: var(--white); box-shadow: 0 8px 24px rgba(26,34,56,.22); }
+.kn__btn--main:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(26,34,56,.28); }
+.kn__btn--ghost { border-color: rgba(26,34,56,.25); color: var(--ink); background: transparent; }
+.kn__btn--ghost:hover { border-color: var(--ink); background: rgba(26,34,56,.05); }
+.kn__btn--gold { background: var(--gold); color: #fff; box-shadow: 0 8px 24px rgba(166,124,61,.3); }
+.kn__btn--gold:hover { transform: translateY(-2px); background: #966e33; }
+
+/* ---------- HERO ---------- */
+.kn__hero { position: relative; overflow: hidden; background: var(--ink); color: #fff; }
+.kn__hero-bg { position: absolute; inset: 0; }
+.kn__hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .30; filter: saturate(.7); }
+.kn__hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(20,27,46,.95) 0%, rgba(20,27,46,.78) 48%, rgba(20,27,46,.45) 100%);
+}
+.kn__hero-in { position: relative; z-index: 2; padding-block: clamp(64px, 11vw, 132px); max-width: 820px; }
+.kn__hero .kn__kicker { color: var(--gold-lt); }
+.kn__hero h1 { color: #fff; }
+.kn__hero-sub { font-size: clamp(18px, 2.1vw, 22px); color: rgba(255,255,255,.82); max-width: 56ch; margin: 22px 0 34px; }
+
+.kn__pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.kn__pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 100px; font-size: 14px; font-weight: 500;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: #fff;
+  backdrop-filter: blur(4px);
+}
+.kn__pill b { font-weight: 600; color: var(--gold-lt); }
+.kn__hero-note { margin-top: 22px; font-size: 15px; color: rgba(255,255,255,.6); }
+
+/* ---------- «коротко о главном» ---------- */
+.kn__facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border-radius: var(--r-l); overflow: hidden; border: 1px solid var(--line); }
+.kn__fact { background: var(--white); padding: clamp(22px, 3vw, 32px); }
+.kn__fact dt { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.kn__fact dd { margin: 0; font-family: var(--serif); font-size: clamp(22px, 2.4vw, 30px); font-weight: 600; line-height: 1.2; }
+.kn__fact dd small { display: block; font-family: var(--sans); font-size: 14px; font-weight: 400; color: var(--ink-soft); margin-top: 8px; line-height: 1.45; }
+
+/* ---------- карточки ---------- */
+.kn__grid { display: grid; gap: clamp(16px, 2vw, 24px); }
+.kn__grid--2 { grid-template-columns: repeat(2, 1fr); }
+.kn__grid--3 { grid-template-columns: repeat(3, 1fr); }
+.kn__grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.kn__card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--r-l);
+  padding: clamp(24px, 3vw, 34px); transition: transform .18s ease, box-shadow .22s ease, border-color .2s ease;
+}
+.kn__card:hover { transform: translateY(-3px); border-color: var(--gold-lt); box-shadow: 0 14px 34px rgba(26,34,56,.09); }
+.kn__card h3 { margin-bottom: 12px; }
+.kn__card p { color: var(--ink-soft); font-size: 16px; }
+.kn__card-ico {
+  width: 50px; height: 50px; border-radius: 14px; margin-bottom: 20px;
+  background: var(--paper-2); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 24px; font-weight: 700;
+}
+.kn__tag { display: inline-block; margin-top: 16px; padding: 5px 13px; border-radius: 100px; background: var(--paper-2); color: var(--gold); font-size: 13px; font-weight: 600; }
+
+/* ---------- шаги ---------- */
+.kn__steps { counter-reset: kn; display: grid; gap: clamp(16px, 2vw, 22px); grid-template-columns: repeat(4, 1fr); }
+.kn__step { position: relative; padding-top: 26px; border-top: 2px solid var(--line); counter-increment: kn; }
+.kn__step::before {
+  content: counter(kn); position: absolute; top: -19px; left: 0;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--gold); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 600; font-family: var(--sans);
+}
+.kn__step h3 { font-size: 20px; margin: 8px 0 10px; }
+.kn__step p { font-size: 15.5px; color: var(--ink-soft); }
+
+/* ---------- чек-лист требований ---------- */
+.kn__check { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.kn__check li { position: relative; padding-left: 40px; font-size: 16.5px; color: var(--ink-soft); }
+.kn__check li::before {
+  content: ""; position: absolute; left: 0; top: 3px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/14px no-repeat;
+}
+.kn__check li b { color: var(--ink); font-weight: 600; }
+.kn__check--no li::before {
+  background: #b43d3d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") center/13px no-repeat;
+}
+.kn__split { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: start; }
+.kn__panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(24px, 3vw, 36px); }
+.kn__panel h3 { margin-bottom: 18px; }
+
+/* ---------- таймлайн ---------- */
+.kn__tl { list-style: none; margin: 0; padding: 0; position: relative; }
+.kn__tl::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px; width: 2px; background: var(--line); }
+.kn__tl li { position: relative; padding: 0 0 30px 44px; }
+.kn__tl li:last-child { padding-bottom: 0; }
+.kn__tl li::before {
+  content: ""; position: absolute; left: 2px; top: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--white); border: 3px solid var(--line);
+}
+.kn__tl li.is-now::before { border-color: var(--gold); box-shadow: 0 0 0 5px rgba(166,124,61,.16); }
+.kn__tl-date { display: block; font-size: 14px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+.kn__tl-ttl { font-family: var(--serif); font-size: 22px; font-weight: 600; display: block; margin-bottom: 6px; }
+.kn__tl p { font-size: 15.5px; color: var(--ink-soft); }
+
+/* ---------- награды ---------- */
+.kn__prizes { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); align-items: stretch; }
+.kn__prize { border-radius: var(--r-l); padding: clamp(26px, 3vw, 38px); border: 1px solid var(--line); background: var(--white); display: flex; flex-direction: column; }
+.kn__prize--top { background: var(--ink); color: #fff; border-color: var(--ink); }
+.kn__prize--top .kn__prize-sum { color: var(--gold-lt); }
+.kn__prize--top p { color: rgba(255,255,255,.75); }
+.kn__prize-pl { font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.kn__prize--top .kn__prize-pl { color: rgba(255,255,255,.6); }
+.kn__prize-sum { font-family: var(--serif); font-size: clamp(34px, 4vw, 48px); font-weight: 700; line-height: 1; color: var(--gold); margin-bottom: 14px; }
+.kn__prize p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
+
+/* ---------- FAQ ---------- */
+.kn__faq { max-width: 860px; }
+.kn__q { border-bottom: 1px solid var(--line); }
+.kn__q summary {
+  list-style: none; cursor: pointer; padding: 22px 48px 22px 0; position: relative;
+  font-family: var(--serif); font-size: clamp(19px, 2vw, 23px); font-weight: 600; color: var(--ink);
+}
+.kn__q summary::-webkit-details-marker { display: none; }
+.kn__q summary::after {
+  content: ""; position: absolute; right: 6px; top: 50%; width: 14px; height: 14px;
+  border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+  transform: translateY(-70%) rotate(45deg); transition: transform .2s ease;
+}
+.kn__q[open] summary::after { transform: translateY(-30%) rotate(225deg); }
+.kn__q-a { padding: 0 48px 24px 0; color: var(--ink-soft); font-size: 16.5px; }
+
+/* ---------- CTA ---------- */
+.kn__cta { background: var(--ink); color: #fff; border-radius: var(--r-l); padding: clamp(36px, 5vw, 68px); text-align: center; }
+.kn__cta h2 { color: #fff; }
+.kn__cta p { color: rgba(255,255,255,.75); max-width: 54ch; margin: 18px auto 32px; font-size: 18px; }
+.kn__cta .kn__btns { justify-content: center; }
+
+/* ---------- контакты ---------- */
+.kn__contacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); }
+.kn__contact { padding: 26px 0; border-top: 2px solid var(--line); }
+.kn__contact span { display: block; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.kn__contact a, .kn__contact p { font-family: var(--serif); font-size: 22px; font-weight: 600; text-decoration: none; color: var(--ink); }
+.kn__contact a:hover { color: var(--gold); }
+
+/* ---------- липкая панель на мобильных ---------- */
+.kn__sticky { display: none; }
+
+/* ---------- адаптив ---------- */
+@media (max-width: 980px) {
+  .kn__facts   { grid-template-columns: repeat(2, 1fr); }
+  .kn__grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .kn__grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .kn__steps   { grid-template-columns: repeat(2, 1fr); }
+  .kn__prizes  { grid-template-columns: 1fr; }
+  .kn__split   { grid-template-columns: 1fr; }
+  .kn__contacts{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .kn { font-size: 16px; }
+  .kn__facts   { grid-template-columns: 1fr; }
+  .kn__grid--2, .kn__grid--3, .kn__grid--4 { grid-template-columns: 1fr; }
+  .kn__steps   { grid-template-columns: 1fr; }
+  .kn__contacts{ grid-template-columns: 1fr; }
+  .kn__btn     { width: 100%; }
+  .kn__hero-in { padding-bottom: 76px; }
+
+  .kn__sticky {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(251,248,242,.94); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+  }
+  .kn__sticky .kn__btn { min-height: 52px; }
+  .kn--pad-bottom { padding-bottom: 84px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kn *, .kn *::before, .kn *::after { transition: none !important; }
+}
+</style>
+
+<div class="kn kn--pad-bottom">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="kn__hero">
+    <div class="kn__hero-bg">
+      <img src="{{URL_ФОНОВОЙ_КАРТИНКИ}}" alt="">
+    </div>
+    <div class="kn__wrap">
+      <div class="kn__hero-in">
+        <p class="kn__kicker">{{Организатор}} · {{Год}}</p>
+        <h1>{{Название конкурса}}</h1>
+        <p class="kn__hero-sub">{{Одно предложение: для кого конкурс, что нужно прислать и что человек получит.}}</p>
+
+        <div class="kn__pills">
+          <span class="kn__pill">Приём работ до <b>{{дата}}</b></span>
+          <span class="kn__pill">Возраст: <b>{{от–до}}</b></span>
+          <span class="kn__pill">Участие <b>бесплатное</b></span>
+          <span class="kn__pill">Номинаций: <b>{{N}}</b></span>
+        </div>
+
+        <div class="kn__btns">
+          <a class="kn__btn kn__btn--gold" href="#zayavka">Подать заявку</a>
+          <a class="kn__btn kn__btn--ghost" style="border-color:rgba(255,255,255,.35);color:#fff" href="{{ССЫЛКА_НА_PDF}}" target="_blank" rel="noopener">Положение о конкурсе (PDF)</a>
+        </div>
+        <p class="kn__hero-note">Заполнение заявки занимает около 5 минут. Работу можно прислать файлом или ссылкой.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ КОРОТКО О ГЛАВНОМ ═══════════ -->
+  <section class="kn__sec">
+    <div class="kn__wrap">
+      <dl class="kn__facts">
+        <div class="kn__fact">
+          <dt>Кто участвует</dt>
+          <dd>{{Школьники 10–17 лет}}<small>{{Уточнение: регионы, учебные заведения, индивидуально или командой.}}</small></dd>
+        </div>
+        <div class="kn__fact">
+          <dt>Что прислать</dt>
+          <dd>{{Творческую работу}}<small>{{Формат: эссе, рисунок, видео, фото — со ссылкой на требования ниже.}}</small></dd>
+        </div>
+        <div class="kn__fact">
+          <dt>Срок приёма</dt>
+          <dd>до {{31 октября}}<small>{{Итоги — {{дата}}. Награждение — {{дата и место}}.}}</small></dd>
+        </div>
+        <div class="kn__fact">
+          <dt>Награды</dt>
+          <dd>{{До 100 000 ₽}}<small>{{Плюс дипломы всем участникам и публикация работ победителей.}}</small></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ═══════════ О КОНКУРСЕ ═══════════ -->
+  <section class="kn__sec kn__sec--tint">
+    <div class="kn__wrap">
+      <div class="kn__split">
+        <div>
+          <p class="kn__kicker">О конкурсе</p>
+          <h2>{{Зачем мы проводим этот конкурс}}</h2>
+          <p class="kn__lead" style="margin-top:18px">{{2–3 абзаца простым языком: какая идея стоит за конкурсом, чего вы ждёте от участников, чем эта история полезна самому участнику.}}</p>
+          <p class="kn__lead">{{Второй абзац.}}</p>
+        </div>
+        <div class="kn__panel">
+          <h3>Что даёт участие</h3>
+          <ul class="kn__check">
+            <li><b>Диплом участника</b> — всем, кто прислал работу в срок.</li>
+            <li><b>Публикация</b> работ финалистов {{где именно}}.</li>
+            <li><b>Профессиональная оценка</b> от жюри конкурса.</li>
+            <li><b>Приглашение</b> на очную церемонию награждения.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ НОМИНАЦИИ ═══════════ -->
+  <section class="kn__sec">
+    <div class="kn__wrap">
+      <div class="kn__head">
+        <p class="kn__kicker">Номинации</p>
+        <h2>Выберите одну — или подайте работы в несколько</h2>
+        <p class="kn__lead">{{Одно пояснение: можно ли участвовать в нескольких номинациях и сколько работ принимается от одного человека.}}</p>
+      </div>
+      <div class="kn__grid kn__grid--3">
+        <article class="kn__card">
+          <div class="kn__card-ico">I</div>
+          <h3>{{Название номинации}}</h3>
+          <p>{{Что именно нужно сделать: объём, жанр, тема. Одно-два предложения без канцелярита.}}</p>
+          <span class="kn__tag">{{формат: до 3 страниц}}</span>
+        </article>
+        <article class="kn__card">
+          <div class="kn__card-ico">II</div>
+          <h3>{{Название номинации}}</h3>
+          <p>{{Описание.}}</p>
+          <span class="kn__tag">{{формат}}</span>
+        </article>
+        <article class="kn__card">
+          <div class="kn__card-ico">III</div>
+          <h3>{{Название номинации}}</h3>
+          <p>{{Описание.}}</p>
+          <span class="kn__tag">{{формат}}</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ КАК УЧАСТВОВАТЬ ═══════════ -->
+  <section class="kn__sec kn__sec--tint">
+    <div class="kn__wrap">
+      <div class="kn__head">
+        <p class="kn__kicker">Как участвовать</p>
+        <h2>Четыре шага — и вы в конкурсе</h2>
+      </div>
+      <div class="kn__steps">
+        <div class="kn__step">
+          <h3>Прочитайте положение</h3>
+          <p>Проверьте, подходите ли вы по возрасту и региону, и выберите номинацию.</p>
+        </div>
+        <div class="kn__step">
+          <h3>Подготовьте работу</h3>
+          <p>Соблюдите требования к формату из раздела ниже — это главная причина отказов.</p>
+        </div>
+        <div class="kn__step">
+          <h3>Заполните заявку</h3>
+          <p>Форма внизу страницы: контакты, номинация и файл или ссылка на работу.</p>
+        </div>
+        <div class="kn__step">
+          <h3>Дождитесь письма</h3>
+          <p>В течение {{N}} рабочих дней мы подтвердим приём работы по электронной почте.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ТРЕБОВАНИЯ ═══════════ -->
+  <section class="kn__sec">
+    <div class="kn__wrap">
+      <div class="kn__head">
+        <p class="kn__kicker">Требования к работам</p>
+        <h2>Что точно примут, а что вернут</h2>
+      </div>
+      <div class="kn__grid kn__grid--2">
+        <div class="kn__panel">
+          <h3>Принимаем</h3>
+          <ul class="kn__check">
+            <li><b>Формат файла:</b> {{PDF, DOCX, JPG, MP4}}.</li>
+            <li><b>Размер:</b> не более {{N}} МБ на файл.</li>
+            <li><b>Объём:</b> {{до N знаков / до N минут}}.</li>
+            <li><b>Подпись:</b> фамилия, имя, возраст, город, номинация.</li>
+            <li><b>Авторство:</b> работа выполнена лично участником.</li>
+          </ul>
+        </div>
+        <div class="kn__panel">
+          <h3>Не принимаем</h3>
+          <ul class="kn__check kn__check--no">
+            <li>Работы, ранее публиковавшиеся или поданные на другие конкурсы.</li>
+            <li>Материалы, созданные не автором заявки.</li>
+            <li>Файлы без подписи и контактов.</li>
+            <li>Заявки, поступившие после {{дата}}.</li>
+            <li>{{Дополнительное ограничение организатора.}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ СРОКИ ═══════════ -->
+  <section class="kn__sec kn__sec--tint">
+    <div class="kn__wrap">
+      <div class="kn__split">
+        <div>
+          <p class="kn__kicker">Сроки</p>
+          <h2>Этапы конкурса</h2>
+          <p class="kn__lead" style="margin-top:18px">Все даты указаны включительно. Заявки принимаются до 23:59 по московскому времени последнего дня приёма.</p>
+        </div>
+        <ol class="kn__tl">
+          <li class="is-now">
+            <span class="kn__tl-date">{{1 сентября — 31 октября}}</span>
+            <span class="kn__tl-ttl">Приём заявок</span>
+            <p>Отправка работ через форму на этой странице.</p>
+          </li>
+          <li>
+            <span class="kn__tl-date">{{1 — 15 ноября}}</span>
+            <span class="kn__tl-ttl">Работа жюри</span>
+            <p>Оценка работ по критериям, указанным в положении.</p>
+          </li>
+          <li>
+            <span class="kn__tl-date">{{20 ноября}}</span>
+            <span class="kn__tl-ttl">Объявление результатов</span>
+            <p>Список победителей публикуется на сайте, финалистам приходит письмо.</p>
+          </li>
+          <li>
+            <span class="kn__tl-date">{{10 декабря}}</span>
+            <span class="kn__tl-ttl">Награждение</span>
+            <p>{{Место проведения церемонии.}}</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ НАГРАДЫ ═══════════ -->
+  <section class="kn__sec">
+    <div class="kn__wrap">
+      <div class="kn__head">
+        <p class="kn__kicker">Награды</p>
+        <h2>Что получают победители</h2>
+      </div>
+      <div class="kn__prizes">
+        <div class="kn__prize kn__prize--top">
+          <span class="kn__prize-pl">Гран-при</span>
+          <span class="kn__prize-sum">{{100 000 ₽}}</span>
+          <p>{{Что ещё входит: поездка, публикация, стажировка.}}</p>
+        </div>
+        <div class="kn__prize">
+          <span class="kn__prize-pl">2 место</span>
+          <span class="kn__prize-sum">{{50 000 ₽}}</span>
+          <p>{{Описание.}}</p>
+        </div>
+        <div class="kn__prize">
+          <span class="kn__prize-pl">3 место</span>
+          <span class="kn__prize-sum">{{25 000 ₽}}</span>
+          <p>{{Описание.}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FAQ ═══════════ -->
+  <section class="kn__sec kn__sec--tint">
+    <div class="kn__wrap">
+      <div class="kn__head">
+        <p class="kn__kicker">Вопросы и ответы</p>
+        <h2>Коротко о том, что спрашивают чаще всего</h2>
+      </div>
+      <div class="kn__faq">
+        <details class="kn__q" open>
+          <summary>Сколько работ можно подать?</summary>
+          <div class="kn__q-a">{{Ответ.}}</div>
+        </details>
+        <details class="kn__q">
+          <summary>Нужно ли согласие родителей, если участнику нет 18 лет?</summary>
+          <div class="kn__q-a">{{Ответ и ссылка на бланк согласия.}}</div>
+        </details>
+        <details class="kn__q">
+          <summary>Как узнать, что работа принята?</summary>
+          <div class="kn__q-a">{{Ответ.}}</div>
+        </details>
+        <details class="kn__q">
+          <summary>Кому принадлежат права на работу после конкурса?</summary>
+          <div class="kn__q-a">{{Ответ.}}</div>
+        </details>
+        <details class="kn__q">
+          <summary>Можно ли участвовать из другого региона?</summary>
+          <div class="kn__q-a">{{Ответ.}}</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ЯКОРЬ ДЛЯ ФОРМЫ ═══════════
+       Под этим блоком поставьте НАТИВНЫЙ блок формы Tilda (FR),
+       чтобы заявки уходили в Мои заявки / CRM / почту.
+       В настройках блока FR задайте ID контейнера: zayavka
+       ============================================== -->
+  <section class="kn__sec" id="zayavka">
+    <div class="kn__wrap">
+      <div class="kn__cta">
+        <h2>Готовы подать работу?</h2>
+        <p>Заполните форму ниже — это займёт около пяти минут. Если что-то не получается, напишите нам, поможем.</p>
+        <div class="kn__btns">
+          <a class="kn__btn kn__btn--gold" href="#form-block">Заполнить заявку</a>
+          <a class="kn__btn kn__btn--ghost" style="border-color:rgba(255,255,255,.35);color:#fff" href="{{ССЫЛКА_НА_PDF}}" target="_blank" rel="noopener">Скачать положение</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ КОНТАКТЫ ═══════════ -->
+  <section class="kn__sec kn__sec--tint">
+    <div class="kn__wrap">
+      <div class="kn__head">
+        <p class="kn__kicker">Контакты</p>
+        <h2>Остались вопросы — спрашивайте</h2>
+      </div>
+      <div class="kn__contacts">
+        <div class="kn__contact">
+          <span>Почта оргкомитета</span>
+          <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+        </div>
+        <div class="kn__contact">
+          <span>Телефон</span>
+          <a href="tel:{{ТЕЛЕФОН_БЕЗ_ПРОБЕЛОВ}}">{{+7 (000) 000-00-00}}</a>
+        </div>
+        <div class="kn__contact">
+          <span>Куратор конкурса</span>
+          <p>{{Имя Фамилия}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ЛИПКАЯ КНОПКА (только мобильные) ═══════════ -->
+  <div class="kn__sticky">
+    <a class="kn__btn kn__btn--gold" href="#zayavka">Подать заявку до {{дата}}</a>
+  </div>
+
+</div>
