@@ -9,7 +9,7 @@ import re
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE / 'source-templates'
-MEDIA_VERSION = '28aa7988c44800bea556a8dccb687c9edcb79243'
+MEDIA_VERSION = 'ec8077171b67a4109256d8830729ef8ecb1c13f5'
 CDN = f'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@{MEDIA_VERSION}/landing/redesign/assets'
 head = (HERE / '01-head.html').read_text(encoding='utf-8')
 css = (SOURCE / '02-styles.css').read_text(encoding='utf-8')
@@ -17,7 +17,7 @@ body = (SOURCE / '03-body-t123.html').read_text(encoding='utf-8')
 footer = (SOURCE / '04-footer.html').read_text(encoding='utf-8')
 
 def render(text, assets):
-    return (text.replace('@@ASSET@@', assets)
+    return (text.replace('@@ASSET@@/photozone-shadows.jpg', (assets + '/photozone-shadows.jpg') if assets == 'assets' else 'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@1160f31267d7a83c85863af64b9840772149867e/landing/redesign/assets/photozone-shadows.jpg').replace('@@ASSET@@', assets)
             .replace('@@AUTUMN_VIDEO@@', assets + '/embankment.mp4'))
 
 meta = ('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
@@ -48,11 +48,11 @@ single = render(body, 'assets')
 images = {}
 chapter_files = set(re.findall(r"'([^']+\.jpg)'", footer))
 for asset in (HERE / 'assets').iterdir():
-    if asset.suffix not in ('.jpg', '.png', '.mp4'):
+    if asset.suffix not in ('.jpg', '.png', '.webp', '.mp4'):
         continue
     if ('assets/' + asset.name) not in single and asset.name not in chapter_files:
         continue
-    mime = {'.jpg':'image/jpeg', '.png':'image/png', '.mp4':'video/mp4'}[asset.suffix]
+    mime = {'.jpg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.mp4':'video/mp4'}[asset.suffix]
     data = f'data:{mime};base64,' + base64.b64encode(asset.read_bytes()).decode()
     single = single.replace('assets/' + asset.name, data)
     if asset.name in chapter_files:
