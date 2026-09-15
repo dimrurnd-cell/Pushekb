@@ -18,112 +18,17 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
     var mobile = window.matchMedia('(max-width:650px)');
     var manuallyCalm = false;
     var calm = function () { return reduce.matches || manuallyCalm; };
-    var media = {};
-    qa('[data-media]').forEach(function (box) {
-      var id = box.getAttribute('data-media');
-      media[id] = {box:box, video:box.querySelector('video'), button:box.querySelector('[data-play]'), requested:false, visible:false};
-    });
-    function label(item, text, icon) {
-      item.button.querySelector('[data-play-label]').textContent = text;
-      item.button.querySelector('.px-play-icon').textContent = icon || '▶';
-      item.button.setAttribute('aria-label', text + ' — осенняя набережная');
-    }
-    function pause(item, user) {
-      item.video.pause();
-      if (user) item.requested = false;
-      if (item.video.ended) label(item, 'Посмотреть ещё раз', '↻');
-      else label(item, item.video.currentTime > 0 ? 'Продолжить' : 'Оживить картину');
-    }
-    function play(item, explicit) {
-      if (!item || (!explicit && calm())) return;
-      item.requested = true;
-      var video = item.video;
-      if (!video.getAttribute('src')) video.src = video.dataset.src;
-      if (video.ended) video.currentTime = 0;
-      label(item, 'Загрузка…', '◌');
-      item.box.querySelector('.px-media-status').textContent = '';
-      var result = video.play();
-      if (result && result.catch) result.catch(function () {
-        if (video.error) return;
-        if (video.paused) label(item, 'Оживить картину');
-      });
-    }
-    Object.keys(media).forEach(function (key) {
-      var item = media[key];
-      item.button.addEventListener('click', function () { if (item.video.paused) play(item, true); else pause(item, true); });
-      item.video.addEventListener('playing', function () { item.video.classList.add('is-ready'); label(item, 'Остановить', 'Ⅱ'); });
-      item.video.addEventListener('ended', function () { item.requested = false; label(item, 'Посмотреть ещё раз', '↻'); });
-      item.video.addEventListener('error', function () {
-        item.requested = false;
-        item.video.classList.remove('is-ready');
-        label(item, 'Повторить загрузку', '↻');
-        item.box.querySelector('.px-media-status').textContent = 'Видео не загрузилось. Показано статичное изображение. Можно повторить загрузку.';
-        item.video.removeAttribute('src');
-      });
-    });
-    if ('IntersectionObserver' in window) {
-      var mediaObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          var item = media[entry.target.dataset.media];
-          item.visible = entry.isIntersecting;
-          if (!entry.isIntersecting) { pause(item, false); return; }
-          if (item.requested && !calm() && !document.hidden) play(item, false);
-        });
-      }, {threshold:.2});
-      Object.keys(media).forEach(function (key) { mediaObserver.observe(media[key].box); });
-    }
-    document.addEventListener('visibilitychange', function () {
-      Object.keys(media).forEach(function (key) {
-        var item = media[key];
-        if (document.hidden) pause(item, false);
-        else if (item.visible && item.requested && !calm()) play(item, false);
-      });
-    });
     var motion = q('.px-motion-toggle');
     function updateMotion() {
       root.classList.toggle('px-calm', calm());
       motion.setAttribute('aria-pressed', String(calm()));
       motion.textContent = reduce.matches ? 'Движение уменьшено в настройках устройства' : manuallyCalm ? 'Включить анимацию' : 'Остановить анимацию';
       motion.disabled = reduce.matches;
-      if (calm()) {
-        Object.keys(media).forEach(function (key) { pause(media[key], true); });
-        stopSnow();
-      }
+
     }
     motion.addEventListener('click', function () { manuallyCalm = !manuallyCalm; updateMotion(); });
     if (reduce.addEventListener) reduce.addEventListener('change', updateMotion);
     else reduce.addListener(updateMotion);
-    var snow = q('.px-snow');
-    var snowButton = q('[data-snow]');
-    function stopSnow() {
-      snow.classList.remove('is-playing');
-      snowButton.setAttribute('aria-pressed', 'false');
-      q('[data-snow-label]').textContent = 'Добавить снег';
-    }
-    snowButton.addEventListener('click', function () {
-      if (calm()) { q('[data-snow-label]').textContent = 'Движение отключено'; return; }
-      if (snow.classList.contains('is-playing')) { stopSnow(); return; }
-      if (!snow.childElementCount) for (var i=0;i<32;i++) {
-        var dot = document.createElement('i');
-        var size = 2 + (i % 4);
-        dot.style.cssText = 'left:'+((i*37)%101)+'%;width:'+size+'px;height:'+size+'px;opacity:'+(0.35+(i%6)*.1)+';--duration:'+(8+i%9)+'s;--delay:-'+(i%15)+'s';
-        snow.appendChild(dot);
-      }
-      snow.classList.add('is-playing');
-      snowButton.setAttribute('aria-pressed','true');
-      q('[data-snow-label]').textContent = 'Остановить снег';
-    });
-    qa('[data-scene]').forEach(function (button) {
-      button.addEventListener('click', function () {
-        var winter = button.dataset.scene === 'winter';
-        qa('[data-scene]').forEach(function (b) { var selected=b===button; b.setAttribute('aria-pressed',String(selected));b.classList.toggle('is-selected',selected); });
-        q('.px-scene-autumn').hidden = winter;
-        q('.px-scene-winter').hidden = !winter;
-        q('.px-gallery').dataset.sceneView = button.dataset.scene;
-        q('.px-gallery-number').textContent = winter ? '02 / 02' : '01 / 02';
-        pause(media.autumn, true); stopSnow();
-      });
-    });
     var chapters = [
       ['Петербург / 1837','Мгновение до выстрела','Зимний город, дорога к Чёрной речке, снег. Из последнего дня история делает шаг назад — к детству, дружбе и первым стихам.','p-duel.jpg','Дмитрий Белюкин. «Дуэль Пушкина. Протаптывают тропинку»'],
       ['Москва / 1799–1811','Мир начинается с детства','Семья, первые впечатления и первые слова. На светлой странице проступает мир, в котором рождается будущий поэт.','p-child-full.jpg','Ксавье де Местр. «Пушкин-ребёнок»'],

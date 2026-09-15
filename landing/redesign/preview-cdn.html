@@ -332,11 +332,14 @@
 @media(max-width:900px){#pushkin-exhibit .px-contacts{gap:30px}#pushkin-exhibit .px-hero-date{font-size:34px}}
 @media(max-width:650px){#pushkin-exhibit .px-hero-event{margin-top:25px}#pushkin-exhibit .px-hero-date{font-size:34px}#pushkin-exhibit .px-hero-date small{width:100%;margin:8px 0 0;font-size:16px}#pushkin-exhibit .px-hero-address{font-size:19px}#pushkin-exhibit .px-contacts{grid-template-columns:1fr;gap:30px;margin-top:35px;padding-block:35px}#pushkin-exhibit .px-contact-copy>p{font-size:20px}#pushkin-exhibit .px-map iframe{height:330px}#pushkin-exhibit .px-contact-phone{margin-top:25px}}
 @media(max-width:360px){#pushkin-exhibit .px-hero-date{font-size:29px}}
+
+#pushkin-exhibit .px-photozone-image img{height:auto;min-height:0;aspect-ratio:1;object-fit:contain;object-position:center}
+#pushkin-exhibit .px-interactive-grid{align-items:center}
 </style></head><body><!-- Вставьте в один блок T123. Все стили ограничены #pushkin-exhibit. -->
 <div id="pushkin-exhibit" lang="ru">
   <a class="px-skip" href="#px-main">Перейти к содержанию</a>
   <header class="px-header">
-    <a class="px-brand px-brand-rart" href="#px-top" aria-label="R-Art — в начало"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/logo-rart-dark.png" alt="R-Art" width="600" height="181"></a>
+    <a class="px-brand px-brand-rart" href="#px-top" aria-label="R-Art — в начало"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/logo-rart-dark.png" alt="R-Art" width="600" height="181"></a>
     <button class="px-menu-toggle" type="button" aria-expanded="false" aria-controls="px-nav"><span>Меню</span><span class="px-menu-icon" aria-hidden="true"></span></button>
     <nav id="px-nav" aria-label="Основная навигация">
       <a href="#px-experience">О выставке</a><a href="#px-interactive">Интерактивная зона</a><a href="#px-story">История</a><a href="#px-visit">Как посетить</a>
@@ -357,9 +360,9 @@
           
         </div>
         <figure class="px-portrait">
-          <div class="px-portrait-paper" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/p-winter.jpg" alt="" width="900" height="600"></div>
+          <div class="px-portrait-paper" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/p-winter.jpg" alt="" width="900" height="600"></div>
           <div class="px-portrait-frame">
-            <img class="px-media-poster" src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/pushkin-hero.jpg" alt="Художественный образ Пушкина: поэт в цилиндре с пером и рукописью" width="760" height="1000" fetchpriority="high">
+            <img class="px-media-poster" src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/pushkin-hero.jpg" alt="Художественный образ Пушкина: поэт в цилиндре с пером и рукописью" width="760" height="1000" fetchpriority="high">
           </div>
           <figcaption><span>Поэт. Друг. Влюблённый.</span><span>Знакомый — и незнакомый.</span></figcaption>
           <span class="px-portrait-note" aria-hidden="true">Встреча через<br>два столетия</span>
@@ -374,55 +377,37 @@
       <div class="px-wrap">
         <div class="px-section-kicker"><span>01 / Мультимедийный зал</span><span>Одна из двух частей выставки</span></div>
         <div class="px-section-intro"><h2 id="px-experience-title">Картины вокруг.<br>История — <em>рядом.</em></h2><div><p class="px-lead">Погрузитесь в фильм.<br>Продолжите открывать — в интерактивной зоне.</p><p>Панорамные ожившие полотна 360° окружают вас. Перед вами разворачивается жизнь Пушкина: дружба, любовь, свобода, творчество. Картины переходят в движение, письма звучат вслух, а музыка связывает их в единый рассказ.</p></div></div>
-        <figure class="px-panorama" data-reveal><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/hall-pushkin-visualization.png" alt="Визуализация мультимедийного зала с произведениями Александра Беггрова и Дмитрия Белюкина из материалов выставки" width="1672" height="941" loading="lazy"><div class="px-panorama-label" aria-hidden="true"><span>Панорамные ожившие полотна</span><i>360°</i></div><figcaption>Визуализация по фото зала R·ART. На экранах — произведения Александра Беггрова и Дмитрия Белюкина из материалов выставки «Пушкин. Живой».</figcaption></figure>
+        <figure class="px-panorama" data-reveal><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/hall-pushkin-visualization.png" alt="Визуализация мультимедийного зала с произведениями Александра Беггрова и Дмитрия Белюкина из материалов выставки" width="1672" height="941" loading="lazy"><div class="px-panorama-label" aria-hidden="true"><span>Панорамные ожившие полотна</span><i>360°</i></div><figcaption>Визуализация по фото зала R·ART. На экранах — произведения Александра Беггрова и Дмитрия Белюкина из материалов выставки «Пушкин. Живой».</figcaption></figure>
         <div class="px-experience-notes"><article><span>01</span><h3>Увидеть больше</h3><p>Центральная сцена, крупная деталь, строчка письма. Панорама открывает новые подробности с каждым поворотом взгляда.</p></article><article><span>02</span><h3>Услышать личное</h3><p>Пушкин, Натали, Муза и Диктор ведут рассказ. В финале к ним присоединяется хор.</p></article><article><span>03</span><h3>Прожить историю</h3><p>От московского детства до последней зимы. Десять эпизодов, объединённых одним сеансом.</p></article></div>
       </div>
     </section>
 
     <section class="px-interactive px-section px-wrap" id="px-interactive" aria-labelledby="px-interactive-title">
       <div class="px-section-kicker"><span>02 / Интерактивная зона</span><span>Здесь историю исследуете вы</span></div>
-      <div class="px-section-intro"><h2 id="px-interactive-title">Ваш разговор<br>с <em>Пушкиным.</em></h2><div><p class="px-lead">Что вдохновляло поэта?<br>О чём он мечтал и спорил?</p><p>В интерактивной зоне вы сами выбираете, что узнать подробнее. Изучайте жизнь поэта, разговаривайте с художниками и знакомьтесь с эпохой, в которой рождались любимые строки. Здесь есть фотозона для ваших фото и сувениры на память.</p></div></div>
-      <figure class="px-interactive-hero"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/interactive-touch.jpg" alt="Посетительницы изучают детали картины на большом сенсорном экране" width="1920" height="1280" loading="lazy"><figcaption>Исследование картины на сенсорной панели. Фото предыдущей выставки R·ART о Сурикове.</figcaption></figure>
+      <div class="px-section-intro"><h2 id="px-interactive-title">Прикоснитесь<br>к <em>эпохе.</em></h2><div><p class="px-lead">Что вдохновляло поэта?<br>О чём он мечтал и спорил?</p><p>В интерактивной зоне вы сами выбираете, что узнать подробнее. Изучайте жизнь поэта и знакомьтесь с эпохой, в которой рождались любимые строки. Здесь есть фотозона для ваших фото и сувениры на память.</p></div></div>
+      <figure class="px-interactive-hero"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/interactive-touch.jpg" alt="Посетительницы изучают детали картины на большом сенсорном экране" width="1920" height="1280" loading="lazy"><figcaption>Исследование картины на сенсорной панели. Фото предыдущей выставки R·ART о Сурикове.</figcaption></figure>
       <div class="px-interactive-grid">
-        <figure class="px-interactive-photo"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/interactive-dialogue.jpg" alt="Посетители у экрана «Разговор с Суриковым» на предыдущей выставке" width="1920" height="1280" loading="lazy"><figcaption>Как устроен диалог через экран. Фото предыдущего проекта R·ART.</figcaption></figure>
+        <figure class="px-interactive-photo px-photozone-image"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/photozone-shadows.jpg" alt="Оформление фотозоны «Тени минувшей эпохи»: силуэты, рисунки и рукописные строки Пушкина" width="11024" height="11024" loading="lazy"><figcaption>«Тени минувшей эпохи». Оформление стены фотозоны.</figcaption></figure>
         <div class="px-interactive-features">
-          <article><span class="px-interactive-number" aria-hidden="true">01</span><div><span class="px-eyebrow">Диалог через экран</span><h3>Разговор с художником</h3><p>Кипренский, Тропинин, Брюллов отвечают на вопросы о своих портретах: почему такой поворот головы, что значит деталь в углу, кто и зачем заказал работу.</p></div></article>
-          <article><span class="px-interactive-number" aria-hidden="true">02</span><div><span class="px-eyebrow">Стенды и сенсорные панели</span><h3>Следуйте за любопытством</h3><p>Иллюстрированные информационные стенды и сенсорные панели помогут глубже изучить жизненный путь Пушкина — от детства и лицейской дружбы до любви и творческих открытий.</p></div></article>
-          <article><span class="px-interactive-number" aria-hidden="true">03</span><div><span class="px-eyebrow">3D-голограммы</span><h3>Почувствуйте его мир</h3><p>Рассмотрите объёмные образы и познакомьтесь с эпохой, в которой рождались любимые строки.</p></div></article>
+          <article><span class="px-interactive-number" aria-hidden="true">01</span><div><span class="px-eyebrow">Стенды и сенсорные панели</span><h3>Следуйте за любопытством</h3><p>Иллюстрированные информационные стенды и сенсорные панели помогут глубже изучить жизненный путь Пушкина — от детства и лицейской дружбы до любви и творческих открытий.</p></div></article>
+          <article><span class="px-interactive-number" aria-hidden="true">02</span><div><span class="px-eyebrow">3D-голограммы</span><h3>Почувствуйте его мир</h3><p>Рассмотрите объёмные образы и познакомьтесь с эпохой, в которой рождались любимые строки.</p></div></article>
         </div>
       </div>
-    <div class="px-keepsakes"><article><span class="px-eyebrow">Фотозона для ваших фото</span><h3>Пушкинский гардероб</h3><p>Цилиндр, шаль, перчатки, кокошник. Всё это надевается, в декорации получается кадр, фотография остаётся у вас.</p></article><article><span class="px-eyebrow">Частичка выставки с собой</span><h3>Сувениры на память</h3><p>Выберите сувенир, который сохранит впечатления от встречи с миром Пушкина.</p></article></div>
-    <div class="px-alive px-interactive-demo" role="group" id="px-alive" aria-labelledby="px-alive-title">
-      <div class="px-demo-heading"><span class="px-eyebrow">Попробуйте на этой странице</span><span class="px-small">Демонстрация движения</span></div>
-      <div class="px-alive-grid">
-        <div class="px-alive-copy"><span class="px-script-note" aria-hidden="true">Смотрите ближе</span><h3 id="px-alive-title">Прикоснитесь<br>к движению.</h3><p>Вода ловит свет. Листья кружатся над набережной. Из неподвижного изображения рождается маленькая сцена.</p><p class="px-small">Включите этюд или добавьте снег — маленькая демонстрация того, как изображение может оживать.</p><div class="px-scene-options" role="group" aria-label="Выбрать изображение"><button type="button" class="is-selected" data-scene="autumn" aria-pressed="true"><span>01</span> Осенняя набережная <span aria-hidden="true">↗</span></button><button type="button" data-scene="winter" aria-pressed="false"><span>02</span> Зимний Петербург <span aria-hidden="true">↗</span></button></div></div>
-        <div class="px-gallery" data-scene-view="autumn">
-          <figure class="px-scene px-scene-autumn" data-media="autumn">
-            <div class="px-scene-visual"><img class="px-media-poster" src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/nevsky-gold.jpg" alt="Осенняя набережная: золотые листья, вода, фонарь и рукописи" width="760" height="1000" loading="lazy"><video class="px-video" muted loop playsinline preload="none" data-src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/embankment.mp4" aria-label="Анимационный этюд: листья, свет и вода на осенней набережной"></video><button class="px-media-button" type="button" data-play="autumn" aria-label="Оживить осеннюю набережную"><span class="px-play-icon" aria-hidden="true">▶</span><span data-play-label>Оживить картину</span></button><p class="px-media-status px-sr-only" role="status"></p></div>
-            <figcaption><span>Осенняя набережная</span><span>Анимационный этюд для сайта</span></figcaption>
-          </figure>
-          <figure class="px-scene px-scene-winter" hidden>
-            <div class="px-scene-visual"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/p-winter.jpg" alt="Александр Беггров. Зимний Петербург: городская площадь под снегом" width="900" height="600" loading="lazy"><div class="px-snow" aria-hidden="true"></div><button class="px-media-button" type="button" data-snow aria-pressed="false"><span aria-hidden="true">✳</span><span data-snow-label>Добавить снег</span></button></div>
-            <figcaption><span>Александр Беггров. Зимний Петербург</span><span>Картина с эффектом снега</span></figcaption>
-          </figure>
-          <div class="px-gallery-number" aria-hidden="true">01 / 02</div>
-        </div>
-      </div>
-    </div>
-      <div class="px-studio-note"><strong>R·ART</strong><p>Выставку создаёт креативная студия «Р-Арт» из Ростова-на-Дону — автор цикла «Великие русские живописцы», мультимедийных проектов о Ван Гоге и Александре Невском.</p></div>
+    <div class="px-keepsakes"><article><span class="px-eyebrow">Фотозона</span><h3>Тени минувшей эпохи</h3><p>Присядьте за стол на фоне рукописных строк и силуэтов пушкинского времени. Сделайте памятный снимок — в одиночку или вместе с близкими — и сохраните свою встречу с минувшей эпохой.</p></article><article><span class="px-eyebrow">Частичка выставки с собой</span><h3>Сувениры на память</h3><p>Выберите сувенир, который сохранит впечатления от встречи с миром Пушкина.</p></article></div>
+      <div class="px-studio-note"><strong>R·ART</strong><p>Выставку создаёт креативная студия «Р-Арт» из Ростова-на-Дону — автор циклов «Великие русские живописцы» и «Шедевры мировой живописи».</p></div>
     </section>
 
 
 
-    <section class="px-story px-section" id="px-story" aria-labelledby="px-story-title"><div class="px-atmosphere px-story-atmosphere" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/p-winter.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-wrap">
+    <section class="px-story px-section" id="px-story" aria-labelledby="px-story-title"><div class="px-atmosphere px-story-atmosphere" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/p-winter.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-wrap">
       <div class="px-section-kicker"><span>03 / Десять эпизодов</span><span>1799 — 1837</span></div>
       <div class="px-story-heading"><h2 id="px-story-title">Целая жизнь.<br><em>За одним именем.</em></h2><p>История начинается за мгновение до выстрела — и возвращает нас к самому началу.<br><span class="px-small">Выберите главу, чтобы узнать больше.</span></p></div>
       <div class="px-chapters" role="tablist" aria-label="Эпизоды выставки"><button role="tab" id="px-tab-0" aria-controls="px-chapter-panel" aria-selected="true" tabindex="0" data-chapter="0"><span>00</span> Пролог</button><button role="tab" id="px-tab-1" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="1"><span>01</span> Детство</button><button role="tab" id="px-tab-2" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="2"><span>02</span> Лицей</button><button role="tab" id="px-tab-3" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="3"><span>03</span> Петербург</button><button role="tab" id="px-tab-4" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="4"><span>04</span> Юг</button><button role="tab" id="px-tab-5" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="5"><span>05</span> Михайловское</button><button role="tab" id="px-tab-6" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="6"><span>06</span> Император</button><button role="tab" id="px-tab-7" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="7"><span>07</span> Болдино</button><button role="tab" id="px-tab-8" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="8"><span>08</span> Натали</button><button role="tab" id="px-tab-9" aria-controls="px-chapter-panel" aria-selected="false" tabindex="-1" data-chapter="9"><span>09</span> Финал</button></div>
-      <div id="px-chapter-panel" class="px-chapter-panel" role="tabpanel" tabindex="0" aria-labelledby="px-tab-0"><figure><img id="px-chapter-image" src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/p-duel.jpg" alt="Дмитрий Белюкин. Дуэль Пушкина. Протаптывают тропинку" width="900" height="600" loading="lazy"><figcaption id="px-chapter-credit">Дмитрий Белюкин. «Дуэль Пушкина. Протаптывают тропинку»</figcaption></figure><div class="px-chapter-copy"><span id="px-chapter-date" class="px-eyebrow">Петербург / 1837</span><h3 id="px-chapter-title">Мгновение<br>до выстрела</h3><p id="px-chapter-text">Зимний город, дорога к Чёрной речке, снег. Из последнего дня история делает шаг назад — к детству, дружбе и первым стихам.</p><div class="px-chapter-bottom"><span id="px-chapter-count">Пролог / 10 эпизодов</span><button type="button" class="px-round-button" data-next-chapter aria-label="Следующий эпизод"><span aria-hidden="true">→</span></button></div></div></div>
+      <div id="px-chapter-panel" class="px-chapter-panel" role="tabpanel" tabindex="0" aria-labelledby="px-tab-0"><figure><img id="px-chapter-image" src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/p-duel.jpg" alt="Дмитрий Белюкин. Дуэль Пушкина. Протаптывают тропинку" width="900" height="600" loading="lazy"><figcaption id="px-chapter-credit">Дмитрий Белюкин. «Дуэль Пушкина. Протаптывают тропинку»</figcaption></figure><div class="px-chapter-copy"><span id="px-chapter-date" class="px-eyebrow">Петербург / 1837</span><h3 id="px-chapter-title">Мгновение<br>до выстрела</h3><p id="px-chapter-text">Зимний город, дорога к Чёрной речке, снег. Из последнего дня история делает шаг назад — к детству, дружбе и первым стихам.</p><div class="px-chapter-bottom"><span id="px-chapter-count">Пролог / 10 эпизодов</span><button type="button" class="px-round-button" data-next-chapter aria-label="Следующий эпизод"><span aria-hidden="true">→</span></button></div></div></div>
       <noscript><p>Продолжение истории: Детство → Лицей → Петербург → Юг → Михайловское → Поэт и император → Болдино → Натали → Финал.</p></noscript>
     </div></section>
 
-    <section class="px-quote-section" aria-label="Слова Пушкина"><div class="px-atmosphere px-quote-atmosphere" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@563b90ddc05e53ad1d1af6a42a9683deb3b26968/landing/redesign/assets/p-nevsky.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-quote-frame px-wrap"><span class="px-eyebrow">Строки, которые остаются</span><span class="px-quote-star" aria-hidden="true">✳</span><blockquote>И долго буду тем любезен я народу,<br> Что чувства добрые я лирой пробуждал.</blockquote><p>Александр Пушкин · 1836</p></div></section>
+    <section class="px-quote-section" aria-label="Слова Пушкина"><div class="px-atmosphere px-quote-atmosphere" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@28aa7988c44800bea556a8dccb687c9edcb79243/landing/redesign/assets/p-nevsky.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-quote-frame px-wrap"><span class="px-eyebrow">Строки, которые остаются</span><span class="px-quote-star" aria-hidden="true">✳</span><blockquote>И долго буду тем любезен я народу,<br> Что чувства добрые я лирой пробуждал.</blockquote><p>Александр Пушкин · 1836</p></div></section>
 
     <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title">
       <div class="px-wrap">
@@ -450,7 +435,7 @@
       </div>
     </section>
 
-    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><span class="px-eyebrow">Перед посещением</span><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: панорамные ожившие полотна 360° и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, разговор с художниками, 3D-голограммы, фотозона «Пушкинский гардероб» и сувениры на память.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Выберите время начала в <a href="#px-schedule">расписании сеансов</a> и оставьте время на интерактивную зону. Здесь вы сами выбираете, на чём остановиться: побеседовать с художниками, изучить детали картин или сделать фотографии.</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Дети до 6 лет включительно проходят бесплатно в будни и выходные. Для школьных и организованных экскурсий от 10 человек билет в будни стоит 400 ₽. Один сопровождающий школьной экскурсии на 10 человек проходит в будни бесплатно. Семейный билет для группы от 3 человек — 600 ₽ за посетителя в будни.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Все тарифы и условия льгот указаны выше, в разделе «Билеты и цены». Билет можно купить на сайте или в кассе на выставке. Расписание сеансов опубликовано в разделе посещения; ссылка на онлайн-покупку появится здесь позже.</p></details></div></section>
+    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><span class="px-eyebrow">Перед посещением</span><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: панорамные ожившие полотна 360° и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, 3D-голограммы, фотозона «Тени минувшей эпохи» и сувениры на память.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Выберите время начала в <a href="#px-schedule">расписании сеансов</a> и оставьте время на интерактивную зону. Здесь вы сами выбираете, на чём остановиться: изучить детали картин или сделать фотографии в фотозоне «Тени минувшей эпохи».</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Дети до 6 лет включительно проходят бесплатно в будни и выходные. Для школьных и организованных экскурсий от 10 человек билет в будни стоит 400 ₽. Один сопровождающий школьной экскурсии на 10 человек проходит в будни бесплатно. Семейный билет для группы от 3 человек — 600 ₽ за посетителя в будни.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Все тарифы и условия льгот указаны выше, в разделе «Билеты и цены». Билет можно купить на сайте или в кассе на выставке. Расписание сеансов опубликовано в разделе посещения; ссылка на онлайн-покупку появится здесь позже.</p></details></div></section>
   </main>
   <footer class="px-footer px-wrap"><div class="px-footer-top"><a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a><p>Пушкин вечен.<br><span>Пушкин живой.</span></p><a class="px-to-top" href="#px-top">Наверх <span aria-hidden="true">↑</span></a></div><div class="px-footer-bottom"><span>© 2026 · Креативная студия R·ART</span><span>Екатеринбург · Свердловская киностудия</span><button type="button" class="px-motion-toggle" aria-pressed="false">Остановить анимацию</button></div></footer>
 </div>
@@ -475,112 +460,17 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
     var mobile = window.matchMedia('(max-width:650px)');
     var manuallyCalm = false;
     var calm = function () { return reduce.matches || manuallyCalm; };
-    var media = {};
-    qa('[data-media]').forEach(function (box) {
-      var id = box.getAttribute('data-media');
-      media[id] = {box:box, video:box.querySelector('video'), button:box.querySelector('[data-play]'), requested:false, visible:false};
-    });
-    function label(item, text, icon) {
-      item.button.querySelector('[data-play-label]').textContent = text;
-      item.button.querySelector('.px-play-icon').textContent = icon || '▶';
-      item.button.setAttribute('aria-label', text + ' — осенняя набережная');
-    }
-    function pause(item, user) {
-      item.video.pause();
-      if (user) item.requested = false;
-      if (item.video.ended) label(item, 'Посмотреть ещё раз', '↻');
-      else label(item, item.video.currentTime > 0 ? 'Продолжить' : 'Оживить картину');
-    }
-    function play(item, explicit) {
-      if (!item || (!explicit && calm())) return;
-      item.requested = true;
-      var video = item.video;
-      if (!video.getAttribute('src')) video.src = video.dataset.src;
-      if (video.ended) video.currentTime = 0;
-      label(item, 'Загрузка…', '◌');
-      item.box.querySelector('.px-media-status').textContent = '';
-      var result = video.play();
-      if (result && result.catch) result.catch(function () {
-        if (video.error) return;
-        if (video.paused) label(item, 'Оживить картину');
-      });
-    }
-    Object.keys(media).forEach(function (key) {
-      var item = media[key];
-      item.button.addEventListener('click', function () { if (item.video.paused) play(item, true); else pause(item, true); });
-      item.video.addEventListener('playing', function () { item.video.classList.add('is-ready'); label(item, 'Остановить', 'Ⅱ'); });
-      item.video.addEventListener('ended', function () { item.requested = false; label(item, 'Посмотреть ещё раз', '↻'); });
-      item.video.addEventListener('error', function () {
-        item.requested = false;
-        item.video.classList.remove('is-ready');
-        label(item, 'Повторить загрузку', '↻');
-        item.box.querySelector('.px-media-status').textContent = 'Видео не загрузилось. Показано статичное изображение. Можно повторить загрузку.';
-        item.video.removeAttribute('src');
-      });
-    });
-    if ('IntersectionObserver' in window) {
-      var mediaObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          var item = media[entry.target.dataset.media];
-          item.visible = entry.isIntersecting;
-          if (!entry.isIntersecting) { pause(item, false); return; }
-          if (item.requested && !calm() && !document.hidden) play(item, false);
-        });
-      }, {threshold:.2});
-      Object.keys(media).forEach(function (key) { mediaObserver.observe(media[key].box); });
-    }
-    document.addEventListener('visibilitychange', function () {
-      Object.keys(media).forEach(function (key) {
-        var item = media[key];
-        if (document.hidden) pause(item, false);
-        else if (item.visible && item.requested && !calm()) play(item, false);
-      });
-    });
     var motion = q('.px-motion-toggle');
     function updateMotion() {
       root.classList.toggle('px-calm', calm());
       motion.setAttribute('aria-pressed', String(calm()));
       motion.textContent = reduce.matches ? 'Движение уменьшено в настройках устройства' : manuallyCalm ? 'Включить анимацию' : 'Остановить анимацию';
       motion.disabled = reduce.matches;
-      if (calm()) {
-        Object.keys(media).forEach(function (key) { pause(media[key], true); });
-        stopSnow();
-      }
+
     }
     motion.addEventListener('click', function () { manuallyCalm = !manuallyCalm; updateMotion(); });
     if (reduce.addEventListener) reduce.addEventListener('change', updateMotion);
     else reduce.addListener(updateMotion);
-    var snow = q('.px-snow');
-    var snowButton = q('[data-snow]');
-    function stopSnow() {
-      snow.classList.remove('is-playing');
-      snowButton.setAttribute('aria-pressed', 'false');
-      q('[data-snow-label]').textContent = 'Добавить снег';
-    }
-    snowButton.addEventListener('click', function () {
-      if (calm()) { q('[data-snow-label]').textContent = 'Движение отключено'; return; }
-      if (snow.classList.contains('is-playing')) { stopSnow(); return; }
-      if (!snow.childElementCount) for (var i=0;i<32;i++) {
-        var dot = document.createElement('i');
-        var size = 2 + (i % 4);
-        dot.style.cssText = 'left:'+((i*37)%101)+'%;width:'+size+'px;height:'+size+'px;opacity:'+(0.35+(i%6)*.1)+';--duration:'+(8+i%9)+'s;--delay:-'+(i%15)+'s';
-        snow.appendChild(dot);
-      }
-      snow.classList.add('is-playing');
-      snowButton.setAttribute('aria-pressed','true');
-      q('[data-snow-label]').textContent = 'Остановить снег';
-    });
-    qa('[data-scene]').forEach(function (button) {
-      button.addEventListener('click', function () {
-        var winter = button.dataset.scene === 'winter';
-        qa('[data-scene]').forEach(function (b) { var selected=b===button; b.setAttribute('aria-pressed',String(selected));b.classList.toggle('is-selected',selected); });
-        q('.px-scene-autumn').hidden = winter;
-        q('.px-scene-winter').hidden = !winter;
-        q('.px-gallery').dataset.sceneView = button.dataset.scene;
-        q('.px-gallery-number').textContent = winter ? '02 / 02' : '01 / 02';
-        pause(media.autumn, true); stopSnow();
-      });
-    });
     var chapters = [
       ['Петербург / 1837','Мгновение до выстрела','Зимний город, дорога к Чёрной речке, снег. Из последнего дня история делает шаг назад — к детству, дружбе и первым стихам.','p-duel.jpg','Дмитрий Белюкин. «Дуэль Пушкина. Протаптывают тропинку»'],
       ['Москва / 1799–1811','Мир начинается с детства','Семья, первые впечатления и первые слова. На светлой странице проступает мир, в котором рождается будущий поэт.','p-child-full.jpg','Ксавье де Местр. «Пушкин-ребёнок»'],
