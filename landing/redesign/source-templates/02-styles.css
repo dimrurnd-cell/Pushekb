@@ -339,11 +339,10 @@
 #pushkin-exhibit .px-interactive-grid{align-items:center}
 /* Финальная последовательность секции посещения: один блок на всю ширину. */
 #pushkin-exhibit .px-visit>.px-wrap{display:flex;flex-direction:column;gap:0}
-#pushkin-exhibit .px-visit>.px-wrap>.px-section-kicker{order:1}
+#pushkin-exhibit .px-visit>.px-wrap>.px-section-kicker{order:2}
 #pushkin-exhibit .px-visit-grid{display:contents}
 #pushkin-exhibit .px-visit-grid>div:first-child{order:5;width:100%}
-#pushkin-exhibit .px-visit-grid>#px-ticket-widget{order:3;width:100%}
-#pushkin-exhibit .px-visit>.px-wrap>#px-schedule{order:2;width:100%}
-#pushkin-exhibit .px-visit>.px-wrap>#px-ticket-widget{order:3;width:100%}
-#pushkin-exhibit .px-visit>.px-wrap>#px-prices{order:4;width:100%}
+#pushkin-exhibit .px-visit-grid>#px-ticket-widget{order:4;width:100%;margin-top:0;margin-bottom:84px}
+#pushkin-exhibit .px-visit>.px-wrap>#px-schedule{order:1;width:100%;margin-top:0;margin-bottom:78px}
+#pushkin-exhibit .px-visit>.px-wrap>#px-prices{order:3;width:100%;margin-top:0;margin-bottom:78px}
 #pushkin-exhibit .px-visit>.px-wrap>#px-contacts{order:6;width:100%}
