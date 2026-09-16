@@ -148,6 +148,14 @@
 #pushkin-exhibit .px-quote-section>p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--px-muted)}
 #pushkin-exhibit .px-visit{background:#e6e9df}
 #pushkin-exhibit .px-visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
+#pushkin-exhibit .px-visit>.px-wrap{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);column-gap:80px}
+#pushkin-exhibit .px-visit>.px-wrap>.px-section-kicker{grid-column:1/-1}
+#pushkin-exhibit .px-visit-grid{display:contents}
+#pushkin-exhibit .px-visit-grid>div:first-child{grid-column:2;grid-row:2 / span 3}
+#pushkin-exhibit .px-visit>.px-wrap>#px-schedule{grid-column:1;grid-row:2}
+#pushkin-exhibit .px-visit>.px-wrap>#px-ticket-widget{grid-column:1;grid-row:3}
+#pushkin-exhibit .px-visit>.px-wrap>#px-prices{grid-column:1;grid-row:4}
+#pushkin-exhibit .px-visit>.px-wrap>#px-contacts{grid-column:1/-1;grid-row:5}
 #pushkin-exhibit .px-visit-dates{display:flex;align-items:baseline;gap:12px;margin-top:39px;font:400 66px/1 'PXInserat','PXAkrobat',sans-serif;letter-spacing:-.025em;flex-wrap:wrap}
 #pushkin-exhibit .px-visit-dates i{font:400 45px/1 'PXAkrobat',sans-serif;color:#89907f}
 #pushkin-exhibit .px-visit-dates small{font:400 22px/1 'PXAkrobat',sans-serif;margin-left:2px;color:var(--px-muted)}
@@ -159,6 +167,8 @@
 #pushkin-exhibit .px-visit-ticket .px-button{margin-top:25px;width:100%}
 #pushkin-exhibit .px-ticket-note{border-block:1px solid var(--px-line);font-size:14px;display:flex;align-items:center;gap:10px;padding-block:17px;margin:25px 0 19px}
 #pushkin-exhibit .px-visit-ticket .px-text-link{font-size:15px}
+@media(max-width:900px){#pushkin-exhibit .px-visit>.px-wrap{column-gap:32px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:650px){#pushkin-exhibit .px-visit>.px-wrap{display:flex;flex-direction:column}#pushkin-exhibit .px-visit>.px-wrap>.px-section-kicker{order:1}#pushkin-exhibit .px-visit-grid{display:contents}#pushkin-exhibit .px-visit-grid>div:first-child{grid-column:auto;grid-row:auto;order:2}#pushkin-exhibit .px-visit>.px-wrap>#px-schedule{order:3}#pushkin-exhibit .px-visit>.px-wrap>#px-ticket-widget{order:4}#pushkin-exhibit .px-visit>.px-wrap>#px-prices{order:5}#pushkin-exhibit .px-visit>.px-wrap>#px-contacts{order:6}}
 #pushkin-exhibit .px-faq{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
 #pushkin-exhibit .px-faq>.px-eyebrow,#pushkin-exhibit .px-faq>div>.px-eyebrow{color:var(--px-red);font-size:11px;display:block;margin-bottom:20px}
 #pushkin-exhibit .px-faq h2{font-size:52px}
@@ -344,7 +354,7 @@
     <nav id="px-nav" aria-label="Основная навигация">
       <a href="#px-experience">О выставке</a><a href="#px-interactive">Интерактивная зона</a><a href="#px-story">История</a><a href="#px-visit">Как посетить</a>
     </nav>
-    <a class="px-header-ticket" href="#px-prices" data-ticket-link>Билеты и цены <span aria-hidden="true">↗</span></a>
+    <a class="px-header-ticket" href="#px-ticket-widget" data-ticket-link>Купить билет <span aria-hidden="true">↗</span></a>
     <div class="px-progress" aria-hidden="true"></div>
   </header>
   <main id="px-main">
@@ -356,7 +366,7 @@
           <h1 id="px-title"><span class="px-title-print">ПУШКИН.</span><span class="px-title-script">Живой</span></h1>
           <p class="px-hero-line">Увидеть поэта.<br>Почувствовать человека.</p>
           <p class="px-hero-description">Панорамные ожившие полотна 360° и интерактивная зона. Смотрите, исследуйте, задавайте вопросы — открывайте своего Пушкина.</p>
-          <div class="px-hero-event"><p class="px-hero-date"><time datetime="2026-10-05">5 октября</time><span aria-hidden="true"> — </span><time datetime="2026-11-29">29 ноября</time><small>2026</small></p><p class="px-hero-address">Екатеринбург, Свердловская киностудия<br>Ленина, 50Ж</p></div><div class="px-hero-actions"><a class="px-button" href="#px-prices" data-ticket-link>Билеты и цены <span aria-hidden="true">↗</span></a><a class="px-text-link" href="#px-experience">Заглянуть внутрь <span aria-hidden="true">↓</span></a></div>
+           <div class="px-hero-event"><p class="px-hero-date"><time datetime="2026-10-05">5 октября</time><span aria-hidden="true"> — </span><time datetime="2026-11-29">29 ноября</time><small>2026</small></p><p class="px-hero-address">Екатеринбург, Свердловская киностудия<br>Ленина, 50Ж</p></div><div class="px-hero-actions"><a class="px-button" href="#px-ticket-widget" data-ticket-link>Купить билет <span aria-hidden="true">↗</span></a><a class="px-text-link" href="#px-experience">Заглянуть внутрь <span aria-hidden="true">↓</span></a></div>
           
         </div>
         <figure class="px-portrait">
@@ -411,7 +421,7 @@
 
     <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title">
       <div class="px-wrap">
-        <div class="px-section-kicker"><span>04 / Ваша встреча с Пушкиным</span><span>Екатеринбург</span></div>
+        <div class="px-section-kicker"><span>04 / Купить билет на выставку</span><span>Екатеринбург</span></div>
         <div class="px-visit-grid">
           <div><h2 id="px-visit-title">Увидимся<br><em>на выставке.</em></h2><div class="px-visit-dates"><span>05.10</span><i>—</i><span>29.11</span><small>2026</small></div><p class="px-venue">Свердловская киностудия</p><p class="px-visit-address">Екатеринбург, просп. Ленина, 50Ж</p><p class="px-small">Оставьте время на интерактивную зону, фотографии и сувениры на память.</p></div>
           <div class="px-visit-ticket" id="px-ticket-widget" aria-labelledby="px-ticket-widget-title"><span class="px-eyebrow">Билеты на выставку</span><h3 id="px-ticket-widget-title">Купить билет</h3><p class="px-ticket-widget-note">Купить билет можно на сайте или в кассе на выставке.</p><div id="ya-widget-frame" aria-live="polite"></div></div>
