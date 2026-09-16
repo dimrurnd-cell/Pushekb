@@ -400,5 +400,42 @@
 #pushkin-exhibit .px-hero-actions{margin-top:12px}
 #pushkin-exhibit .px-portrait{margin-top:8px}
 }
+/* Низкие широкие окна: портрет получает ширину обратно за счёт широкого кадра —
+   высота кадра остаётся прежней, поэтому сгиб не двигается. Освободившийся
+   коридор между колонками занимает рукопись. Выше 960px и на телефоне — без изменений. */
+@media(min-width:1150px) and (max-height:960px){
+#pushkin-exhibit .px-portrait{max-width:472px}
+#pushkin-exhibit .px-portrait-frame{aspect-ratio:.93}
+#pushkin-exhibit .px-portrait .px-media-poster{object-position:50% 30%}
+}
+@media(min-width:1150px) and (max-height:860px){
+#pushkin-exhibit .px-portrait-frame{aspect-ratio:1.08}
+}
+@media(min-width:1150px) and (max-height:780px){
+#pushkin-exhibit .px-portrait-frame{aspect-ratio:1.27}
+}
+@media(min-width:1150px) and (max-height:700px){
+#pushkin-exhibit .px-portrait{max-width:462px}
+#pushkin-exhibit .px-portrait-frame{aspect-ratio:1.49}
+}
+@media(min-width:1400px) and (max-height:960px){
+#pushkin-exhibit .px-manuscript-hero{white-space:normal;max-width:min(300px,20.5vw);top:330px;left:34%;
+ opacity:.25;transform:rotate(-6deg);font-size:min(2.1vw,33px);line-height:1.32;color:#7d6448}
+#pushkin-exhibit .px-manuscript-hero span+span{margin-left:16px;margin-top:8px}
+}
+@media(min-width:1700px) and (max-height:960px){
+#pushkin-exhibit .px-manuscript-hero{max-width:min(340px,23vw);left:37.5%;font-size:min(2.3vw,36px)}
+}
+@media(min-width:1400px) and (max-height:780px){
+#pushkin-exhibit .px-manuscript-hero{top:232px;font-size:min(1.95vw,30px)}
+}
+@media(min-width:1400px) and (max-height:700px){
+#pushkin-exhibit .px-manuscript-hero{top:176px;max-width:min(270px,19vw);font-size:min(1.8vw,26px)}
+}
+/* Уже 1400px: коридор закрыт портретом, а на узких окнах рукопись свисала
+   в блок с цифрами — убираем её, на телефоне она остаётся как была. */
+@media(min-width:651px) and (max-width:1399px) and (max-height:960px){
+#pushkin-exhibit .px-manuscript-hero{display:none}
+}
 
 </style>
