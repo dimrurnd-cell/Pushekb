@@ -319,13 +319,13 @@
 #pushkin-exhibit .px-interactive-grid{align-items:center}
 /* Секция «Как посетить»: порядок в DOM совпадает с порядком на экране. */
 #pushkin-exhibit .px-visit>.px-wrap{display:flex;flex-direction:column}
-#pushkin-exhibit .px-visit-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:30px 80px;align-items:start}
+#pushkin-exhibit .px-visit-head{margin-top:78px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:30px 80px;align-items:start}
 #pushkin-exhibit .px-visit-head>div{padding-top:10px}
 #pushkin-exhibit .px-visit-head .px-visit-dates{margin-top:0}
 #pushkin-exhibit .px-visit-head .px-small{max-width:37ch}
-#pushkin-exhibit .px-visit .px-schedule{margin-top:72px}
+#pushkin-exhibit .px-visit .px-schedule{margin-top:0}
 #pushkin-exhibit .px-visit .px-prices{margin-top:74px}
-#pushkin-exhibit .px-visit .px-contacts{margin-top:72px}
+#pushkin-exhibit .px-visit .px-contacts{margin-top:46px}
 /* Карточка покупки: текст и виджет рядом, форма получает собственную ширину. */
 #pushkin-exhibit .px-visit-ticket{margin-top:76px;display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:34px 60px;align-items:start;scroll-margin-top:110px}
 #pushkin-exhibit .px-visit-ticket>.px-ticket-copy>.px-eyebrow{font-size:11px;color:var(--px-red)}
@@ -339,5 +339,5 @@
 #pushkin-exhibit #ya-widget-frame.is-mounted{display:block;min-height:0;border:0;background:none}
 #pushkin-exhibit .px-ticket-placeholder{font-size:15px;color:var(--px-muted);text-align:center;padding:24px;max-width:34ch}
 @media(max-width:1150px){#pushkin-exhibit .px-visit-ticket{gap:28px 40px}}
-@media(max-width:900px){#pushkin-exhibit .px-visit-ticket{grid-template-columns:1fr;gap:26px;margin-top:58px}#pushkin-exhibit .px-visit .px-schedule,#pushkin-exhibit .px-visit .px-prices,#pushkin-exhibit .px-visit .px-contacts{margin-top:58px}#pushkin-exhibit #ya-widget-frame{min-height:600px}}
-@media(max-width:650px){#pushkin-exhibit .px-visit-ticket{margin-top:45px}#pushkin-exhibit .px-visit .px-schedule,#pushkin-exhibit .px-visit .px-prices,#pushkin-exhibit .px-visit .px-contacts{margin-top:45px}#pushkin-exhibit .px-ticket-copy h3{margin:16px 0 14px}#pushkin-exhibit .px-ticket-widget-note{font-size:17px}}
+@media(max-width:900px){#pushkin-exhibit .px-visit-ticket{grid-template-columns:1fr;gap:26px;margin-top:58px}#pushkin-exhibit .px-visit .px-prices,#pushkin-exhibit .px-visit-head{margin-top:58px}#pushkin-exhibit .px-visit .px-contacts{margin-top:38px}#pushkin-exhibit #ya-widget-frame{min-height:600px}}
+@media(max-width:650px){#pushkin-exhibit .px-visit-ticket{margin-top:45px}#pushkin-exhibit .px-visit .px-prices,#pushkin-exhibit .px-visit-head{margin-top:45px}#pushkin-exhibit .px-visit .px-contacts{margin-top:30px}#pushkin-exhibit .px-ticket-copy h3{margin:16px 0 14px}#pushkin-exhibit .px-ticket-widget-note{font-size:17px}}
