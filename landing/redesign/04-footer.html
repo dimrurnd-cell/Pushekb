@@ -1,8 +1,13 @@
 <!-- Последний блок T123, после разметки. Не требует библиотек. -->
 <script>
-/* После согласования: укажите HTTPS-ссылку на реальную продажу билетов.
-   Пустая строка оставляет честное сообщение об уточнении информации. */
-window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: '' };
+/* Параметры продажи билетов. clientKey и eventId выдаёт Яндекс Билеты;
+   phone используется, если форма не загрузилась. */
+window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || {};
+window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets || {
+  clientKey: 'dfdd4a27-87eb-4e27-999f-8e44cffa2155',
+  regionId: 54,
+  eventId: '886786'
+};
 (function () {
   'use strict';
   var watcher;
@@ -79,18 +84,6 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
       if(!target.hasAttribute('tabindex')){target.setAttribute('tabindex','-1');target.addEventListener('blur',function(){target.removeAttribute('tabindex');},{once:true});}
       target.focus({preventScroll:true});
     });
-    var config=window.PUSHKIN_EXHIBIT_CONFIG || {};
-    if(typeof config.ticketUrl==='string' && /^https:\/\//i.test(config.ticketUrl.trim())){
-      try {
-        var ticketUrl=new URL(config.ticketUrl.trim());
-        if(ticketUrl.protocol==='https:' && !ticketUrl.username && !ticketUrl.password){
-          qa('[data-ticket-link]').forEach(function(link){link.href=ticketUrl.href;link.textContent='Купить билет ↗';});
-          q('[data-buy-button]').href=ticketUrl.href;q('[data-buy-button]').hidden=false;
-          q('[data-ticket-description]').textContent='Расписание сеансов — на странице продажи. Переходите, чтобы выбрать удобное время.';
-          q('[data-ticket-note]').hidden=true;
-        }
-      }catch(ignore){}
-    }
     var ticking=false;
     function progress(){ticking=false;var rect=root.getBoundingClientRect();var range=root.offsetHeight-window.innerHeight;var value=range>0?Math.min(1,Math.max(0,-rect.top/range)):0;root.style.setProperty('--px-progress',value.toFixed(4));}
     window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
@@ -99,7 +92,51 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
       var reveal=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.remove('px-reveal-pending');reveal.unobserve(entry.target);}});},{threshold:.08});
       qa('[data-reveal]').forEach(function(el){el.classList.add('px-reveal-pending');reveal.observe(el);});
     }
+    mountTickets(q, calm);
     updateMotion();progress();return true;
+  }
+  /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
+  function mountTickets(q, calm){
+    var frame=q('#ya-widget-frame');if(!frame||frame.dataset.pxTickets)return;
+    frame.dataset.pxTickets='pending';
+    var cfg=(window.PUSHKIN_EXHIBIT_CONFIG||{}).tickets||{};
+    var placeholder=frame.querySelector('[data-ticket-placeholder]');
+    var widget=null,timer=null;
+    if(!cfg.clientKey||!cfg.eventId){fail('Продажа билетов пока не подключена. Билеты можно купить в кассе на выставке.');return;}
+    function fail(text){
+      frame.dataset.pxTickets='failed';frame.setAttribute('aria-busy','false');
+      if(placeholder)placeholder.textContent=text||'Форма продажи билетов не загрузилась. Купите билет в кассе на выставке или позвоните нам.';
+    }
+    function mount(){
+      if(timer)return;
+      timer=setTimeout(function(){if(frame.dataset.pxTickets!=='mounted')fail();},12000);
+      var dealer=window.YandexTicketsDealer=window.YandexTicketsDealer||[];
+      dealer.push(['setDefaultClientKey',cfg.clientKey]);
+      if(cfg.regionId)dealer.push(['setDefaultRegionId',cfg.regionId]);
+      dealer.push(['getDealer',function(api){
+        clearTimeout(timer);timer=null;
+        if(placeholder&&placeholder.parentNode)placeholder.parentNode.removeChild(placeholder);
+        frame.classList.add('is-mounted');frame.dataset.pxTickets='mounted';frame.setAttribute('aria-busy','false');
+        widget=api.Widget(cfg.eventId,'event',{target:frame,onRequestClose:function(){
+          /* Закрытие формы не должно оставлять пустую карточку: монтируем заново. */
+          try{widget.unmount();}catch(ignore){}
+          frame.classList.remove('is-mounted');frame.dataset.pxTickets='pending';
+          widget.mount({style:{height:'620px'}});frame.classList.add('is-mounted');frame.dataset.pxTickets='mounted';
+        }});
+        widget.mount({style:{height:'620px'}});
+      }]);
+      if(document.querySelector('script[data-px-tickets]'))return;
+      var script=document.createElement('script');
+      script.async=true;script.dataset.pxTickets='true';
+      script.src='https://widget.afisha.yandex.ru/dealer/dealer.js';
+      script.onerror=function(){clearTimeout(timer);timer=null;fail();};
+      document.head.appendChild(script);
+    }
+    if(!('IntersectionObserver'in window)||calm()){mount();return;}
+    var io=new IntersectionObserver(function(entries){
+      if(entries.some(function(e){return e.isIntersecting;})){io.disconnect();mount();}
+    },{rootMargin:'400px 0px'});
+    io.observe(frame);
   }
   function start(){
     if(init())return;
@@ -109,40 +146,5 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
     setTimeout(function(){if(watcher)watcher.disconnect();},30000);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
-})();
-</script>
-
-<!-- Яндекс Билеты: форма выбора сеанса и покупки билета. -->
-<script>
-(function () {
-  'use strict';
-  function mountYandexTickets() {
-    var target = document.getElementById('ya-widget-frame');
-    if (!target || target.dataset.yandexMounted === 'true') return;
-    target.dataset.yandexMounted = 'true';
-    var dealerName = 'YandexTicketsDealer';
-    var dealer = window[dealerName] = window[dealerName] || [];
-    dealer.push(['setDefaultClientKey', 'dfdd4a27-87eb-4e27-999f-8e44cffa2155']);
-    dealer.push(['setDefaultRegionId', 54]);
-    dealer.push(['getDealer', function (api) {
-      var widget = api.Widget('886786', 'event', {
-        target: target,
-        onRequestClose: function () {
-          widget.unmount();
-          widget.destroy();
-        }
-      });
-      widget.mount({ style: { height: '600px' } });
-    }]);
-    if (!document.querySelector('script[data-pushkin-yandex-tickets]')) {
-      var script = document.createElement('script');
-      script.async = true;
-      script.dataset.pushkinYandexTickets = 'true';
-      script.src = 'https://widget.afisha.yandex.ru/dealer/dealer.js';
-      document.head.appendChild(script);
-    }
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountYandexTickets, { once: true });
-  else mountYandexTickets();
 })();
 </script>

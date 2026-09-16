@@ -61,6 +61,7 @@ single_footer = footer.replace('chapterImage.src=assetBase+data[3];',
                               'chapterImage.src=' + json.dumps(images) + '[data[3]];')
 files['Пушкин-Живой-просмотр.html'] = page(single, single_footer)
 for name, content in files.items():
-    (HERE / name).write_text(content, encoding='utf-8')
+    # Перевод строки задаём явно: иначе сборка на Windows и на Linux даёт разные файлы.
+    (HERE / name).write_bytes(content.replace('\r\n', '\n').replace('\n', '\r\n').encode('utf-8'))
 print('Tilda fragments and previews regenerated.')
 
