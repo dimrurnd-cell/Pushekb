@@ -92,6 +92,62 @@ window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets ||
       var reveal=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.remove('px-reveal-pending');reveal.unobserve(entry.target);}});},{threshold:.08});
       qa('[data-reveal]').forEach(function(el){el.classList.add('px-reveal-pending');reveal.observe(el);});
     }
+    /* Галерея зала: прокрутка стрелками, увеличение кадра по клику. */
+    var track=q('#px-hallery-track');
+    if(track){
+      var shots=qa('.px-hallery-cell');
+      var shotPrev=q('.px-hallery-prev'),shotNext=q('.px-hallery-next');
+      var box=q('#px-lightbox'),boxImage=q('#px-lightbox-image'),boxCaption=q('#px-lightbox-caption');
+      var shotAt=0,shotTick=false;
+      function shotStep(){
+        if(!shots.length)return 320;
+        return shots[0].getBoundingClientRect().width+(parseFloat(getComputedStyle(track).columnGap)||18);
+      }
+      function syncArrows(){
+        var max=track.scrollWidth-track.clientWidth-2;
+        shotPrev.disabled=track.scrollLeft<=2;
+        shotNext.disabled=track.scrollLeft>=max;
+      }
+      function slide(direction){track.scrollBy({left:direction*shotStep(),behavior:calm()?'auto':'smooth'});}
+      shotPrev.addEventListener('click',function(){slide(-1);});
+      shotNext.addEventListener('click',function(){slide(1);});
+      track.addEventListener('scroll',function(){
+        if(shotTick)return;shotTick=true;
+        requestAnimationFrame(function(){shotTick=false;syncArrows();});
+      },{passive:true});
+      track.addEventListener('keydown',function(e){
+        if(e.key==='ArrowRight')slide(1);else if(e.key==='ArrowLeft')slide(-1);else return;
+        e.preventDefault();
+      });
+      window.addEventListener('resize',syncArrows,{passive:true});
+      syncArrows();
+      var canOpen=box&&typeof box.showModal==='function';
+      function showShot(index){
+        shotAt=(index+shots.length)%shots.length;
+        var cell=shots[shotAt],image=cell.querySelector('img');
+        boxImage.src=cell.dataset.full||image.src;
+        boxImage.alt=image.alt;
+        boxCaption.textContent=cell.querySelector('.px-hallery-caption span').textContent+' · '+(shotAt+1)+' из '+shots.length;
+      }
+      shots.forEach(function(cell,index){
+        cell.addEventListener('click',function(){
+          /* Без поддержки dialog просто открываем кадр отдельной страницей. */
+          if(!canOpen){window.open(cell.dataset.full,'_blank','noopener');return;}
+          showShot(index);box.showModal();
+        });
+      });
+      if(canOpen){
+        q('[data-lb-prev]').addEventListener('click',function(){showShot(shotAt-1);});
+        q('[data-lb-next]').addEventListener('click',function(){showShot(shotAt+1);});
+        q('[data-lb-close]').addEventListener('click',function(){box.close();});
+        box.addEventListener('keydown',function(e){
+          if(e.key==='ArrowRight')showShot(shotAt+1);else if(e.key==='ArrowLeft')showShot(shotAt-1);else return;
+          e.preventDefault();
+        });
+        box.addEventListener('click',function(e){if(e.target===box)box.close();});
+        box.addEventListener('close',function(){shots[shotAt].focus({preventScroll:true});});
+      }
+    }
     mountTickets(q, calm);
     updateMotion();progress();return true;
   }

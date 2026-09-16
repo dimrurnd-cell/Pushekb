@@ -46,16 +46,22 @@ files = {
 single = render(body, 'assets')
 images = {}
 chapter_files = set(re.findall(r"'([^']+\.jpg)'", footer))
-for asset in (HERE / 'assets').iterdir():
+for asset in sorted((HERE / 'assets').rglob('*')):
     if asset.suffix not in ('.jpg', '.png', '.webp', '.mp4'):
         continue
-    if ('assets/' + asset.name) not in single and asset.name not in chapter_files:
+    ref = 'assets/' + asset.relative_to(HERE / 'assets').as_posix()
+    if ref.startswith('assets/hall/') and ref.endswith('-full.webp'):
+        continue
+    if ref not in single and asset.name not in chapter_files:
         continue
     mime = {'.jpg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.mp4':'video/mp4'}[asset.suffix]
     data = f'data:{mime};base64,' + base64.b64encode(asset.read_bytes()).decode()
-    single = single.replace('assets/' + asset.name, data)
+    single = single.replace(ref, data)
     if asset.name in chapter_files:
         images[asset.name] = data
+# Полные кадры галереи оставляем на CDN: иначе файл вырастает на пару мегабайт.
+# Подстановка идёт после вшивания, иначе цикл затирает путь внутри собранной ссылки.
+single = re.sub(r'assets/hall/([\w-]+)-full\.webp', CDN + r'/hall/\1-full.webp', single)
 single_footer = footer.replace('chapterImage.src=assetBase+data[3];',
                               'chapterImage.src=' + json.dumps(images) + '[data[3]];')
 files['Пушкин-Живой-просмотр.html'] = page(single, single_footer)
