@@ -111,3 +111,38 @@ window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || { ticketUrl: ''
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
 </script>
+
+<!-- Яндекс Билеты: форма выбора сеанса и покупки билета. -->
+<script>
+(function () {
+  'use strict';
+  function mountYandexTickets() {
+    var target = document.getElementById('ya-widget-frame');
+    if (!target || target.dataset.yandexMounted === 'true') return;
+    target.dataset.yandexMounted = 'true';
+    var dealerName = 'YandexTicketsDealer';
+    var dealer = window[dealerName] = window[dealerName] || [];
+    dealer.push(['setDefaultClientKey', 'dfdd4a27-87eb-4e27-999f-8e44cffa2155']);
+    dealer.push(['setDefaultRegionId', 54]);
+    dealer.push(['getDealer', function (api) {
+      var widget = api.Widget('886786', 'event', {
+        target: target,
+        onRequestClose: function () {
+          widget.unmount();
+          widget.destroy();
+        }
+      });
+      widget.mount({ style: { height: '600px' } });
+    }]);
+    if (!document.querySelector('script[data-pushkin-yandex-tickets]')) {
+      var script = document.createElement('script');
+      script.async = true;
+      script.dataset.pushkinYandexTickets = 'true';
+      script.src = 'https://widget.afisha.yandex.ru/dealer/dealer.js';
+      document.head.appendChild(script);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountYandexTickets, { once: true });
+  else mountYandexTickets();
+})();
+</script>
