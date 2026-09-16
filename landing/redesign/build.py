@@ -17,8 +17,7 @@ body = (SOURCE / '03-body-t123.html').read_text(encoding='utf-8')
 footer = (SOURCE / '04-footer.html').read_text(encoding='utf-8')
 
 def render(text, assets):
-    return (text.replace('@@ASSET@@/photozone-shadows.jpg', (assets + '/photozone-shadows.jpg') if assets == 'assets' else 'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@1160f31267d7a83c85863af64b9840772149867e/landing/redesign/assets/photozone-shadows.jpg').replace('@@ASSET@@', assets)
-            .replace('@@AUTUMN_VIDEO@@', assets + '/embankment.mp4'))
+    return text.replace('@@ASSET@@', assets)
 
 meta = ('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
         '<meta name="description" content="Пушкин. Живой — мультимедийная выставка в Екатеринбурге. '
@@ -61,6 +60,7 @@ single_footer = footer.replace('chapterImage.src=assetBase+data[3];',
                               'chapterImage.src=' + json.dumps(images) + '[data[3]];')
 files['Пушкин-Живой-просмотр.html'] = page(single, single_footer)
 for name, content in files.items():
+    assert '@@' not in content, f'Незаменённая подстановка в {name}'
     # Перевод строки задаём явно: иначе сборка на Windows и на Linux даёт разные файлы.
     (HERE / name).write_bytes(content.replace('\r\n', '\n').replace('\n', '\r\n').encode('utf-8'))
 print('Tilda fragments and previews regenerated.')
