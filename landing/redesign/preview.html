@@ -179,9 +179,9 @@
 #pushkin-exhibit .px-hero{position:relative;isolation:isolate;background:radial-gradient(ellipse at 90% 36%,#ede6d780,transparent 65%)}
 #pushkin-exhibit .px-hero::before,#pushkin-exhibit .px-quote-section::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
 #pushkin-exhibit .px-manuscript{position:absolute;pointer-events:none;user-select:none;font:400 clamp(45px,5vw,78px)/1.45 'PXMonplesir',cursive;color:#8b735a;white-space:nowrap;z-index:-1}
-#pushkin-exhibit .px-manuscript span{display:block}
+#pushkin-exhibit .px-manuscript>span{display:block}
 #pushkin-exhibit .px-manuscript-hero{top:92px;left:35%;opacity:.14;transform:rotate(-11deg)}
-#pushkin-exhibit .px-manuscript-hero span+span{margin-left:-100px;margin-top:360px}
+#pushkin-exhibit .px-manuscript-hero>span+span{margin-left:-100px;margin-top:360px}
 #pushkin-exhibit .px-hero-meta,#pushkin-exhibit .px-facts{position:relative}
 #pushkin-exhibit .px-atmosphere{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
 #pushkin-exhibit .px-atmosphere img{width:100%;height:100%;object-fit:cover;object-position:center}
@@ -214,7 +214,7 @@
 #pushkin-exhibit .px-price-table td.px-price-free{font:600 20px/1.3 'PXAkrobat',sans-serif}
 #pushkin-exhibit .px-price-note{font-size:15px;line-height:1.5;color:var(--px-muted);margin-top:18px;max-width:760px}
 @media(max-width:900px){#pushkin-exhibit .px-price-category{width:54%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:20px}#pushkin-exhibit .px-price-table tbody th{font-size:21px}}
-@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{top:550px;left:-120px;font-size:43px;opacity:.17}#pushkin-exhibit .px-manuscript-hero span+span{margin-top:255px;margin-left:0}#pushkin-exhibit .px-story-atmosphere{height:380px;opacity:.1}#pushkin-exhibit .px-quote-section{padding:32px 18px}#pushkin-exhibit .px-quote-frame{padding:36px 21px 32px}#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:10px}#pushkin-exhibit .px-quote-section blockquote{font-size:35px;line-height:1.45;margin-block:12px 20px}#pushkin-exhibit .px-quote-frame>p{font-size:10px}#pushkin-exhibit .px-quote-star{margin-top:16px}#pushkin-exhibit .px-prices{margin-top:45px;padding-top:33px}#pushkin-exhibit .px-prices-heading{display:block;margin-bottom:24px}#pushkin-exhibit .px-prices-heading p{text-align:left;font-size:15px;margin-top:17px}#pushkin-exhibit .px-price-category{width:48%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:18px 9px}#pushkin-exhibit .px-price-table thead th{font-size:10px;letter-spacing:.03em;padding-block:14px}#pushkin-exhibit .px-price-table tbody th{font-size:18px;overflow-wrap:anywhere}#pushkin-exhibit .px-price-table tbody th span{font-size:14px;margin-top:6px}#pushkin-exhibit .px-price-table td{font-size:23px}#pushkin-exhibit .px-price-table td.px-price-unavailable{font-size:14px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:16px;letter-spacing:-.02em}#pushkin-exhibit .px-price-note{font-size:14px}}
+@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{top:550px;left:-120px;font-size:43px;opacity:.17}#pushkin-exhibit .px-manuscript-hero>span+span{margin-top:255px;margin-left:0}#pushkin-exhibit .px-story-atmosphere{height:380px;opacity:.1}#pushkin-exhibit .px-quote-section{padding:32px 18px}#pushkin-exhibit .px-quote-frame{padding:36px 21px 32px}#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:10px}#pushkin-exhibit .px-quote-section blockquote{font-size:35px;line-height:1.45;margin-block:12px 20px}#pushkin-exhibit .px-quote-frame>p{font-size:10px}#pushkin-exhibit .px-quote-star{margin-top:16px}#pushkin-exhibit .px-prices{margin-top:45px;padding-top:33px}#pushkin-exhibit .px-prices-heading{display:block;margin-bottom:24px}#pushkin-exhibit .px-prices-heading p{text-align:left;font-size:15px;margin-top:17px}#pushkin-exhibit .px-price-category{width:48%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:18px 9px}#pushkin-exhibit .px-price-table thead th{font-size:10px;letter-spacing:.03em;padding-block:14px}#pushkin-exhibit .px-price-table tbody th{font-size:18px;overflow-wrap:anywhere}#pushkin-exhibit .px-price-table tbody th span{font-size:14px;margin-top:6px}#pushkin-exhibit .px-price-table td{font-size:23px}#pushkin-exhibit .px-price-table td.px-price-unavailable{font-size:14px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:16px;letter-spacing:-.02em}#pushkin-exhibit .px-price-note{font-size:14px}}
 @media(max-width:360px){#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:6px}#pushkin-exhibit .px-price-table tbody th{font-size:17px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:14px}}
 /* Интерактивная зона — самостоятельная часть выставки. */
 #pushkin-exhibit .px-interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:stretch}
@@ -428,7 +428,7 @@
 @media(min-width:1400px) and (max-height:960px){
 #pushkin-exhibit .px-manuscript-hero{white-space:normal;max-width:min(300px,20.5vw);top:330px;left:34%;
  opacity:.25;transform:rotate(-6deg);font-size:min(2.1vw,33px);line-height:1.32;color:#7d6448}
-#pushkin-exhibit .px-manuscript-hero span+span{margin-left:16px;margin-top:8px}
+#pushkin-exhibit .px-manuscript-hero>span+span{margin-left:16px;margin-top:8px}
 }
 @media(min-width:1700px) and (max-height:960px){
 #pushkin-exhibit .px-manuscript-hero{max-width:min(340px,23vw);left:37.5%;font-size:min(2.3vw,36px)}
@@ -444,17 +444,19 @@
 @media(min-width:651px) and (max-width:1399px) and (max-height:960px){
 #pushkin-exhibit .px-manuscript-hero{display:none}
 }
-/* Стих проявляется, будто его выписывают от руки: маска-градиент с наклонным
-   мягким краем идёт слева направо. База — текст виден целиком, поэтому при
-   выключенной анимации и в режиме «остановить движение» строки просто на месте. */
+/* Стих выписывается по словам: каждое слово проявляется своей маской-градиентом
+   с наклонным мягким краем, со сдвигом по очереди. База — слово видно целиком,
+   поэтому при выключенной анимации и в режиме «остановить движение» стих на месте. */
+#pushkin-exhibit .px-manuscript .px-word{display:inline-block}
 @media(min-width:651px){
-#pushkin-exhibit .px-manuscript-hero{
- -webkit-mask-image:linear-gradient(101deg,#000 0 44%,#00000000 57%);
- mask-image:linear-gradient(101deg,#000 0 44%,#00000000 57%);
- -webkit-mask-size:200% 100%;mask-size:200% 100%;
+#pushkin-exhibit .px-manuscript-hero .px-word{
+ -webkit-mask-image:linear-gradient(101deg,#000 0 40%,#00000000 62%);
+ mask-image:linear-gradient(101deg,#000 0 40%,#00000000 62%);
+ -webkit-mask-size:210% 100%;mask-size:210% 100%;
  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
  -webkit-mask-position:0 0;mask-position:0 0;
- animation:px-handwrite 3.4s cubic-bezier(.33,0,.5,1) .55s backwards}
+ animation:px-handwrite .62s cubic-bezier(.35,0,.65,1) backwards;
+ animation-delay:calc(.5s + var(--i,0) * .27s)}
 }
 @keyframes px-handwrite{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
 </style></head><body><!-- Вставьте в один блок T123. Все стили ограничены #pushkin-exhibit. -->
@@ -471,7 +473,7 @@
   </header>
   <main id="px-main">
     <section class="px-hero px-wrap" id="px-top" aria-labelledby="px-title">
-      <div class="px-manuscript px-manuscript-hero" aria-hidden="true"><span>Я памятник себе воздвиг нерукотворный,</span><span>К нему не зарастёт народная тропа…</span></div>
+      <div class="px-manuscript px-manuscript-hero" aria-hidden="true"><span><span class="px-word" style="--i:0">Я</span> <span class="px-word" style="--i:1">памятник</span> <span class="px-word" style="--i:2">себе</span> <span class="px-word" style="--i:3">воздвиг</span> <span class="px-word" style="--i:4">нерукотворный,</span></span><span><span class="px-word" style="--i:5">К</span> <span class="px-word" style="--i:6">нему</span> <span class="px-word" style="--i:7">не</span> <span class="px-word" style="--i:8">зарастёт</span> <span class="px-word" style="--i:9">народная</span> <span class="px-word" style="--i:10">тропа…</span></span></div>
       <div class="px-hero-meta"><p>Мультимедийная выставка <span class="px-dot" aria-hidden="true"></span> Екатеринбург</p></div>
       <div class="px-hero-grid">
         <div class="px-hero-copy">
