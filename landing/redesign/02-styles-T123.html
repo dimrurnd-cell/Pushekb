@@ -443,14 +443,15 @@
 #pushkin-exhibit .px-manuscript .px-word{display:inline-block}
 @media(min-width:651px){
 #pushkin-exhibit .px-manuscript-hero .px-word{
- -webkit-mask-image:linear-gradient(101deg,#000 0 40%,#00000000 62%);
- mask-image:linear-gradient(101deg,#000 0 40%,#00000000 62%);
- -webkit-mask-size:210% 100%;mask-size:210% 100%;
- -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
- -webkit-mask-position:0 0;mask-position:0 0;
- animation:px-handwrite .62s cubic-bezier(.35,0,.65,1) backwards;
+ -webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);
+ clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);
+ animation:px-handwrite .6s cubic-bezier(.35,0,.65,1) backwards;
  animation-delay:calc(.5s + var(--i,0) * .27s)}
 }
-@keyframes px-handwrite{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
+/* Край проявления наклонён на 12% ширины слова: верх идёт впереди низа, как при письме.
+   Конечный многоугольник заходит за границы слова, поэтому буква дописывается целиком. */
+@keyframes px-handwrite{
+from{-webkit-clip-path:polygon(-30% -60%,-18% -60%,-30% 160%,-30% 160%);clip-path:polygon(-30% -60%,-18% -60%,-30% 160%,-30% 160%)}
+to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%)}}
 
 </style>
