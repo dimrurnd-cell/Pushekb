@@ -9,7 +9,7 @@ import re
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE / 'source-templates'
-MEDIA_VERSION = '084cbb3bb59fa4b19256337cdf7358323aac7233'
+MEDIA_VERSION = '502d7688f9c496a59e21b1c636d1fc36385422f8'
 CDN = f'https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@{MEDIA_VERSION}/landing/redesign/assets'
 head = (HERE / '01-head.html').read_text(encoding='utf-8')
 css = (SOURCE / '02-styles.css').read_text(encoding='utf-8')
