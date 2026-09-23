@@ -45,7 +45,7 @@ files = {
 }
 single = render(body, 'assets')
 images = {}
-chapter_files = set(re.findall(r"'([^']+\.jpg)'", footer))
+chapter_files = set(re.findall(r"'([^']+\.(?:jpg|webp))'", footer))
 for asset in sorted((HERE / 'assets').rglob('*')):
     if asset.suffix not in ('.jpg', '.png', '.webp', '.mp4'):
         continue
