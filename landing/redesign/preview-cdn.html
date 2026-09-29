@@ -198,13 +198,10 @@
 #pushkin-exhibit .px-interactive-features .px-eyebrow{color:var(--px-red);font-size:10px;letter-spacing:.1em}
 #pushkin-exhibit .px-interactive-features h3{font-size:27px;font-weight:600;line-height:1.15;margin:9px 0 12px}
 #pushkin-exhibit .px-interactive-features p{font-size:18px;line-height:1.5;color:var(--px-muted);max-width:425px}
-#pushkin-exhibit .px-studio-note{display:grid;grid-template-columns:150px 1fr;gap:30px;align-items:center;margin-top:40px;padding:26px 0 0;border-top:1px solid var(--px-line)}
-#pushkin-exhibit .px-studio-note strong{font:600 28px/1 'PXAkrobat',sans-serif;letter-spacing:.12em}
-#pushkin-exhibit .px-studio-note p{font-size:16px;line-height:1.5;color:var(--px-muted);max-width:820px}
 @media(max-width:1150px){#pushkin-exhibit #px-nav{gap:18px}#pushkin-exhibit .px-interactive-grid{gap:40px}#pushkin-exhibit .px-interactive-features h3{font-size:25px}}
-@media(max-width:900px){#pushkin-exhibit #px-nav{gap:14px;font-size:14px}#pushkin-exhibit .px-interactive-grid{grid-template-columns:.9fr 1.1fr;gap:28px}#pushkin-exhibit .px-interactive-features article{gap:10px;padding-block:20px}#pushkin-exhibit .px-interactive-features p{font-size:17px}#pushkin-exhibit .px-studio-note{grid-template-columns:110px 1fr;gap:20px}}
-@media(max-width:650px){#pushkin-exhibit #px-nav{font-size:22px;gap:0}#pushkin-exhibit .px-interactive-grid{grid-template-columns:1fr;gap:26px}#pushkin-exhibit .px-interactive-photo{margin-inline:-4px}#pushkin-exhibit .px-interactive-photo img{height:auto;min-height:0;aspect-ratio:1.2;object-position:48% center}#pushkin-exhibit .px-interactive-photo figcaption{font-size:11px}#pushkin-exhibit .px-interactive-features article{grid-template-columns:22px 1fr;gap:11px;padding-block:21px}#pushkin-exhibit .px-interactive-features h3{font-size:25px}#pushkin-exhibit .px-interactive-features p{font-size:18px}#pushkin-exhibit .px-studio-note{grid-template-columns:1fr;gap:15px;margin-top:28px;padding-top:25px}#pushkin-exhibit .px-studio-note strong{font-size:25px}#pushkin-exhibit .px-studio-note p{font-size:16px}}
-/* Approved visitor content: R-Art, questions, keepsakes and sessions. */
+@media(max-width:900px){#pushkin-exhibit #px-nav{gap:14px;font-size:14px}#pushkin-exhibit .px-interactive-grid{grid-template-columns:.9fr 1.1fr;gap:28px}#pushkin-exhibit .px-interactive-features article{gap:10px;padding-block:20px}#pushkin-exhibit .px-interactive-features p{font-size:17px}}
+@media(max-width:650px){#pushkin-exhibit #px-nav{font-size:22px;gap:0}#pushkin-exhibit .px-interactive-grid{grid-template-columns:1fr;gap:26px}#pushkin-exhibit .px-interactive-photo{margin-inline:-4px}#pushkin-exhibit .px-interactive-photo img{height:auto;min-height:0;aspect-ratio:1.2;object-position:48% center}#pushkin-exhibit .px-interactive-photo figcaption{font-size:11px}#pushkin-exhibit .px-interactive-features article{grid-template-columns:22px 1fr;gap:11px;padding-block:21px}#pushkin-exhibit .px-interactive-features h3{font-size:25px}#pushkin-exhibit .px-interactive-features p{font-size:18px}}
+/* Approved visitor content: questions, keepsakes and sessions. */
 #pushkin-exhibit .px-header .px-brand-rart{width:130px;min-height:44px}
 #pushkin-exhibit .px-brand-rart img{width:130px;height:auto;object-fit:contain}
 #pushkin-exhibit .px-facts{grid-template-columns:1.3fr 1fr 1fr auto}
@@ -273,7 +270,7 @@
 @media(max-width:1150px){#pushkin-exhibit .px-visit-ticket{gap:28px 40px}}
 @media(max-width:900px){#pushkin-exhibit .px-visit-ticket{grid-template-columns:1fr;gap:26px;margin-top:58px}#pushkin-exhibit .px-visit .px-prices,#pushkin-exhibit .px-visit-head{margin-top:58px}#pushkin-exhibit .px-visit .px-contacts{margin-top:38px}#pushkin-exhibit #ya-widget-frame{min-height:600px}}
 @media(max-width:650px){#pushkin-exhibit .px-visit-ticket{margin-top:45px}#pushkin-exhibit .px-visit .px-prices,#pushkin-exhibit .px-visit-head{margin-top:45px}#pushkin-exhibit .px-visit .px-contacts{margin-top:30px}#pushkin-exhibit .px-ticket-copy h3{margin:16px 0 14px}#pushkin-exhibit .px-ticket-widget-note{font-size:17px}}
-/* Галерея «Выставки R·ART в фотографиях»: три кадра на ПК, один на телефоне. */
+/* Галерея «Выставки Р-АРТ в фотографиях»: три кадра на ПК, один на телефоне. */
 #pushkin-exhibit .px-hallery{background:var(--px-soft)}
 #pushkin-exhibit .px-hallery-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:28px 80px;align-items:end;margin-bottom:40px}
 #pushkin-exhibit .px-hallery-heading p{color:var(--px-muted);max-width:54ch;padding-bottom:6px}
@@ -435,14 +432,55 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit .px-schedule-soon .px-dot{margin-top:11px}
 #pushkin-exhibit .px-schedule-soon p{font-size:19px;line-height:1.5;max-width:62ch}
 @media(max-width:650px){#pushkin-exhibit .px-schedule-soon{padding:24px 20px;gap:12px;margin-top:20px}#pushkin-exhibit .px-schedule-soon p{font-size:17px}}
+/* Блок «Об организаторе»: карточка с логотипом, текст и два цикла выставок. */
+#pushkin-exhibit .px-organizer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+#pushkin-exhibit .px-organizer-logo img{display:block;width:100%;height:auto}
+#pushkin-exhibit .px-organizer-copy .px-lead{font-size:25px;line-height:1.3;margin:24px 0 16px}
+#pushkin-exhibit .px-organizer-copy p:not(.px-lead){color:var(--px-muted);max-width:560px}
+#pushkin-exhibit .px-organizer-copy p+p{margin-top:12px}
+#pushkin-exhibit .px-organizer-cycles{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:60px}
+#pushkin-exhibit .px-organizer-cycles article{border-top:1px solid var(--px-line);padding-top:22px}
+#pushkin-exhibit .px-organizer-cycles .px-eyebrow{color:var(--px-red);font-size:11px;letter-spacing:.1em}
+#pushkin-exhibit .px-organizer-cycles h3{font:400 30px/1.15 'PXTroover',Georgia,serif;letter-spacing:-.02em;margin:8px 0 14px}
+#pushkin-exhibit .px-organizer-cycles li{color:var(--px-muted);padding-block:6px;border-bottom:1px solid var(--px-line)}
+#pushkin-exhibit .px-organizer-cycles li:last-child{border-bottom:0}
+#pushkin-exhibit .px-organizer-link{margin-top:40px}
+@media(max-width:900px){#pushkin-exhibit .px-organizer-grid{grid-template-columns:1fr;gap:34px}#pushkin-exhibit .px-organizer-cycles{gap:34px;margin-top:44px}}
+@media(max-width:650px){#pushkin-exhibit .px-organizer-logo{margin-inline:calc(-1 * var(--px-gutter))}#pushkin-exhibit .px-organizer-copy .px-lead{font-size:22px;margin-top:18px}#pushkin-exhibit .px-organizer-copy p:not(.px-lead){font-size:17px}#pushkin-exhibit .px-organizer-cycles{grid-template-columns:1fr;gap:30px}#pushkin-exhibit .px-organizer-cycles h3{font-size:26px}#pushkin-exhibit .px-organizer-link{margin-top:30px}}
+
+#pushkin-exhibit .px-nobr{white-space:nowrap}
+
+/* Возрастная категория: в первом экране и в подвале. */
+#pushkin-exhibit .px-age{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:22px;padding:0 6px;border:1px solid currentColor;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.02em;line-height:1;text-transform:none;vertical-align:middle}
+
+/* Подвал: организатор, реквизиты и документы. */
+#pushkin-exhibit .px-footer-legal{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px 60px;padding-block:24px;border-top:1px solid var(--px-line);font-size:13px;line-height:1.6;color:var(--px-muted)}
+#pushkin-exhibit .px-footer-org strong{color:var(--px-ink);font-weight:600}
+#pushkin-exhibit .px-footer-org .px-age{margin-left:8px;color:var(--px-ink)}
+#pushkin-exhibit .px-footer-legal a,#pushkin-exhibit .px-footer-docs button{border-bottom:1px solid var(--px-line);transition:color .2s,border-color .2s}
+#pushkin-exhibit .px-footer-legal a:hover,#pushkin-exhibit .px-footer-docs button:hover{color:var(--px-red);border-color:var(--px-red)}
+#pushkin-exhibit .px-footer-docs{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+#pushkin-exhibit .px-footer-docs button{font:inherit;color:inherit;background:none;padding:0;cursor:pointer}
+@media(max-width:650px){#pushkin-exhibit .px-footer-legal{grid-template-columns:1fr;font-size:12px}}
+
+/* Согласие на cookie: Метрика запускается только после «Принять». */
+#pushkin-exhibit .px-cookie{position:fixed;z-index:90;left:var(--px-gutter);right:var(--px-gutter);bottom:20px;max-width:820px;margin-inline:auto;display:flex;gap:26px;align-items:center;padding:20px 24px;background:var(--px-paper);color:var(--px-ink);border:1px solid var(--px-line);box-shadow:0 18px 50px rgba(35,39,33,.2);font-size:15px;line-height:1.5}
+#pushkin-exhibit .px-cookie[hidden]{display:none}
+#pushkin-exhibit .px-cookie a{text-decoration:underline;text-underline-offset:3px}
+#pushkin-exhibit .px-cookie a:hover{color:var(--px-red)}
+#pushkin-exhibit .px-cookie-actions{display:flex;gap:10px;flex-shrink:0}
+#pushkin-exhibit .px-cookie .px-button,#pushkin-exhibit .px-cookie-decline{min-height:46px;padding:10px 22px;font-size:15px;font-weight:600;justify-content:center}
+#pushkin-exhibit .px-cookie-decline{border:1px solid var(--px-ink);background:none;color:var(--px-ink);cursor:pointer;transition:background .2s,color .2s}
+#pushkin-exhibit .px-cookie-decline:hover{background:var(--px-ink);color:var(--px-paper)}
+@media(max-width:650px){#pushkin-exhibit .px-cookie{flex-direction:column;align-items:stretch;left:12px;right:12px;bottom:12px;padding:18px;gap:14px;font-size:14px}#pushkin-exhibit .px-cookie-actions>*{flex:1}}
 </style></head><body><!-- Вставьте в один блок T123. Все стили ограничены #pushkin-exhibit. -->
 <div id="pushkin-exhibit" lang="ru">
   <a class="px-skip" href="#px-main">Перейти к содержанию</a>
   <header class="px-header">
-    <a class="px-brand px-brand-rart" href="#px-top" aria-label="R-Art — в начало"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/logo-rart-dark.webp" alt="R-Art" width="600" height="181"></a>
+    <a class="px-brand px-brand-rart" href="#px-top" aria-label="Р-АРТ — в начало"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/logo-rart-dark.webp" alt="Р-АРТ, креативная студия" width="600" height="181"></a>
     <button class="px-menu-toggle" type="button" aria-expanded="false" aria-controls="px-nav"><span>Меню</span><span class="px-menu-icon" aria-hidden="true"></span></button>
     <nav id="px-nav" aria-label="Основная навигация">
-      <a href="#px-experience">О выставке</a><a href="#px-interactive">Интерактивная зона</a><a href="#px-visit">Сеансы</a><a href="#px-contacts">Контакты</a>
+      <a href="#px-experience">О выставке</a><a href="#px-interactive">Интерактивная зона</a><a href="#px-organizer">Об организаторе</a><a href="#px-visit">Сеансы</a><a href="#px-contacts">Контакты</a>
     </nav>
     <a class="px-header-ticket" href="#px-ticket-widget" data-ticket-link>Купить билет <span aria-hidden="true">↗</span></a>
     <div class="px-progress" aria-hidden="true"></div>
@@ -450,7 +488,7 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
   <main id="px-main">
     <section class="px-hero px-wrap" id="px-top" aria-labelledby="px-title">
       <div class="px-manuscript px-manuscript-hero" aria-hidden="true"><span><span class="px-word" style="--i:0">Я</span> <span class="px-word" style="--i:1">памятник</span> <span class="px-word" style="--i:2">себе</span> <span class="px-word" style="--i:3">воздвиг</span> <span class="px-word" style="--i:4">нерукотворный,</span></span><span><span class="px-word" style="--i:5">К</span> <span class="px-word" style="--i:6">нему</span> <span class="px-word" style="--i:7">не</span> <span class="px-word" style="--i:8">зарастёт</span> <span class="px-word" style="--i:9">народная</span> <span class="px-word" style="--i:10">тропа…</span></span></div>
-      <div class="px-hero-meta"><p>Мультимедийная выставка <span class="px-dot" aria-hidden="true"></span> Екатеринбург</p></div>
+      <div class="px-hero-meta"><p>Мультимедийная выставка <span class="px-dot" aria-hidden="true"></span> Екатеринбург <span class="px-age" aria-label="Возрастная категория: 0+">0+</span></p></div>
       <div class="px-hero-grid">
         <div class="px-hero-copy">
           <h1 id="px-title"><span class="px-title-print">ПУШКИН.</span><span class="px-title-script">Живой</span></h1>
@@ -485,7 +523,7 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
     <section class="px-interactive px-section px-wrap" id="px-interactive" aria-labelledby="px-interactive-title">
       <div class="px-section-kicker"><span>02 / Интерактивная зона</span><span>Здесь историю исследуете вы</span></div>
       <div class="px-section-intro"><h2 id="px-interactive-title">Прикоснитесь<br>к <em>эпохе.</em></h2><div><p class="px-lead">Что вдохновляло поэта?<br>О чём он мечтал и спорил?</p><p>В интерактивной зоне вы сами выбираете, что узнать подробнее. Изучайте жизнь поэта и знакомьтесь с эпохой, в которой рождались любимые строки. Здесь есть фотозона для ваших фото и сувениры на память.</p></div></div>
-      <figure class="px-interactive-hero"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/interactive-touch.webp" alt="Посетительницы изучают детали картины на большом сенсорном экране" width="1920" height="1280" loading="lazy"><figcaption>Исследование картины на сенсорной панели. Фото предыдущей выставки R·ART о Сурикове.</figcaption></figure>
+      <figure class="px-interactive-hero"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/interactive-touch.webp" alt="Посетительницы изучают детали картины на большом сенсорном экране" width="1920" height="1280" loading="lazy"><figcaption>Исследование картины на сенсорной панели. Фото предыдущей выставки <span class="px-nobr">Р-АРТ</span> о Сурикове.</figcaption></figure>
       <div class="px-interactive-grid">
       <figure class="px-interactive-photo px-photozone-image"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/photozone-shadows.webp" alt="Оформление фотозоны «Тени минувшей эпохи»: силуэты, рисунки и рукописные строки Пушкина" width="1800" height="1800" loading="lazy"><figcaption>«Тени минувшей эпохи». Оформление стены фотозоны.</figcaption></figure>
         <div class="px-interactive-features">
@@ -494,26 +532,40 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
         </div>
       </div>
     <div class="px-keepsakes"><article><span class="px-eyebrow">Фотозона</span><h3>Тени минувшей эпохи</h3><p>Присядьте за стол на фоне рукописных строк и силуэтов пушкинского времени. Сделайте памятный снимок — в одиночку или вместе с близкими — и сохраните свою встречу с минувшей эпохой.</p></article><article><span class="px-eyebrow">Частичка выставки с собой</span><h3>Сувениры на память</h3><p>Выберите сувенир, который сохранит впечатления от встречи с миром Пушкина.</p></article></div>
-      <div class="px-studio-note"><strong>R·ART</strong><p>Выставку создаёт креативная студия «Р-Арт» из Ростова-на-Дону — автор циклов «Великие русские живописцы» и «Шедевры мировой живописи».</p></div>
     </section>
 
     <section class="px-quote-section" aria-label="Слова Пушкина"><div class="px-atmosphere px-quote-atmosphere" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/p-nevsky.jpg" alt="" width="900" height="600" loading="lazy"></div><div class="px-quote-frame px-wrap"><span class="px-eyebrow">Строки, которые остаются</span><span class="px-quote-star" aria-hidden="true">✳</span><blockquote>И долго буду тем любезен я народу,<br> Что чувства добрые я лирой пробуждал.</blockquote><p>Александр Пушкин · 1836</p></div></section>
 
     <section class="px-hallery px-section" id="px-hallery" aria-labelledby="px-hallery-title">
       <div class="px-wrap">
-        <div class="px-section-kicker"><span>03 / Выставки R·ART в фотографиях</span><span>Прошлые проекты студии</span></div>
-        <div class="px-hallery-heading"><h2 id="px-hallery-title">Как это выглядит<br><em>в зале.</em></h2><p>Фотографии выставки креативной студии R·ART о Василии Сурикове. «Пушкин. Живой» построен в том же формате: панорамные ожившие полотна вокруг зрителя и интерактивная зона рядом.</p></div>
+        <div class="px-section-kicker"><span>03 / Выставки <span class="px-nobr">Р-АРТ</span> в фотографиях</span><span>Прошлые проекты агентства</span></div>
+        <div class="px-hallery-heading"><h2 id="px-hallery-title">Как это выглядит<br><em>в зале.</em></h2><p>Фотографии выставки агентства <span class="px-nobr">Р-АРТ</span> о Василии Сурикове «Россия на холсте». «Пушкин. Живой» построен в том же формате: панорамные ожившие полотна вокруг зрителя и интерактивная зона рядом.</p></div>
         <div class="px-hallery-frame">
-          <ul class="px-hallery-track" id="px-hallery-track" tabindex="0" aria-label="Фотографии выставок R·ART"><li><button type="button" class="px-hallery-cell" data-hall="0" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-01-full.webp" aria-label="Открыть фотографию: Панорамный зал: полотна на всех стенах"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-01.webp" alt="Панорамный зал выставки R·ART: живопись на экранах по всем стенам, зрители в креслах перед проекцией" width="1100" height="733"  decoding="async"><span class="px-hallery-caption"><span>Панорамный зал: полотна на всех стенах</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="1" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-02-full.webp" aria-label="Открыть фотографию: Портрет во всю стену"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-02.webp" alt="Крупный живописный портрет, спроецированный во всю стену зала, перед ним силуэты зрителей" width="1100" height="733"  decoding="async"><span class="px-hallery-caption"><span>Портрет во всю стену</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="2" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-03-full.webp" aria-label="Открыть фотографию: Панорама полотен Василия Сурикова"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-03.webp" alt="Изогнутая панорама с полотнами Василия Сурикова и надписью «Россия» в зале выставки R·ART" width="1100" height="733"  decoding="async"><span class="px-hallery-caption"><span>Панорама полотен Василия Сурикова</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="3" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-04-full.webp" aria-label="Открыть фотографию: Портрет художника в панораме зала"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-04.webp" alt="Портрет Василия Сурикова и его картины на панорамных экранах зала" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Портрет художника в панораме зала</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="4" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-05-full.webp" aria-label="Открыть фотографию: Живопись на большом экране"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-05.webp" alt="Женский портрет на большом экране, перед экраном силуэты сидящих зрителей" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Живопись на большом экране</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="5" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-06-full.webp" aria-label="Открыть фотографию: Сенсорная панель: деталь картины под рукой"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-06.webp" alt="Посетительница рассматривает деталь картины на большой сенсорной панели" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Сенсорная панель: деталь картины под рукой</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="6" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-07-full.webp" aria-label="Открыть фотографию: Посетители у сенсорных панелей"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-07.webp" alt="Посетители изучают живопись на сенсорных панелях в интерактивной зоне выставки" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Посетители у сенсорных панелей</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="7" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-08-full.webp" aria-label="Открыть фотографию: Экран «Разговор с Суриковым»"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-08.webp" alt="Посетители перед экраном с надписью «Разговор с Суриковым о картине „Утро стрелецкой казни“»" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Экран «Разговор с Суриковым»</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="8" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-09-full.webp" aria-label="Открыть фотографию: Интерактив «Собери картину»"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-09.webp" alt="Настольный интерактив «Собери картину» в зале выставки R·ART" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Интерактив «Собери картину»</span><i aria-hidden="true">+</i></span></button></li></ul>
+          <ul class="px-hallery-track" id="px-hallery-track" tabindex="0" aria-label="Фотографии выставок Р-АРТ"><li><button type="button" class="px-hallery-cell" data-hall="0" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-01-full.webp" aria-label="Открыть фотографию: Панорамный зал: полотна на всех стенах"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-01.webp" alt="Панорамный зал выставки Р-АРТ: живопись на экранах по всем стенам, зрители в креслах перед проекцией" width="1100" height="733"  decoding="async"><span class="px-hallery-caption"><span>Панорамный зал: полотна на всех стенах</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="1" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-02-full.webp" aria-label="Открыть фотографию: Портрет во всю стену"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-02.webp" alt="Крупный живописный портрет, спроецированный во всю стену зала, перед ним силуэты зрителей" width="1100" height="733"  decoding="async"><span class="px-hallery-caption"><span>Портрет во всю стену</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="2" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-03-full.webp" aria-label="Открыть фотографию: Панорама полотен Василия Сурикова"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-03.webp" alt="Изогнутая панорама с полотнами Василия Сурикова и надписью «Россия» в зале выставки Р-АРТ" width="1100" height="733"  decoding="async"><span class="px-hallery-caption"><span>Панорама полотен Василия Сурикова</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="3" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-04-full.webp" aria-label="Открыть фотографию: Портрет художника в панораме зала"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-04.webp" alt="Портрет Василия Сурикова и его картины на панорамных экранах зала" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Портрет художника в панораме зала</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="4" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-05-full.webp" aria-label="Открыть фотографию: Живопись на большом экране"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-05.webp" alt="Женский портрет на большом экране, перед экраном силуэты сидящих зрителей" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Живопись на большом экране</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="5" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-06-full.webp" aria-label="Открыть фотографию: Сенсорная панель: деталь картины под рукой"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-06.webp" alt="Посетительница рассматривает деталь картины на большой сенсорной панели" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Сенсорная панель: деталь картины под рукой</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="6" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-07-full.webp" aria-label="Открыть фотографию: Посетители у сенсорных панелей"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-07.webp" alt="Посетители изучают живопись на сенсорных панелях в интерактивной зоне выставки" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Посетители у сенсорных панелей</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="7" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-08-full.webp" aria-label="Открыть фотографию: Экран «Разговор с Суриковым»"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-08.webp" alt="Посетители перед экраном с надписью «Разговор с Суриковым о картине „Утро стрелецкой казни“»" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Экран «Разговор с Суриковым»</span><i aria-hidden="true">+</i></span></button></li><li><button type="button" class="px-hallery-cell" data-hall="8" data-full="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-09-full.webp" aria-label="Открыть фотографию: Интерактив «Собери картину»"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/hall/hall-09.webp" alt="Настольный интерактив «Собери картину» в зале выставки Р-АРТ" width="1100" height="733" loading="lazy" decoding="async"><span class="px-hallery-caption"><span>Интерактив «Собери картину»</span><i aria-hidden="true">+</i></span></button></li></ul>
           <button type="button" class="px-hallery-arrow px-hallery-prev" aria-label="Предыдущие фотографии" aria-controls="px-hallery-track"><span aria-hidden="true">←</span></button>
           <button type="button" class="px-hallery-arrow px-hallery-next" aria-label="Следующие фотографии" aria-controls="px-hallery-track"><span aria-hidden="true">→</span></button>
         </div>
-        <p class="px-hallery-note">Кадры прошлых выставок студии, а не выставки «Пушкин. Живой»: её фотографии появятся после открытия. Нажмите на кадр, чтобы рассмотреть.</p>
+        <p class="px-hallery-note">Кадры прошлых выставок агентства, а не выставки «Пушкин. Живой»: её фотографии появятся после открытия. Нажмите на кадр, чтобы рассмотреть.</p>
       </div>
     </section>
+    <section class="px-organizer px-section" id="px-organizer" aria-labelledby="px-organizer-title">
+      <div class="px-wrap">
+        <div class="px-section-kicker"><span>04 / Об организаторе</span><span>Ростов-на-Дону · с 2018 года</span></div>
+        <div class="px-organizer-grid">
+          <figure class="px-organizer-logo"><img src="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@4e2e804113935cbcb53fb87318ed9040629e4d64/landing/redesign/assets/logo-rart-card.webp" alt="Логотип Р-АРТ, креативная студия" width="1200" height="506" loading="lazy"></figure>
+          <div class="px-organizer-copy"><h2 id="px-organizer-title">Креативное агентство<br><em><span class="px-nobr">Р-АРТ</span>.</em></h2><p class="px-lead">Организация мультимедийных проектов по всей России.</p><p>Компания основана в 2018 году в Ростове-на-Дону. <span class="px-nobr">Р-АРТ</span> создаёт мультимедийные выставки о великих художниках: полотна оживают на широкоформатных экранах, а рядом с залом работает интерактивная зона с сенсорными панелями, 3D-голограммами и фотозоной.</p><p>Выставки агентства уже увидели зрители Ростова-на-Дону, Екатеринбурга, Тюмени, Новосибирска, Пятигорска, Воронежа, Самары, Красноярска и Перми.</p></div>
+        </div>
+        <div class="px-organizer-cycles">
+          <article><span class="px-eyebrow">Цикл</span><h3>Великие русские живописцы</h3><ul><li>Иван Шишкин. «Одинокие леса»</li><li>Иван Айвазовский. «Гений и море»</li><li>Василий Суриков. «Россия на холсте»</li><li>Илья Репин. «Учитель великих»</li></ul></article>
+          <article><span class="px-eyebrow">Цикл</span><h3>Шедевры мировой живописи</h3><ul><li>Винсент Ван Гог</li><li>Клод Моне. «Видеть сердцем»</li><li>Пабло Пикассо. «Параграфы»</li></ul></article>
+        </div>
+        <a class="px-text-link px-organizer-link" href="https://r-art.ru/" target="_blank" rel="noopener noreferrer">Сайт организатора: r-art.ru <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title">
       <div class="px-wrap">
-        <div class="px-section-kicker"><span>04 / Как посетить</span><span>Екатеринбург</span></div>
+        <div class="px-section-kicker"><span>05 / Как посетить</span><span>Екатеринбург</span></div>
         <section class="px-schedule" id="px-schedule" aria-labelledby="px-schedule-title"><div class="px-prices-heading"><div><span class="px-eyebrow">Готовим расписание</span><h3 id="px-schedule-title">Расписание сеансов</h3></div><p>5 октября — 29 ноября 2026</p></div><div class="px-schedule-soon"><span class="px-dot" aria-hidden="true"></span><p>Точное расписание появится здесь до открытия выставки. Билет действует на выбранный день, так что выбрать удобное время вы сможете и перед визитом.</p></div></section>
         <section class="px-prices" id="px-prices" aria-labelledby="px-prices-title">
           <div class="px-prices-heading"><div><span class="px-eyebrow">Выберите свой билет</span><h3 id="px-prices-title">Билеты и цены</h3></div><p>5 октября — 29 ноября 2026<br>Стоимость указана за одного посетителя.</p></div>
@@ -539,7 +591,11 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 
     <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><span class="px-eyebrow">Перед посещением</span><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: панорамные ожившие полотна 360° и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, 3D-голограммы, фотозона «Тени минувшей эпохи» и сувениры на память.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Билет действует на весь день, так что время выбираете вы — оставьте время на интерактивную зону. Точное <a href="#px-schedule">расписание сеансов</a> опубликуем до открытия. Здесь вы сами выбираете, на чём остановиться: изучить детали картин или сделать фотографии в фотозоне «Тени минувшей эпохи».</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Дети до 6 лет включительно проходят бесплатно в будни и выходные. Для школьных и организованных экскурсий от 10 человек билет в будни стоит 400 ₽. Один сопровождающий школьной экскурсии на 10 человек проходит в будни бесплатно. Семейный билет для группы от 3 человек — 600 ₽ за посетителя в будни.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Все тарифы и условия льгот — в разделе <a href="#px-prices">«Билеты и цены»</a>. Там же, ниже, форма <a href="#px-ticket-widget">покупки билета</a>: выберите дату и оплатите онлайн. Билеты также продаются в кассе на выставке.</p></details></div></section>
   </main>
-  <footer class="px-footer px-wrap"><div class="px-footer-top"><a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a><p>Пушкин вечен.<br><span>Пушкин живой.</span></p><a class="px-to-top" href="#px-top">Наверх <span aria-hidden="true">↑</span></a></div><div class="px-footer-bottom"><span>© 2026 · Креативная студия R·ART</span><span>Екатеринбург · Свердловская киностудия</span><button type="button" class="px-motion-toggle" aria-pressed="false">Остановить анимацию</button></div></footer>
+  <footer class="px-footer px-wrap"><div class="px-footer-top"><a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a><p>Пушкин вечен.<br><span>Пушкин живой.</span></p><a class="px-to-top" href="#px-top">Наверх <span aria-hidden="true">↑</span></a></div><div class="px-footer-legal"><div class="px-footer-org"><p><strong>Организатор — ООО «ЭкспоСервис»</strong> <span class="px-age" aria-label="Возрастная категория: 0+">0+</span></p><p>ИНН 6161044634 · КПП 616101001 · ОГРН 1066161004876</p><p>344068, г. Ростов-на-Дону, пр. М. Нагибина, 30Л, офис 220</p><p><a href="tel:+78632687709">+7 (863) 268-77-09</a> · <a href="mailto:rart@donexpocentre.ru">rart@donexpocentre.ru</a></p></div><nav class="px-footer-docs" aria-label="Документы"><a href="/privacy">Политика обработки персональных данных</a><a href="/consent">Согласие на обработку персональных данных</a><button type="button" data-cookie-settings>Настройки cookie</button></nav></div><div class="px-footer-bottom"><span>© 2026 · Креативное агентство <span class="px-nobr">Р-АРТ</span></span><span>Екатеринбург · Свердловская киностудия</span><button type="button" class="px-motion-toggle" aria-pressed="false">Остановить анимацию</button></div></footer>
+  <div class="px-cookie" id="px-cookie" role="dialog" aria-modal="false" aria-labelledby="px-cookie-title" hidden>
+    <p><strong id="px-cookie-title">Cookie и Яндекс Метрика.</strong> Мы хотим понимать, как посетители пользуются сайтом, поэтому просим разрешения включить счётчик Яндекс Метрики. Без вашего согласия он не запускается. Подробнее — в <a href="/privacy">политике обработки персональных данных</a> и <a href="/consent">тексте согласия</a>.</p>
+    <div class="px-cookie-actions"><button type="button" class="px-button" data-cookie-accept>Принять</button><button type="button" class="px-cookie-decline" data-cookie-decline>Отказаться</button></div>
+  </div>
   <dialog class="px-lightbox" id="px-lightbox" aria-label="Просмотр фотографии">
     <figure><img id="px-lightbox-image" alt=""><figcaption id="px-lightbox-caption"></figcaption></figure>
     <button type="button" class="px-lightbox-arrow px-lightbox-prev" data-lb-prev aria-label="Предыдущее фото"><span aria-hidden="true">←</span></button>
@@ -558,6 +614,9 @@ window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets ||
   regionId: 54,
   eventId: '886786'
 };
+/* Номер счётчика Яндекс Метрики. Счётчик запускается только после согласия
+   посетителя в баннере cookie; в настройках Тильды Метрику нужно отключить. */
+window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaId || 0;
 (function () {
   'use strict';
   var watcher;
@@ -664,9 +723,46 @@ window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets ||
       }
     }
     mountTickets(q, calm);
+    mountConsent(q);
     updateMotion();progress();return true;
   }
   /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
+  function mountConsent(q){
+    var banner=q('#px-cookie');
+    if(!banner)return;
+    var id=Number(window.PUSHKIN_EXHIBIT_CONFIG.metrikaId)||0;
+    var name='px_cookie_consent';
+    var loaded=false;
+    function read(){var m=document.cookie.match(new RegExp('(?:^|; )'+name+'=([^;]*)'));return m?m[1]:'';}
+    function save(value){document.cookie=name+'='+value+'; max-age=31536000; path=/; SameSite=Lax';}
+    function loadMetrika(){
+      if(loaded||!id)return;
+      loaded=true;
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments);};m[i].l=1*new Date();k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+      window.ym(id,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+    }
+    /* При отказе стираем cookie и записи Метрики, если они остались с прошлого визита. */
+    function clearMetrika(){
+      var host=location.hostname;
+      var domains=['',host,'.'+host,'.'+host.split('.').slice(-2).join('.')];
+      document.cookie.split('; ').forEach(function(pair){
+        var key=pair.split('=')[0];
+        if(key.indexOf('_ym')!==0)return;
+        domains.forEach(function(d){document.cookie=key+'=; max-age=0; path=/'+(d?'; domain='+d:'');});
+      });
+      try{Object.keys(localStorage).forEach(function(k){if(k.indexOf('_ym')===0)localStorage.removeItem(k);});}catch(e){}
+    }
+    q('[data-cookie-accept]').addEventListener('click',function(){save('granted');banner.hidden=true;loadMetrika();});
+    q('[data-cookie-decline]').addEventListener('click',function(){
+      save('denied');banner.hidden=true;clearMetrika();
+      if(loaded)location.reload();
+    });
+    var settings=q('[data-cookie-settings]');
+    if(settings)settings.addEventListener('click',function(){banner.hidden=false;q('[data-cookie-accept]').focus();});
+    var state=read();
+    if(state==='granted')loadMetrika();
+    else if(state!=='denied')banner.hidden=false;
+  }
   function mountTickets(q, calm){
     var frame=q('#ya-widget-frame');if(!frame||frame.dataset.pxTickets)return;
     frame.dataset.pxTickets='pending';
