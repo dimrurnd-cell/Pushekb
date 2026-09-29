@@ -10,7 +10,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets ||
 };
 /* Номер счётчика Яндекс Метрики. Счётчик запускается только после согласия
    посетителя в баннере cookie; в настройках Тильды Метрику нужно отключить. */
-window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaId || 0;
+window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaId || 112737577;
 (function () {
   'use strict';
   var watcher;
@@ -22,6 +22,8 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     root.classList.add('px-enhanced');
     var q = function (s) { return root.querySelector(s); };
     var qa = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+    /* Согласие на cookie подключаем первым: сбой в остальном коде не должен его блокировать. */
+    try { mountConsent(q); } catch (e) { if (window.console) console.error(e); }
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var mobile = window.matchMedia('(max-width:650px)');
     var manuallyCalm = false;
@@ -117,7 +119,6 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
       }
     }
     mountTickets(q, calm);
-    mountConsent(q);
     updateMotion();progress();return true;
   }
   /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
@@ -132,7 +133,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     function loadMetrika(){
       if(loaded||!id)return;
       loaded=true;
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments);};m[i].l=1*new Date();k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments);};m[i].l=1*new Date();if(e.querySelector('script[src="'+r+'"]'))return;k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
       window.ym(id,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
     }
     /* При отказе стираем cookie и записи Метрики, если они остались с прошлого визита. */
