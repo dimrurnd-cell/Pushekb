@@ -147,7 +147,10 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
       });
       try{Object.keys(localStorage).forEach(function(k){if(k.indexOf('_ym')===0)localStorage.removeItem(k);});}catch(e){}
     }
-    q('[data-cookie-accept]').addEventListener('click',function(){save('granted');banner.hidden=true;loadMetrika();});
+    q('[data-cookie-accept]').addEventListener('click',function(){
+      save('granted');banner.hidden=true;loadMetrika();
+      try{document.dispatchEvent(new Event('px-analytics-consent'));}catch(e){}
+    });
     q('[data-cookie-decline]').addEventListener('click',function(){
       save('denied');banner.hidden=true;clearMetrika();
       if(loaded)location.reload();
@@ -164,6 +167,15 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     var cfg=(window.PUSHKIN_EXHIBIT_CONFIG||{}).tickets||{};
     var placeholder=frame.querySelector('[data-ticket-placeholder]');
     var widget=null,timer=null;
+    var metrikaId=Number((window.PUSHKIN_EXHIBIT_CONFIG||{}).metrikaId)||0;
+    /* Номер счётчика отдаём виджету только с согласия посетителя: тогда виджет сам
+       шлёт в Метрику цели yndx-afisha-wg-goals-tickets-widget_* (открытие … покупка). */
+    function shareMetrika(){
+      if(!metrikaId||!/(?:^|; )px_cookie_consent=granted(?:;|$)/.test(document.cookie))return;
+      var d=window.YandexTicketsDealer=window.YandexTicketsDealer||[];
+      d.push(['setYandexMetrika',metrikaId]);
+    }
+    document.addEventListener('px-analytics-consent',shareMetrika);
     if(!cfg.clientKey||!cfg.eventId){fail('Продажа билетов пока не подключена. Билеты можно купить в кассе на выставке.');return;}
     function fail(text){
       frame.dataset.pxTickets='failed';frame.setAttribute('aria-busy','false');
@@ -174,6 +186,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
       timer=setTimeout(function(){if(frame.dataset.pxTickets!=='mounted')fail();},12000);
       var dealer=window.YandexTicketsDealer=window.YandexTicketsDealer||[];
       dealer.push(['setDefaultClientKey',cfg.clientKey]);
+      shareMetrika();
       if(cfg.regionId)dealer.push(['setDefaultRegionId',cfg.regionId]);
       dealer.push(['getDealer',function(api){
         clearTimeout(timer);timer=null;
