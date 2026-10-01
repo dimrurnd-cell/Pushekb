@@ -463,5 +463,36 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit .px-cookie-actions{display:flex;gap:10px;flex-shrink:0}
 #pushkin-exhibit .px-cookie .px-button{min-height:46px;padding:10px 22px;font-size:15px;font-weight:600;justify-content:center}
 @media(max-width:650px){#pushkin-exhibit .px-cookie{flex-direction:column;align-items:stretch;left:12px;right:12px;bottom:12px;padding:18px;gap:14px;font-size:14px}#pushkin-exhibit .px-cookie-actions>*{flex:1}}
+/* Мобильное меню: тонкий гамбургер справа, панель выезжает сверху с затемнением страницы. */
+#pushkin-exhibit .px-nav-extra,#pushkin-exhibit .px-nav-backdrop{display:none}
+@media(max-width:650px){
+#pushkin-exhibit .px-menu-toggle{width:44px;height:44px;min-height:44px;padding:0;margin-right:-11px;justify-content:center;gap:0;color:var(--px-ink)}
+#pushkin-exhibit .px-menu-icon,#pushkin-exhibit .px-menu-toggle[aria-expanded=true] .px-menu-icon{position:relative;display:block;width:22px;height:1.5px;border:0;background:currentColor;transition:background-color .2s}
+#pushkin-exhibit .px-menu-icon::before,#pushkin-exhibit .px-menu-icon::after,#pushkin-exhibit .px-menu-toggle[aria-expanded=true] .px-menu-icon::before,#pushkin-exhibit .px-menu-toggle[aria-expanded=true] .px-menu-icon::after{content:'';position:absolute;right:0;height:1.5px;background:currentColor;transition:top .3s cubic-bezier(.6,0,.2,1),width .3s cubic-bezier(.6,0,.2,1),transform .3s cubic-bezier(.6,0,.2,1)}
+#pushkin-exhibit .px-menu-icon::before{top:-7px;width:22px;transform:none}
+#pushkin-exhibit .px-menu-icon::after{top:7px;width:14px;transform:none}
+#pushkin-exhibit .px-menu-toggle[aria-expanded=true] .px-menu-icon{background:transparent}
+#pushkin-exhibit .px-menu-toggle[aria-expanded=true] .px-menu-icon::before{top:0;width:22px;transform:rotate(45deg)}
+#pushkin-exhibit .px-menu-toggle[aria-expanded=true] .px-menu-icon::after{top:0;width:22px;transform:rotate(-45deg)}
+#pushkin-exhibit #px-nav{display:flex;position:absolute;z-index:2;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:6px var(--px-gutter) 26px;background:var(--px-paper);border-bottom:1px solid var(--px-line);box-shadow:0 24px 40px rgba(35,39,33,.1);font:400 26px/1.15 'PXTroover',Georgia,serif;letter-spacing:-.01em;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s ease,transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s linear .35s}
+#pushkin-exhibit #px-nav.is-open{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s}
+#pushkin-exhibit #px-nav>a{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--px-line);opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1),color .2s}
+#pushkin-exhibit #px-nav>a::after{content:'→';position:static;height:auto;background:none;transform:none;font:400 18px/1 'PXAkrobat',sans-serif;color:var(--px-red)}
+#pushkin-exhibit #px-nav>a:active{color:var(--px-red)}
+#pushkin-exhibit #px-nav.is-open>a{opacity:1;transform:none}
+#pushkin-exhibit #px-nav.is-open>a:nth-child(2){transition-delay:.04s}
+#pushkin-exhibit #px-nav.is-open>a:nth-child(3){transition-delay:.08s}
+#pushkin-exhibit #px-nav.is-open>a:nth-child(4){transition-delay:.12s}
+#pushkin-exhibit #px-nav.is-open>a:nth-child(5){transition-delay:.16s}
+#pushkin-exhibit .px-nav-extra{display:block;margin-top:22px;font:400 14px/1.5 'PXAkrobat',sans-serif;letter-spacing:0;color:var(--px-muted)}
+#pushkin-exhibit #px-nav .px-nav-ticket{display:flex;width:100%;padding:14px 22px;border:0;color:#fff;font:600 16px/1.2 'PXAkrobat',sans-serif;white-space:nowrap}
+#pushkin-exhibit #px-nav .px-nav-ticket::after{content:none}
+#pushkin-exhibit .px-nav-extra p{margin-top:14px}
+#pushkin-exhibit .px-nav-backdrop{display:block;position:absolute;z-index:1;top:100%;left:0;right:0;height:100vh;background:rgba(35,39,33,.32);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s}
+#pushkin-exhibit #px-nav.is-open+.px-nav-backdrop{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s}
+#pushkin-exhibit.px-calm #px-nav,#pushkin-exhibit.px-calm #px-nav>a,#pushkin-exhibit.px-calm .px-nav-backdrop,#pushkin-exhibit.px-calm .px-menu-icon,#pushkin-exhibit.px-calm .px-menu-icon::before,#pushkin-exhibit.px-calm .px-menu-icon::after{transition:none!important}
+#pushkin-exhibit:not(.px-enhanced) #px-nav,#pushkin-exhibit:not(.px-enhanced) #px-nav>a{opacity:1;visibility:visible;transform:none;font:400 16px/1.4 'PXAkrobat',sans-serif}
+#pushkin-exhibit:not(.px-enhanced) #px-nav>a::after,#pushkin-exhibit:not(.px-enhanced) .px-nav-extra,#pushkin-exhibit:not(.px-enhanced) .px-nav-backdrop{display:none}
+}
 
 </style>

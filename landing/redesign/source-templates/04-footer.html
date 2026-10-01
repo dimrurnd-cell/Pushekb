@@ -8,8 +8,8 @@ window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets ||
   regionId: 54,
   eventId: '886786'
 };
-/* Номер счётчика Яндекс Метрики. Счётчик запускается при открытии страницы,
-   баннер только уведомляет о cookie; в настройках Тильды Метрику нужно отключить. */
+/* Номер счётчика Яндекс Метрики. Если счётчик подключён в настройках Тильды, код страницы
+   свой не запускает и только передаёт номер виджету билетов; иначе запускает сам. */
 window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaId || 112737577;
 (function () {
   'use strict';
@@ -45,6 +45,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     root.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu(true);}});
     root.addEventListener('focusout',function(){setTimeout(function(){if(!q('.px-header').contains(document.activeElement))closeMenu(false);},0);});
     root.addEventListener('click',function(e){if(!e.target.closest('.px-header'))closeMenu(false);});
+    var backdrop=q('.px-nav-backdrop');if(backdrop)backdrop.addEventListener('click',function(){closeMenu(false);});
     if(mobile.addEventListener)mobile.addEventListener('change',function(){closeMenu(false);});
     root.addEventListener('click',function(e){
       var link=e.target.closest('a[href^="#px-"]');if(!link)return;
@@ -124,7 +125,12 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
   /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
   function mountConsent(q){
     var id=Number(window.PUSHKIN_EXHIBIT_CONFIG.metrikaId)||0;
-    if(id&&!window.pxMetrikaStarted){
+    /* Если счётчик подключён в настройках Тильды, свой не запускаем, чтобы не было двух копий. */
+    var tilda=[].some.call(document.querySelectorAll('script:not([src])'),function(el){
+      var t=el.textContent;if(t.indexOf('PUSHKIN_EXHIBIT_CONFIG')>-1)return false;
+      return t.indexOf('mc.yandex.ru/metrika/tag.js')>-1&&(el.hasAttribute('data-tilda-cookie-type')||t.indexOf('mainMetrikaId')>-1);
+    });
+    if(id&&!tilda&&!window.pxMetrikaStarted){
       window.pxMetrikaStarted=true;
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments);};m[i].l=1*new Date();if(e.querySelector('script[src="'+r+'"]'))return;k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
       window.ym(id,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});

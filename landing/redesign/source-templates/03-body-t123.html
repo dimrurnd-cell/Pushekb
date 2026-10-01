@@ -3,10 +3,12 @@
   <a class="px-skip" href="#px-main">Перейти к содержанию</a>
   <header class="px-header">
     <a class="px-brand px-brand-rart" href="#px-top" aria-label="Р-АРТ — в начало"><img src="@@ASSET@@/logo-rart-dark.webp" alt="Р-АРТ, креативная студия" width="600" height="181"></a>
-    <button class="px-menu-toggle" type="button" aria-expanded="false" aria-controls="px-nav"><span>Меню</span><span class="px-menu-icon" aria-hidden="true"></span></button>
+    <button class="px-menu-toggle" type="button" aria-expanded="false" aria-controls="px-nav"><span class="px-sr-only">Меню</span><span class="px-menu-icon" aria-hidden="true"></span></button>
     <nav id="px-nav" aria-label="Основная навигация">
       <a href="#px-experience">О выставке</a><a href="#px-interactive">Интерактивная зона</a><a href="#px-organizer">Об организаторе</a><a href="#px-visit">Сеансы</a><a href="#px-contacts">Контакты</a>
+      <div class="px-nav-extra"><a class="px-button px-nav-ticket" href="#px-ticket-widget" data-ticket-link>Купить билет <span aria-hidden="true">↗</span></a><p>5 октября — 29 ноября 2026<br>Свердловская киностудия, Ленина, 50Ж</p></div>
     </nav>
+    <span class="px-nav-backdrop" aria-hidden="true"></span>
     <a class="px-header-ticket" href="#px-ticket-widget" data-ticket-link>Купить билет <span aria-hidden="true">↗</span></a>
     <div class="px-progress" aria-hidden="true"></div>
   </header>
