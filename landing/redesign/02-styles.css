@@ -493,3 +493,12 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit:not(.px-enhanced) #px-nav,#pushkin-exhibit:not(.px-enhanced) #px-nav>a{opacity:1;visibility:visible;transform:none;font:400 16px/1.4 'PXAkrobat',sans-serif}
 #pushkin-exhibit:not(.px-enhanced) #px-nav>a::after,#pushkin-exhibit:not(.px-enhanced) .px-nav-extra,#pushkin-exhibit:not(.px-enhanced) .px-nav-backdrop{display:none}
 }
+/* Телефон: шапка с логотипом уезжает при прокрутке, гамбургер остаётся в правом верхнем углу. */
+@media(max-width:650px){
+#pushkin-exhibit.px-enhanced .px-header{position:relative}
+#pushkin-exhibit .px-menu-toggle{position:fixed;z-index:3;top:14px;right:calc(var(--px-gutter) - 11px);margin:0;border-radius:50%;transition:background-color .25s ease,box-shadow .25s ease}
+#pushkin-exhibit.px-header-away .px-menu-toggle{background:rgba(250,249,245,.94);box-shadow:0 6px 20px rgba(35,39,33,.16),0 0 0 1px rgba(35,39,33,.06);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#pushkin-exhibit.px-header-away .px-menu-toggle[aria-expanded=true]{background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+#pushkin-exhibit #px-nav{position:fixed;top:0;padding-top:72px;max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+#pushkin-exhibit .px-nav-backdrop{position:fixed;top:0;bottom:0;height:auto}
+}

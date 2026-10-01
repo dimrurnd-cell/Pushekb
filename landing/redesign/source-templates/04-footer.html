@@ -46,6 +46,8 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     root.addEventListener('focusout',function(){setTimeout(function(){if(!q('.px-header').contains(document.activeElement))closeMenu(false);},0);});
     root.addEventListener('click',function(e){if(!e.target.closest('.px-header'))closeMenu(false);});
     var backdrop=q('.px-nav-backdrop');if(backdrop)backdrop.addEventListener('click',function(){closeMenu(false);});
+    /* На телефоне шапка уезжает; когда она почти скрылась, гамбургер получает фон-кружок. */
+    if('IntersectionObserver'in window){new IntersectionObserver(function(entries){root.classList.toggle('px-header-away',!entries[0].isIntersecting);},{rootMargin:'-58px 0px 0px 0px'}).observe(q('.px-header'));}
     if(mobile.addEventListener)mobile.addEventListener('change',function(){closeMenu(false);});
     root.addEventListener('click',function(e){
       var link=e.target.closest('a[href^="#px-"]');if(!link)return;
