@@ -654,7 +654,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets ||
   eventId: '886786'
 };
 /* Номер счётчика Яндекс Метрики. Если счётчик подключён в настройках Тильды, код страницы
-   свой не запускает и только передаёт номер виджету билетов; иначе запускает сам. */
+   свой не запускает; иначе запускает сам. */
 window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaId || 112737577;
 (function () {
   'use strict';
@@ -799,14 +799,6 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     var cfg=(window.PUSHKIN_EXHIBIT_CONFIG||{}).tickets||{};
     var placeholder=frame.querySelector('[data-ticket-placeholder]');
     var widget=null,timer=null;
-    var metrikaId=Number((window.PUSHKIN_EXHIBIT_CONFIG||{}).metrikaId)||0;
-    /* С номером счётчика виджет сам шлёт в Метрику цели
-       yndx-afisha-wg-goals-tickets-widget_* (открытие … покупка). */
-    function shareMetrika(){
-      if(!metrikaId)return;
-      var d=window.YandexTicketsDealer=window.YandexTicketsDealer||[];
-      d.push(['setYandexMetrika',metrikaId]);
-    }
     if(!cfg.clientKey||!cfg.eventId){fail('Продажа билетов пока не подключена. Билеты можно купить в кассе на выставке.');return;}
     function fail(text){
       frame.dataset.pxTickets='failed';frame.setAttribute('aria-busy','false');
@@ -817,7 +809,8 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
       timer=setTimeout(function(){if(frame.dataset.pxTickets!=='mounted')fail();},12000);
       var dealer=window.YandexTicketsDealer=window.YandexTicketsDealer||[];
       dealer.push(['setDefaultClientKey',cfg.clientKey]);
-      shareMetrika();
+      /* setYandexMetrika сюда не добавлять: с ним виджет не отрисовывается (проверено 01.10.2026).
+         Цели виджета подключаются номером счётчика через форму Яндекс Билетов. */
       if(cfg.regionId)dealer.push(['setDefaultRegionId',cfg.regionId]);
       dealer.push(['getDealer',function(api){
         clearTimeout(timer);timer=null;
