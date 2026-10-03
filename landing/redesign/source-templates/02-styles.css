@@ -203,16 +203,16 @@
 #pushkin-exhibit .px-questions-list li>span{font:400 42px/1 'PXMonplesir',cursive;color:var(--px-red)}
 #pushkin-exhibit .px-questions-list p{font-size:24px;line-height:1.35;max-width:560px}
 #pushkin-exhibit .px-panorama-label>span{font-size:clamp(17px,2vw,28px)}
-#pushkin-exhibit .px-keepsakes{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;margin-top:42px;padding:38px;border:1px solid var(--px-line);background:var(--px-soft)}
-#pushkin-exhibit .px-keepsakes h3{font:400 clamp(27px,3vw,38px)/1.15 'PXTroover',Georgia,serif;margin:16px 0}
-#pushkin-exhibit .px-keepsakes p{font-size:20px;line-height:1.5;max-width:570px}
+
+
+
 #pushkin-exhibit .px-schedule{margin-top:70px;scroll-margin-top:110px}
 #pushkin-exhibit .px-session-list{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--px-line);border-left:1px solid var(--px-line);margin-top:28px}
 #pushkin-exhibit .px-session-list li{padding:24px 12px;border-right:1px solid var(--px-line);border-bottom:1px solid var(--px-line);display:flex;flex-direction:column;gap:10px}
 #pushkin-exhibit .px-session-list time{font:400 clamp(30px,3.4vw,45px)/1 'PXInserat','PXAkrobat',sans-serif;white-space:nowrap}
 #pushkin-exhibit .px-session-list span{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--px-muted)}
-@media(max-width:900px){#pushkin-exhibit .px-questions{gap:35px}#pushkin-exhibit .px-keepsakes{gap:30px;padding:28px}#pushkin-exhibit .px-session-list{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:650px){#pushkin-exhibit .px-header .px-brand-rart,#pushkin-exhibit .px-brand-rart img{width:108px}#pushkin-exhibit .px-facts{grid-template-columns:1fr 1fr}#pushkin-exhibit .px-facts>div:first-child{grid-column:1/-1}#pushkin-exhibit .px-questions{grid-template-columns:1fr;gap:28px;padding-block:42px}#pushkin-exhibit .px-questions-list p{font-size:21px}#pushkin-exhibit .px-questions-list li{gap:12px;padding-block:20px}#pushkin-exhibit .px-keepsakes{grid-template-columns:1fr;padding:25px 22px;gap:28px;margin-top:28px}#pushkin-exhibit .px-keepsakes article+article{padding-top:28px;border-top:1px solid var(--px-line)}#pushkin-exhibit .px-keepsakes p{font-size:18px}#pushkin-exhibit .px-session-list{grid-template-columns:repeat(3,minmax(0,1fr))}#pushkin-exhibit .px-session-list li{padding:22px 12px}#pushkin-exhibit .px-session-list time{font-size:36px}#pushkin-exhibit .px-schedule{margin-top:45px}}
+@media(max-width:900px){#pushkin-exhibit .px-questions{gap:35px}#pushkin-exhibit .px-session-list{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){#pushkin-exhibit .px-header .px-brand-rart,#pushkin-exhibit .px-brand-rart img{width:108px}#pushkin-exhibit .px-facts{grid-template-columns:1fr 1fr}#pushkin-exhibit .px-facts>div:first-child{grid-column:1/-1}#pushkin-exhibit .px-questions{grid-template-columns:1fr;gap:28px;padding-block:42px}#pushkin-exhibit .px-questions-list p{font-size:21px}#pushkin-exhibit .px-questions-list li{gap:12px;padding-block:20px}#pushkin-exhibit .px-session-list{grid-template-columns:repeat(3,minmax(0,1fr))}#pushkin-exhibit .px-session-list li{padding:22px 12px}#pushkin-exhibit .px-session-list time{font-size:36px}#pushkin-exhibit .px-schedule{margin-top:45px}}
 @media(max-width:360px){#pushkin-exhibit .px-session-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* Exhibition dates and verified visitor contacts. */
 #pushkin-exhibit .px-hero-event{margin-top:28px}
@@ -536,3 +536,53 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 }
 /* Подвал: «Живой» перечёркивал «ПУШКИН». */
 #pushkin-exhibit .px-footer .px-brand i{margin-top:16px}
+/* Шаг 2 дизайн-аудита: разные композиции разделов вместо одинакового «заголовок слева, абзац справа». */
+#pushkin-exhibit .px-exp-head{max-width:820px;margin-bottom:46px}
+#pushkin-exhibit .px-exp-head>div{max-width:60ch;margin-top:26px}
+#pushkin-exhibit .px-exp-head p{color:var(--px-muted)}
+#pushkin-exhibit .px-exp-head .px-lead{font-size:25px;line-height:1.3;color:var(--px-ink);margin-bottom:14px}
+#pushkin-exhibit .px-panorama.px-bleed{margin-inline:calc(-1 * var(--px-gutter))}
+#pushkin-exhibit .px-panorama.px-bleed figcaption{padding-inline:var(--px-gutter)}
+/* Вариант А: асимметрия «одна крупная мысль и две поменьше». */
+#pushkin-exhibit .px-notes-asym .px-experience-notes{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:auto auto;gap:0 80px;margin-top:56px}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article{padding:22px 0 26px;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child{grid-row:1/3;border-top:0;padding-top:0}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child h3{font:400 clamp(34px,3.4vw,50px)/1.08 'PXTroover',Georgia,serif;letter-spacing:-.025em;margin-bottom:18px}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child p{font-size:21px;max-width:30ch}
+#pushkin-exhibit .px-notes-asym .px-experience-notes p{max-width:40ch}
+/* Вариант Б: список рядом с текстом, фото после. */
+#pushkin-exhibit .px-notes-list .px-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);grid-template-areas:"kick kick" "head notes" "fig fig";column-gap:80px}
+#pushkin-exhibit .px-notes-list .px-section-kicker{grid-area:kick}
+#pushkin-exhibit .px-notes-list .px-exp-head{grid-area:head}
+#pushkin-exhibit .px-notes-list .px-panorama{grid-area:fig}
+#pushkin-exhibit .px-notes-list .px-experience-notes{grid-area:notes;grid-template-columns:1fr;gap:0;margin:6px 0 46px;align-self:end}
+#pushkin-exhibit .px-notes-list .px-experience-notes article{padding:18px 0 20px;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-notes-list .px-experience-notes h3{font-size:21px;margin-bottom:6px}
+#pushkin-exhibit .px-notes-list .px-experience-notes p{max-width:44ch;font-size:17px}
+
+#pushkin-exhibit .px-int-top{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:70px;align-items:end;margin-bottom:76px}
+#pushkin-exhibit .px-int-copy .px-lead{font-size:25px;line-height:1.3;margin:26px 0 14px}
+#pushkin-exhibit .px-int-copy p:not(.px-lead){color:var(--px-muted);max-width:44ch}
+#pushkin-exhibit .px-int-top .px-interactive-hero{margin:0}
+#pushkin-exhibit .px-int-top .px-interactive-hero img{aspect-ratio:1.35}
+#pushkin-exhibit .px-interactive-features article{display:block;padding:22px 0}
+#pushkin-exhibit .px-interactive-features h3{margin:0 0 8px}
+
+#pushkin-exhibit .px-hallery-heading.px-stack{display:block;max-width:820px}
+#pushkin-exhibit .px-hallery-heading.px-stack p{margin-top:20px;padding-bottom:0}
+
+@media(max-width:900px){
+#pushkin-exhibit .px-notes-asym .px-experience-notes{gap:0 40px}
+#pushkin-exhibit .px-notes-list .px-wrap{grid-template-columns:1fr;grid-template-areas:"kick" "head" "notes" "fig"}
+#pushkin-exhibit .px-int-top{grid-template-columns:1fr;gap:34px;margin-bottom:50px}
+}
+@media(max-width:650px){
+#pushkin-exhibit .px-exp-head{margin-bottom:30px}
+#pushkin-exhibit .px-exp-head .px-lead,#pushkin-exhibit .px-int-copy .px-lead{font-size:22px}
+#pushkin-exhibit .px-notes-asym .px-experience-notes{grid-template-columns:1fr;margin-top:34px}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child{grid-row:auto;padding-bottom:22px}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child h3{font-size:32px}
+#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child p{font-size:19px}
+#pushkin-exhibit .px-int-top .px-interactive-hero{margin-inline:calc(-1 * var(--px-gutter))}
+#pushkin-exhibit .px-int-top .px-interactive-hero figcaption{padding-inline:var(--px-gutter)}
+}
