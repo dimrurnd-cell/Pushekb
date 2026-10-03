@@ -516,5 +516,26 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
    (правило для ПК стоит в файле ниже мобильных и перебивало их). */
 @media(max-width:900px){#pushkin-exhibit .px-visit-head{grid-template-columns:1fr;gap:28px}#pushkin-exhibit .px-visit-head>div{padding-top:0}}
 @media(max-width:650px){#pushkin-exhibit .px-visit-head{gap:22px}}
+/* Шаг 1 дизайн-аудита.
+   Первый экран занимает окно целиком: полоса с цифрами начинается сразу под ним, а не выглядывает краем. */
+@media(min-width:651px){
+#pushkin-exhibit .px-hero-main{display:flex;flex-direction:column;min-height:calc(100vh - 90px);min-height:calc(100svh - 90px)}
+#pushkin-exhibit .px-hero-main>.px-hero-grid{flex:1 0 auto}
+}
+@media(min-width:651px) and (max-width:900px){#pushkin-exhibit .px-hero-main{min-height:calc(100vh - 76px);min-height:calc(100svh - 76px)}}
+/* Телефон: фоновый стих наезжал на адрес и кнопку покупки. */
+@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{display:none}}
+/* Телефон: три цифры в ряд, число над подписью, без висящих линий. */
+@media(max-width:650px){
+#pushkin-exhibit .px-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-block:24px 26px}
+#pushkin-exhibit .px-facts>div,#pushkin-exhibit .px-facts>div:first-child{grid-column:auto;flex-direction:column;align-items:flex-start;gap:8px;padding-inline:14px;border-right:1px solid var(--px-line)}
+#pushkin-exhibit .px-facts>div:first-child{padding-left:0}
+#pushkin-exhibit .px-facts>div:last-of-type{border-right:0}
+#pushkin-exhibit .px-facts strong{font-size:44px;min-width:0}
+#pushkin-exhibit .px-facts strong span{font-size:24px;top:3px}
+#pushkin-exhibit .px-facts>div>span{font-size:13px}
+}
+/* Подвал: «Живой» перечёркивал «ПУШКИН». */
+#pushkin-exhibit .px-footer .px-brand i{margin-top:16px}
 
 </style>
