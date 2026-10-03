@@ -163,7 +163,6 @@
 #pushkin-exhibit .px-quote-atmosphere img{object-position:center 67%;filter:grayscale(.7)}
 #pushkin-exhibit .px-quote-frame{position:relative;max-width:1390px;padding:48px 24px 45px;border:1px solid #a89b7c66}
 #pushkin-exhibit .px-quote-frame::before{content:'';position:absolute;inset:7px;border:1px solid #a89b7c33;pointer-events:none}
-#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:11px;color:var(--px-muted)}
 #pushkin-exhibit .px-quote-star{display:block;margin-top:20px;font-size:26px}
 #pushkin-exhibit .px-quote-section blockquote{font:400 clamp(32px,3.9vw,57px)/1.35 'PXMonplesir',cursive;letter-spacing:0;margin:17px auto 23px;max-width:1050px}
 #pushkin-exhibit .px-quote-frame>p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--px-muted)}
@@ -184,7 +183,7 @@
 #pushkin-exhibit .px-price-table td.px-price-free{font:600 20px/1.3 'PXAkrobat',sans-serif}
 #pushkin-exhibit .px-price-note{font-size:15px;line-height:1.5;color:var(--px-muted);margin-top:18px;max-width:760px}
 @media(max-width:900px){#pushkin-exhibit .px-price-category{width:54%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:20px}#pushkin-exhibit .px-price-table tbody th{font-size:21px}}
-@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{top:550px;left:-120px;font-size:43px;opacity:.17}#pushkin-exhibit .px-manuscript-hero>span+span{margin-top:255px;margin-left:0}#pushkin-exhibit .px-quote-section{padding:32px 18px}#pushkin-exhibit .px-quote-frame{padding:36px 21px 32px}#pushkin-exhibit .px-quote-frame>.px-eyebrow{font-size:10px}#pushkin-exhibit .px-quote-section blockquote{font-size:35px;line-height:1.45;margin-block:12px 20px}#pushkin-exhibit .px-quote-frame>p{font-size:10px}#pushkin-exhibit .px-quote-star{margin-top:16px}#pushkin-exhibit .px-prices{margin-top:45px;padding-top:33px}#pushkin-exhibit .px-prices-heading{display:block;margin-bottom:24px}#pushkin-exhibit .px-prices-heading p{text-align:left;font-size:15px;margin-top:17px}#pushkin-exhibit .px-price-category{width:48%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:18px 9px}#pushkin-exhibit .px-price-table thead th{font-size:10px;letter-spacing:.03em;padding-block:14px}#pushkin-exhibit .px-price-table tbody th{font-size:18px;overflow-wrap:anywhere}#pushkin-exhibit .px-price-table tbody th span{font-size:14px;margin-top:6px}#pushkin-exhibit .px-price-table td{font-size:23px}#pushkin-exhibit .px-price-table td.px-price-unavailable{font-size:14px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:16px;letter-spacing:-.02em}#pushkin-exhibit .px-price-note{font-size:14px}}
+@media(max-width:650px){#pushkin-exhibit .px-manuscript-hero{top:550px;left:-120px;font-size:43px;opacity:.17}#pushkin-exhibit .px-manuscript-hero>span+span{margin-top:255px;margin-left:0}#pushkin-exhibit .px-quote-section{padding:32px 18px}#pushkin-exhibit .px-quote-frame{padding:36px 21px 32px}#pushkin-exhibit .px-quote-section blockquote{font-size:35px;line-height:1.45;margin-block:12px 20px}#pushkin-exhibit .px-quote-frame>p{font-size:10px}#pushkin-exhibit .px-quote-star{margin-top:16px}#pushkin-exhibit .px-prices{margin-top:45px;padding-top:33px}#pushkin-exhibit .px-prices-heading{display:block;margin-bottom:24px}#pushkin-exhibit .px-prices-heading p{text-align:left;font-size:15px;margin-top:17px}#pushkin-exhibit .px-price-category{width:48%}#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding:18px 9px}#pushkin-exhibit .px-price-table thead th{font-size:10px;letter-spacing:.03em;padding-block:14px}#pushkin-exhibit .px-price-table tbody th{font-size:18px;overflow-wrap:anywhere}#pushkin-exhibit .px-price-table tbody th span{font-size:14px;margin-top:6px}#pushkin-exhibit .px-price-table td{font-size:23px}#pushkin-exhibit .px-price-table td.px-price-unavailable{font-size:14px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:16px;letter-spacing:-.02em}#pushkin-exhibit .px-price-note{font-size:14px}}
 @media(max-width:360px){#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{padding-inline:6px}#pushkin-exhibit .px-price-table tbody th{font-size:17px}#pushkin-exhibit .px-price-table td.px-price-free{font-size:14px}}
 /* Интерактивная зона — самостоятельная часть выставки. */
 #pushkin-exhibit .px-interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:stretch}
@@ -593,6 +592,29 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit .px-experience .px-experience-notes article:first-child h3{font:400 clamp(32px,5vw,42px)/1.08 'PXTroover',Georgia,serif;letter-spacing:-.025em;margin-bottom:14px}
 #pushkin-exhibit .px-experience .px-experience-notes p{max-width:46ch;font-size:18px}
 #pushkin-exhibit .px-experience .px-experience-notes article:first-child p{font-size:19px;max-width:34ch}
+}
+/* Шаг 3 дизайн-аудита. Цитата без двойной рамки: строки, звёздочка и подпись. */
+#pushkin-exhibit .px-quote-frame{border:0;padding:30px 24px 26px}
+#pushkin-exhibit .px-quote-frame::before{content:none}
+#pushkin-exhibit .px-quote-star{margin-top:0}
+#pushkin-exhibit .px-quote-frame>p{font-size:13px;letter-spacing:.08em}
+/* Таблица цен легче: без заливок, только тонкие линии между строками. */
+#pushkin-exhibit .px-price-table{background:none}
+#pushkin-exhibit .px-price-table thead th{background:none;color:var(--px-muted);font-size:12px;border-bottom:1px solid var(--px-ink);padding-block:0 14px}
+#pushkin-exhibit .px-price-table th,#pushkin-exhibit .px-price-table td{border-bottom-color:#c9cdc0}
+#pushkin-exhibit .px-price-table tbody tr:last-child th,#pushkin-exhibit .px-price-table tbody tr:last-child td{border-bottom:0}
+#pushkin-exhibit .px-price-table th:first-child{padding-left:0}
+/* Подписи под фото крупнее: 12 px и меньше читалось с трудом. */
+#pushkin-exhibit .px-panorama figcaption,#pushkin-exhibit .px-interactive-hero figcaption,#pushkin-exhibit .px-interactive-photo figcaption{font-size:14px;line-height:1.45}
+#pushkin-exhibit .px-portrait figcaption{font-size:13px}
+#pushkin-exhibit .px-hallery-note{font-size:15px}
+@media(max-width:650px){
+#pushkin-exhibit .px-quote-frame{padding:22px 4px 18px}
+#pushkin-exhibit .px-quote-frame>p{font-size:12px}
+#pushkin-exhibit .px-price-table thead th{font-size:11px;padding-block:0 12px}
+#pushkin-exhibit .px-panorama figcaption,#pushkin-exhibit .px-interactive-hero figcaption,#pushkin-exhibit .px-interactive-photo figcaption{font-size:13px}
+#pushkin-exhibit .px-portrait figcaption{font-size:12px}
+#pushkin-exhibit .px-hallery-note{font-size:14px}
 }
 </style></head><body><!-- Вставьте в один блок T123. Все стили ограничены #pushkin-exhibit. -->
 <div id="pushkin-exhibit" lang="ru">
