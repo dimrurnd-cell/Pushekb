@@ -26,6 +26,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     try { mountConsent(q); } catch (e) { if (window.console) console.error(e); }
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var mobile = window.matchMedia('(max-width:650px)');
+    try { mountManuscript(q, mobile); } catch (e) { if (window.console) console.error(e); }
     var manuallyCalm = false;
     var calm = function () { return reduce.matches || manuallyCalm; };
     var motion = q('.px-motion-toggle');
@@ -125,6 +126,47 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     updateMotion();progress();return true;
   }
   /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
+  /* Строфа и подпись встают в свободный коридор между текстом первого экрана и портретом.
+     Узкий коридор (меньше 200 px) — рукопись не показываем, чтобы не наезжать на текст. */
+  function mountManuscript(q, mobile){
+    var ms=q('.px-manuscript-hero'),hero=q('.px-hero'),portrait=q('.px-portrait'),actions=q('.px-hero-actions'),line=q('.px-hero-line');
+    if(!ms||!hero||!portrait||!actions||!line)return;
+    function textRight(){
+      var right=0;
+      ['.px-hero-line','.px-hero-description','.px-hero-event','.px-hero-actions'].forEach(function(sel){
+        var el=q(sel);if(!el)return;
+        var walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),node;
+        while((node=walker.nextNode())){
+          if(!node.textContent.trim())continue;
+          var range=document.createRange();range.selectNodeContents(node);
+          Array.prototype.forEach.call(range.getClientRects(),function(r){if(r.right>right)right=r.right;});
+        }
+        Array.prototype.forEach.call(el.querySelectorAll('a'),function(a){var r=a.getBoundingClientRect();if(r.right>right)right=r.right;});
+      });
+      return right;
+    }
+    function place(){
+      if(mobile.matches){ms.classList.remove('is-placed');return;}
+      var h=hero.getBoundingClientRect(),p=portrait.getBoundingClientRect();
+      var top=line.getBoundingClientRect().top-h.top,bottom=actions.getBoundingClientRect().bottom-h.top;
+      var x=textRight()-h.left+32,w=p.left-h.left-36-x;
+      if(w<200){ms.classList.remove('is-placed');return;}
+      var fs=Math.max(18,Math.min(34,w*0.085)),room=bottom-top+30;
+      ms.style.setProperty('--ms-x',x+'px');ms.style.setProperty('--ms-w',w+'px');
+      ms.classList.add('is-placed');
+      for(var k=0;k<8;k++){
+        ms.style.setProperty('--ms-fs',fs+'px');
+        if(ms.getBoundingClientRect().height<=room||fs<=18)break;
+        fs-=2;
+      }
+      var mh=ms.getBoundingClientRect().height;
+      ms.style.setProperty('--ms-y',(top+Math.max(0,(bottom-top-mh)/2)+mh*0.04)+'px');
+    }
+    var timer;
+    function later(){clearTimeout(timer);timer=setTimeout(place,150);}
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);else place();
+    window.addEventListener('resize',later);
+  }
   function mountConsent(q){
     var id=Number(window.PUSHKIN_EXHIBIT_CONFIG.metrikaId)||0;
     /* Если счётчик подключён в настройках Тильды, свой не запускаем, чтобы не было двух копий. */
