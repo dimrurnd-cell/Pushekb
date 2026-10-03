@@ -544,22 +544,6 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit .px-exp-head .px-lead{font-size:25px;line-height:1.3;color:var(--px-ink);margin-bottom:14px}
 #pushkin-exhibit .px-panorama.px-bleed{margin-inline:calc(-1 * var(--px-gutter))}
 #pushkin-exhibit .px-panorama.px-bleed figcaption{padding-inline:var(--px-gutter)}
-/* Вариант А: асимметрия «одна крупная мысль и две поменьше». */
-#pushkin-exhibit .px-notes-asym .px-experience-notes{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:auto auto;gap:0 80px;margin-top:56px}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article{padding:22px 0 26px;border-top:1px solid var(--px-line)}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child{grid-row:1/3;border-top:0;padding-top:0}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child h3{font:400 clamp(34px,3.4vw,50px)/1.08 'PXTroover',Georgia,serif;letter-spacing:-.025em;margin-bottom:18px}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child p{font-size:21px;max-width:30ch}
-#pushkin-exhibit .px-notes-asym .px-experience-notes p{max-width:40ch}
-/* Вариант Б: список рядом с текстом, фото после. */
-#pushkin-exhibit .px-notes-list .px-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);grid-template-areas:"kick kick" "head notes" "fig fig";column-gap:80px}
-#pushkin-exhibit .px-notes-list .px-section-kicker{grid-area:kick}
-#pushkin-exhibit .px-notes-list .px-exp-head{grid-area:head}
-#pushkin-exhibit .px-notes-list .px-panorama{grid-area:fig}
-#pushkin-exhibit .px-notes-list .px-experience-notes{grid-area:notes;grid-template-columns:1fr;gap:0;margin:6px 0 46px;align-self:end}
-#pushkin-exhibit .px-notes-list .px-experience-notes article{padding:18px 0 20px;border-top:1px solid var(--px-line)}
-#pushkin-exhibit .px-notes-list .px-experience-notes h3{font-size:21px;margin-bottom:6px}
-#pushkin-exhibit .px-notes-list .px-experience-notes p{max-width:44ch;font-size:17px}
 
 #pushkin-exhibit .px-int-top{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:70px;align-items:end;margin-bottom:76px}
 #pushkin-exhibit .px-int-copy .px-lead{font-size:25px;line-height:1.3;margin:26px 0 14px}
@@ -573,19 +557,35 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit .px-hallery-heading.px-stack p{margin-top:20px;padding-bottom:0}
 
 @media(max-width:900px){
-#pushkin-exhibit .px-notes-asym .px-experience-notes{gap:0 40px}
-#pushkin-exhibit .px-notes-list .px-wrap{grid-template-columns:1fr;grid-template-areas:"kick" "head" "notes" "fig"}
 #pushkin-exhibit .px-int-top{grid-template-columns:1fr;gap:34px;margin-bottom:50px}
 }
 @media(max-width:650px){
 #pushkin-exhibit .px-exp-head{margin-bottom:30px}
 #pushkin-exhibit .px-exp-head .px-lead,#pushkin-exhibit .px-int-copy .px-lead{font-size:22px}
-#pushkin-exhibit .px-notes-asym .px-experience-notes{grid-template-columns:1fr;margin-top:34px}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child{grid-row:auto;padding-bottom:22px}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child h3{font-size:32px}
-#pushkin-exhibit .px-notes-asym .px-experience-notes article:first-child p{font-size:19px}
 #pushkin-exhibit .px-int-top .px-interactive-hero{margin-inline:calc(-1 * var(--px-gutter))}
 #pushkin-exhibit .px-int-top .px-interactive-hero figcaption{padding-inline:var(--px-gutter)}
+}
+/* «Мультимедийный зал». ПК: текст слева, три мысли строками справа, фото замыкает блок.
+   Планшет и телефон: текст, фото, затем одна крупная мысль и две поменьше. */
+#pushkin-exhibit .px-experience .px-experience-notes article>span{display:none}
+@media(min-width:901px){
+#pushkin-exhibit .px-experience .px-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);grid-template-areas:"kick kick" "head notes" "fig fig";column-gap:80px}
+#pushkin-exhibit .px-experience .px-section-kicker{grid-area:kick}
+#pushkin-exhibit .px-experience .px-exp-head{grid-area:head}
+#pushkin-exhibit .px-experience .px-panorama{grid-area:fig}
+#pushkin-exhibit .px-experience .px-experience-notes{grid-area:notes;display:block;margin:6px 0 46px;align-self:end}
+#pushkin-exhibit .px-experience .px-experience-notes article{padding:18px 0 20px;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-experience .px-experience-notes h3{font-size:21px;margin-bottom:6px}
+#pushkin-exhibit .px-experience .px-experience-notes p{max-width:44ch;font-size:17px}
+}
+@media(max-width:900px){
+#pushkin-exhibit .px-experience .px-experience-notes{display:block;margin-top:40px}
+#pushkin-exhibit .px-experience .px-experience-notes article{padding:22px 0 26px;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-experience .px-experience-notes article:first-child{border-top:0;padding-top:0}
+#pushkin-exhibit .px-experience .px-experience-notes h3{font-size:24px;margin-bottom:8px}
+#pushkin-exhibit .px-experience .px-experience-notes article:first-child h3{font:400 clamp(32px,5vw,42px)/1.08 'PXTroover',Georgia,serif;letter-spacing:-.025em;margin-bottom:14px}
+#pushkin-exhibit .px-experience .px-experience-notes p{max-width:46ch;font-size:18px}
+#pushkin-exhibit .px-experience .px-experience-notes article:first-child p{font-size:19px;max-width:34ch}
 }
 
 </style>
