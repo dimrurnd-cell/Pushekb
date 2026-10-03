@@ -502,3 +502,16 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 #pushkin-exhibit #px-nav{position:fixed;top:0;padding-top:72px;max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
 #pushkin-exhibit .px-nav-backdrop{position:fixed;top:0;bottom:0;height:auto}
 }
+/* Время работы выставки: крупно, тем же шрифтом, что и даты. */
+#pushkin-exhibit .px-hours{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+#pushkin-exhibit .px-hours .px-eyebrow{color:var(--px-red)}
+#pushkin-exhibit .px-hours-time{display:flex;align-items:baseline;gap:14px;font:400 66px/1 'PXInserat','PXAkrobat',sans-serif;letter-spacing:-.025em;color:var(--px-ink)}
+#pushkin-exhibit .px-hours-time i{font:400 45px/1 'PXAkrobat',sans-serif;color:#89907f}
+#pushkin-exhibit .px-visit-head .px-hours{margin:26px 0 6px}
+@media(max-width:900px){#pushkin-exhibit .px-hours-time{font-size:58px}}
+@media(max-width:650px){#pushkin-exhibit .px-hours{margin-top:22px;gap:10px}#pushkin-exhibit .px-hours-time{font-size:52px;gap:10px}#pushkin-exhibit .px-hours-time i{font-size:34px}}
+@media(max-width:360px){#pushkin-exhibit .px-hours-time{font-size:46px}}
+/* Блок «Увидимся на выставке» на планшете и телефоне — в одну колонку
+   (правило для ПК стоит в файле ниже мобильных и перебивало их). */
+@media(max-width:900px){#pushkin-exhibit .px-visit-head{grid-template-columns:1fr;gap:28px}#pushkin-exhibit .px-visit-head>div{padding-top:0}}
+@media(max-width:650px){#pushkin-exhibit .px-visit-head{gap:22px}}
