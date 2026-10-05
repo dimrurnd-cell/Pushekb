@@ -1,7 +1,6 @@
 <!-- Последний блок T123, после разметки. Не требует библиотек. -->
 <script>
-/* Параметры продажи билетов. clientKey и eventId выдаёт Яндекс Билеты;
-   phone используется, если форма не загрузилась. */
+/* Параметры продажи билетов. clientKey и eventId выдаёт Яндекс Билеты. */
 window.PUSHKIN_EXHIBIT_CONFIG = window.PUSHKIN_EXHIBIT_CONFIG || {};
 window.PUSHKIN_EXHIBIT_CONFIG.tickets = window.PUSHKIN_EXHIBIT_CONFIG.tickets || {
   clientKey: 'dfdd4a27-87eb-4e27-999f-8e44cffa2155',
@@ -125,7 +124,6 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     mountTickets(q, calm);
     updateMotion();progress();return true;
   }
-  /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
   /* Строфа и подпись встают в свободный коридор между текстом первого экрана и портретом.
      Узкий коридор (меньше 200 px) — рукопись не показываем, чтобы не наезжать на текст. */
   function mountManuscript(q, mobile){
@@ -190,6 +188,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
       banner.hidden=true;
     });
   }
+  /* Яндекс Билеты: форма монтируется, когда блок покупки попадает в зону видимости. */
   function mountTickets(q, calm){
     var frame=q('#ya-widget-frame');if(!frame||frame.dataset.pxTickets)return;
     frame.dataset.pxTickets='pending';
