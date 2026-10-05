@@ -378,11 +378,6 @@
 @keyframes px-handwrite{
 from{-webkit-clip-path:polygon(-30% -60%,-18% -60%,-30% 160%,-30% 160%);clip-path:polygon(-30% -60%,-18% -60%,-30% 160%,-30% 160%)}
 to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%)}}
-/* Пока расписание не объявлено: плашка вместо сетки сеансов. */
-#pushkin-exhibit .px-schedule-soon{margin-top:26px;display:flex;gap:16px;align-items:flex-start;max-width:900px;padding:32px 34px;border:1px solid var(--px-line);background:#faf9f58c}
-#pushkin-exhibit .px-schedule-soon .px-dot{margin-top:11px}
-#pushkin-exhibit .px-schedule-soon p{font-size:19px;line-height:1.5;max-width:62ch}
-@media(max-width:650px){#pushkin-exhibit .px-schedule-soon{padding:24px 20px;gap:12px;margin-top:20px}#pushkin-exhibit .px-schedule-soon p{font-size:17px}}
 /* Блок «Об организаторе»: карточка с логотипом, текст и два цикла выставок. */
 #pushkin-exhibit .px-organizer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 #pushkin-exhibit .px-organizer-logo img{display:block;width:100%;height:auto}
@@ -609,6 +604,25 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 64%{transform:translateY(-3px) rotate(0)}
 81%{opacity:1;transform:translateY(1px) rotate(1deg)}
 100%{opacity:0;transform:translate(34px,-46px) rotate(9deg)}}
+/* Расписание сеансов: время начала крупно, сеткой без карточек, тонкие линии между ячейками. */
+#pushkin-exhibit .px-sessions{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:34px;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions li{padding:18px 0 16px;border-bottom:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions li:not(:nth-child(6n+1)){padding-left:22px;border-left:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions time{font:400 clamp(30px,2.6vw,40px)/1 'PXInserat','PXAkrobat',sans-serif;letter-spacing:-.02em;color:var(--px-ink)}
+#pushkin-exhibit .px-sessions-note{margin-top:16px;font-size:16px;color:var(--px-muted);max-width:65ch}
+@media(max-width:900px){
+#pushkin-exhibit .px-sessions{grid-template-columns:repeat(4,minmax(0,1fr))}
+#pushkin-exhibit .px-sessions li:not(:nth-child(6n+1)){padding-left:0;border-left:0}
+#pushkin-exhibit .px-sessions li:not(:nth-child(4n+1)){padding-left:18px;border-left:1px solid var(--px-line)}
+}
+@media(max-width:650px){
+#pushkin-exhibit .px-sessions{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+#pushkin-exhibit .px-sessions li:not(:nth-child(4n+1)){padding-left:0;border-left:0}
+#pushkin-exhibit .px-sessions li{padding:14px 0 12px}
+#pushkin-exhibit .px-sessions li:not(:nth-child(3n+1)){padding-left:14px;border-left:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions time{font-size:30px}
+#pushkin-exhibit .px-sessions-note{font-size:15px}
+}
 </style></head><body><!-- Вставьте в один блок T123. Все стили ограничены #pushkin-exhibit. -->
 <div id="pushkin-exhibit" lang="ru">
   <a class="px-skip" href="#px-main">Перейти к содержанию</a>
@@ -706,7 +720,7 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 
     <section class="px-visit px-section" id="px-visit" aria-labelledby="px-visit-title">
       <div class="px-wrap">
-        <section class="px-schedule" id="px-schedule" aria-labelledby="px-schedule-title"><div class="px-prices-heading"><div><h3 id="px-schedule-title">Расписание сеансов</h3></div></div><div class="px-hours"><span class="px-eyebrow">Время работы</span><p class="px-hours-time"><time datetime="10:00">10:00</time><i aria-hidden="true">—</i><span class="px-sr-only">до</span><time datetime="21:00">21:00</time></p></div><div class="px-schedule-soon"><span class="px-dot" aria-hidden="true"></span><p>Точное расписание сеансов появится здесь до открытия выставки. Билет действует на выбранный день, так что выбрать удобное время вы сможете и перед визитом.</p></div></section>
+        <section class="px-schedule" id="px-schedule" aria-labelledby="px-schedule-title"><div class="px-prices-heading"><div><h3 id="px-schedule-title">Расписание сеансов</h3></div></div><div class="px-hours"><span class="px-eyebrow">Время работы</span><p class="px-hours-time"><time datetime="10:00">10:00</time><i aria-hidden="true">—</i><span class="px-sr-only">до</span><time datetime="21:00">21:00</time></p></div><ol class="px-sessions" aria-label="Начало сеансов"><li><time datetime="10:10">10:10</time></li><li><time datetime="11:05">11:05</time></li><li><time datetime="12:00">12:00</time></li><li><time datetime="12:55">12:55</time></li><li><time datetime="13:50">13:50</time></li><li><time datetime="14:45">14:45</time></li><li><time datetime="15:40">15:40</time></li><li><time datetime="16:35">16:35</time></li><li><time datetime="17:30">17:30</time></li><li><time datetime="18:25">18:25</time></li><li><time datetime="19:20">19:20</time></li><li><time datetime="20:15">20:15</time></li></ol><p class="px-sessions-note">Билет действует на выбранный день — приходите к любому сеансу.</p></section>
         <section class="px-prices" id="px-prices" aria-labelledby="px-prices-title">
           <div class="px-prices-heading"><div><h3 id="px-prices-title">Билеты и цены</h3></div></div>
           <table class="px-price-table" aria-describedby="px-price-note"><caption class="px-sr-only">Стоимость посещения выставки «Пушкин. Живой» в будни и выходные</caption><colgroup><col class="px-price-category"><col><col></colgroup><thead><tr><th scope="col">Категория</th><th scope="col">Будни</th><th scope="col">Выходные</th></tr></thead><tbody>
@@ -729,7 +743,7 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
       </div>
     </section>
 
-    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: панорамные ожившие полотна 360° и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, 3D-голограммы, фотозона «Тени минувшей эпохи» и сувениры на память.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Билет действует на весь день, так что время выбираете вы — оставьте время на интерактивную зону. Точное <a href="#px-schedule">расписание сеансов</a> опубликуем до открытия. Здесь вы сами выбираете, на чём остановиться: изучить детали картин или сделать фотографии в фотозоне «Тени минувшей эпохи».</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Дети до 6 лет включительно проходят бесплатно в будни и выходные. Для школьных и организованных экскурсий от 10 человек билет в будни стоит 400 ₽. Один сопровождающий школьной экскурсии на 10 человек проходит в будни бесплатно. Семейный билет для группы от 3 человек — 600 ₽ за посетителя в будни.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Все тарифы и условия льгот — в разделе <a href="#px-prices">«Билеты и цены»</a>. Там же, ниже, форма <a href="#px-ticket-widget">покупки билета</a>: выберите дату и оплатите онлайн. Билеты также продаются в кассе на выставке.</p></details></div></section>
+    <section class="px-faq px-section px-wrap" id="px-faq" aria-labelledby="px-faq-title"><div><h2 id="px-faq-title">Несколько<br>ответов.</h2></div><div class="px-faq-list"><details><summary>Что меня ждёт на выставке?<span aria-hidden="true">+</span></summary><p>Две части: панорамные ожившие полотна 360° и интерактивная зона. В фильме соединяются более ста картин, анимация, музыка и голоса героев. В интерактивной зоне вас ждут информационные стенды, сенсорные панели, 3D-голограммы, фотозона «Тени минувшей эпохи» и сувениры на память.</p></details><details><summary>Сколько времени запланировать?<span aria-hidden="true">+</span></summary><p>Билет действует на весь день, так что время выбираете вы — оставьте время на интерактивную зону. Сеансы начинаются с 10:10 до 20:15, <a href="#px-schedule">расписание</a> — в разделе «Сеансы». Здесь вы сами выбираете, на чём остановиться: изучить детали картин или сделать фотографии в фотозоне «Тени минувшей эпохи».</p></details><details><summary>Можно ли прийти с детьми или классом?<span aria-hidden="true">+</span></summary><p>Дети до 6 лет включительно проходят бесплатно в будни и выходные. Для школьных и организованных экскурсий от 10 человек билет в будни стоит 400 ₽. Один сопровождающий школьной экскурсии на 10 человек проходит в будни бесплатно. Семейный билет для группы от 3 человек — 600 ₽ за посетителя в будни.</p></details><details><summary>Где посмотреть цены и купить билет?<span aria-hidden="true">+</span></summary><p>Все тарифы и условия льгот — в разделе <a href="#px-prices">«Билеты и цены»</a>. Там же, ниже, форма <a href="#px-ticket-widget">покупки билета</a>: выберите дату и оплатите онлайн. Билеты также продаются в кассе на выставке.</p></details></div></section>
   </main>
   <footer class="px-footer px-wrap"><div class="px-footer-top"><a class="px-brand" href="#px-top" aria-label="Пушкин. Живой — в начало"><span>ПУШКИН.</span><i>Живой</i></a><p>Пушкин вечен.<br><span>Пушкин живой.</span></p><a class="px-to-top" href="#px-top">Наверх <span aria-hidden="true">↑</span></a></div><div class="px-footer-legal"><div class="px-footer-org"><p><strong>Организатор — ООО «ЭкспоСервис»</strong> <span class="px-age" aria-label="Возрастная категория: 0+">0+</span></p><p>ИНН 6161044634 · КПП 616101001 · ОГРН 1066161004876</p><p>344068, г. Ростов-на-Дону, пр. М. Нагибина, 30Л, офис 220</p><p><a href="tel:+78632687709">+7 (863) 268-77-09</a> · <a href="mailto:rart@donexpocentre.ru">rart@donexpocentre.ru</a></p></div><nav class="px-footer-docs" aria-label="Документы"><a href="/privacy">Политика обработки персональных данных</a><a href="/consent">Согласие на обработку персональных данных</a></nav></div><div class="px-footer-bottom"><span>© 2026 · Креативное агентство <span class="px-nobr">Р-АРТ</span></span><span>Екатеринбург · Свердловская киностудия</span><button type="button" class="px-motion-toggle" aria-pressed="false">Остановить анимацию</button></div></footer>
   <div class="px-cookie" id="px-cookie" role="region" aria-labelledby="px-cookie-title" hidden>

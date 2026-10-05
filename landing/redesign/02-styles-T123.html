@@ -371,11 +371,6 @@
 @keyframes px-handwrite{
 from{-webkit-clip-path:polygon(-30% -60%,-18% -60%,-30% 160%,-30% 160%);clip-path:polygon(-30% -60%,-18% -60%,-30% 160%,-30% 160%)}
 to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%)}}
-/* Пока расписание не объявлено: плашка вместо сетки сеансов. */
-#pushkin-exhibit .px-schedule-soon{margin-top:26px;display:flex;gap:16px;align-items:flex-start;max-width:900px;padding:32px 34px;border:1px solid var(--px-line);background:#faf9f58c}
-#pushkin-exhibit .px-schedule-soon .px-dot{margin-top:11px}
-#pushkin-exhibit .px-schedule-soon p{font-size:19px;line-height:1.5;max-width:62ch}
-@media(max-width:650px){#pushkin-exhibit .px-schedule-soon{padding:24px 20px;gap:12px;margin-top:20px}#pushkin-exhibit .px-schedule-soon p{font-size:17px}}
 /* Блок «Об организаторе»: карточка с логотипом, текст и два цикла выставок. */
 #pushkin-exhibit .px-organizer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 #pushkin-exhibit .px-organizer-logo img{display:block;width:100%;height:auto}
@@ -602,5 +597,24 @@ to{-webkit-clip-path:polygon(-30% -60%,170% -60%,158% 160%,-30% 160%);clip-path:
 64%{transform:translateY(-3px) rotate(0)}
 81%{opacity:1;transform:translateY(1px) rotate(1deg)}
 100%{opacity:0;transform:translate(34px,-46px) rotate(9deg)}}
+/* Расписание сеансов: время начала крупно, сеткой без карточек, тонкие линии между ячейками. */
+#pushkin-exhibit .px-sessions{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:34px;border-top:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions li{padding:18px 0 16px;border-bottom:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions li:not(:nth-child(6n+1)){padding-left:22px;border-left:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions time{font:400 clamp(30px,2.6vw,40px)/1 'PXInserat','PXAkrobat',sans-serif;letter-spacing:-.02em;color:var(--px-ink)}
+#pushkin-exhibit .px-sessions-note{margin-top:16px;font-size:16px;color:var(--px-muted);max-width:65ch}
+@media(max-width:900px){
+#pushkin-exhibit .px-sessions{grid-template-columns:repeat(4,minmax(0,1fr))}
+#pushkin-exhibit .px-sessions li:not(:nth-child(6n+1)){padding-left:0;border-left:0}
+#pushkin-exhibit .px-sessions li:not(:nth-child(4n+1)){padding-left:18px;border-left:1px solid var(--px-line)}
+}
+@media(max-width:650px){
+#pushkin-exhibit .px-sessions{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+#pushkin-exhibit .px-sessions li:not(:nth-child(4n+1)){padding-left:0;border-left:0}
+#pushkin-exhibit .px-sessions li{padding:14px 0 12px}
+#pushkin-exhibit .px-sessions li:not(:nth-child(3n+1)){padding-left:14px;border-left:1px solid var(--px-line)}
+#pushkin-exhibit .px-sessions time{font-size:30px}
+#pushkin-exhibit .px-sessions-note{font-size:15px}
+}
 
 </style>
