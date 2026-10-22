@@ -26,6 +26,7 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var mobile = window.matchMedia('(max-width:650px)');
     try { mountManuscript(q, mobile); } catch (e) { if (window.console) console.error(e); }
+    try { mountTrailer(q); } catch (e) { if (window.console) console.error(e); }
     var manuallyCalm = false;
     var calm = function () { return reduce.matches || manuallyCalm; };
     var motion = q('.px-motion-toggle');
@@ -164,6 +165,37 @@ window.PUSHKIN_EXHIBIT_CONFIG.metrikaId = window.PUSHKIN_EXHIBIT_CONFIG.metrikaI
     function later(){clearTimeout(timer);timer=setTimeout(place,150);}
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);else place();
     window.addEventListener('resize',later);
+  }
+  /* Трейлер на Rutube. Плеер создаём только по клику: он тяжёлый и ставит свои cookie.
+     Без скрипта ссылки ведут на страницу ролика. Цель Метрики trailer_play — «JavaScript-событие». */
+  function mountTrailer(q){
+    var cover=q('.px-trailer-cover'),src=cover&&cover.dataset.trailerSrc;if(!src)return;
+    var stage=cover.querySelector('.px-trailer-stage'),start=cover.querySelector('[data-trailer-play]');
+    function frame(){
+      var f=document.createElement('iframe');
+      f.src=src+(src.indexOf('?')>-1?'&':'?')+'autoplay=true';
+      f.title='Трейлер выставки «Пушкин. Живой»';
+      f.allow='clipboard-write; autoplay; fullscreen; picture-in-picture';f.setAttribute('allowfullscreen','');
+      return f;
+    }
+    function goal(){var id=Number(window.PUSHKIN_EXHIBIT_CONFIG.metrikaId)||0;if(id&&typeof window.ym==='function')window.ym(id,'reachGoal','trailer_play');}
+    function pauseInline(){var f=stage.querySelector('iframe');if(f&&f.contentWindow)f.contentWindow.postMessage(JSON.stringify({type:'player:pause',data:{}}),'*');}
+    if(stage&&start)start.addEventListener('click',function(e){
+      e.preventDefault();if(stage.classList.contains('is-playing'))return;
+      var f=frame();stage.appendChild(f);stage.classList.add('is-playing');
+      var cap=cover.querySelector('figcaption');if(cap)cap.textContent='Трейлер выставки «Пушкин. Живой», 1:20.';
+      f.focus();goal();
+    });
+    var box=q('#px-trailer-dialog'),open=q('[data-trailer-open]');
+    if(!box||!open||typeof box.showModal!=='function')return;
+    var slot=box.querySelector('.px-trailer-box');
+    open.addEventListener('click',function(e){
+      e.preventDefault();pauseInline();slot.appendChild(frame());box.showModal();goal();
+    });
+    box.querySelector('[data-trailer-close]').addEventListener('click',function(){box.close();});
+    box.addEventListener('click',function(e){if(e.target===box)box.close();});
+    /* Закрыли окно — убираем плеер, чтобы звук не продолжался. */
+    box.addEventListener('close',function(){slot.textContent='';open.focus({preventScroll:true});});
   }
   function mountConsent(q){
     var id=Number(window.PUSHKIN_EXHIBIT_CONFIG.metrikaId)||0;
