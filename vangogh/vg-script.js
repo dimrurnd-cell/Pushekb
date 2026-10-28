@@ -279,6 +279,7 @@ window.VANGOGH_EXHIBIT_CONFIG.metrikaId = window.VANGOGH_EXHIBIT_CONFIG.metrikaI
     var cv = root && root.querySelector('.vg-sky');
     if (!cv || cv.dataset.vgSky) return !!cv;
     cv.dataset.vgSky = 'on';
+    setTimeout(function () { root.classList.add('vg-ready'); }, 60);
     var ctx = cv.getContext('2d');
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var phone = window.matchMedia('(max-width:650px)');

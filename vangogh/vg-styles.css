@@ -612,6 +612,7 @@
 #vangogh-exhibit .px-button span{color:var(--vg-night)}
 #vangogh-exhibit #px-nav .px-nav-ticket{color:var(--vg-night)}
 #vangogh-exhibit .px-header-ticket span{color:var(--vg-cobalt)}
+#vangogh-exhibit.px-enhanced:not(.vg-ready) #px-nav,#vangogh-exhibit.px-enhanced:not(.vg-ready) #px-nav>a,#vangogh-exhibit.px-enhanced:not(.vg-ready) .px-nav-backdrop{transition:none!important}
 #vangogh-exhibit .vg-plaque{--n:22px;--notch:radial-gradient(circle var(--n) at top left,#0000 98%,#000) top left/51% 51% no-repeat,radial-gradient(circle var(--n) at top right,#0000 98%,#000) top right/51% 51% no-repeat,radial-gradient(circle var(--n) at bottom left,#0000 98%,#000) bottom left/51% 51% no-repeat,radial-gradient(circle var(--n) at bottom right,#0000 98%,#000) bottom right/51% 51% no-repeat;background:var(--vg-gold);padding:4px;-webkit-mask:var(--notch);mask:var(--notch)}
 #vangogh-exhibit .vg-plaque-in{--n:18px;background:var(--vg-cream);padding:6px;-webkit-mask:var(--notch);mask:var(--notch)}
 #vangogh-exhibit .vg-plaque-line{--n:12px;background:var(--vg-gold);padding:1.5px;-webkit-mask:var(--notch);mask:var(--notch)}
