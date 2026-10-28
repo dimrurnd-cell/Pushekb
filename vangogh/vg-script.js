@@ -1,7 +1,11 @@
 
-/* Билеты продаются на tickets.donexpocentre.ru по ссылке, виджет Яндекс Билетов не подключён. */
+/* Параметры продажи билетов. clientKey и eventId выдаёт Яндекс Билеты. */
 window.VANGOGH_EXHIBIT_CONFIG = window.VANGOGH_EXHIBIT_CONFIG || {};
-window.VANGOGH_EXHIBIT_CONFIG.tickets = window.VANGOGH_EXHIBIT_CONFIG.tickets || {};
+window.VANGOGH_EXHIBIT_CONFIG.tickets = window.VANGOGH_EXHIBIT_CONFIG.tickets || {
+  clientKey: '', /* выдаёт Яндекс Билеты; пока пусто — вместо формы показывается заглушка */
+  regionId: 39, /* Ростов-на-Дону */
+  eventId: ''
+};
 /* Номер счётчика Яндекс Метрики (0 — счётчик не подключён). Если счётчик подключён в настройках Тильды, код страницы
    свой не запускает; иначе запускает сам. */
 window.VANGOGH_EXHIBIT_CONFIG.metrikaId = window.VANGOGH_EXHIBIT_CONFIG.metrikaId || 0;
@@ -222,10 +226,10 @@ window.VANGOGH_EXHIBIT_CONFIG.metrikaId = window.VANGOGH_EXHIBIT_CONFIG.metrikaI
     var cfg=(window.VANGOGH_EXHIBIT_CONFIG||{}).tickets||{};
     var placeholder=frame.querySelector('[data-ticket-placeholder]');
     var widget=null,timer=null;
-    if(!cfg.clientKey||!cfg.eventId){fail('Продажа билетов пока не подключена. Билеты можно купить в кассе на выставке.');return;}
+    if(!cfg.clientKey||!cfg.eventId){fail();return;}
     function fail(text){
       frame.dataset.pxTickets='failed';frame.setAttribute('aria-busy','false');
-      if(placeholder)placeholder.textContent=text||'Форма продажи билетов не загрузилась. Купите билет в кассе на выставке или позвоните нам.';
+      if(placeholder){if(text)placeholder.textContent=text;else placeholder.innerHTML='Онлайн-продажа билетов откроется совсем скоро.<small>Пока билеты можно купить в кассе на выставке. Вопросы по посещению: <a href="tel:+78632687709">+7 (863) 268-77-09</a></small>';}
     }
     function mount(){
       if(timer)return;
