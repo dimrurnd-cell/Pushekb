@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+/*__FONTS__*/
+    body { margin: 0; background: #14120f; }
+    * { box-sizing: border-box; }
+    a { color: #b3842f; text-decoration: none; }
+    a:hover { color: #8d6520; }
+    .eyebrow { font-family: Akrobat, system-ui, sans-serif; font-weight: 600; font-size: 11px;
+               letter-spacing: .22em; text-transform: uppercase; }
+    .disp { font-family: Troover, 'Times New Roman', serif; font-weight: 400; }
+    .scriptf { font-family: Monplesir, 'Snell Roundhand', cursive; font-weight: 400; }
+    .num { font-family: Inserat, 'Haettenschweiler', 'Arial Narrow', sans-serif; }
+    .body { font-family: Akrobat, system-ui, sans-serif; }
+    .pad { padding-left: 24px; padding-right: 24px; }
+
+    @keyframes mbreathe { from { transform: scale(1.01); } to { transform: scale(1.08); } }
+    @keyframes mkb { from { transform: scale(1); } to { transform: scale(1.12); } }
+    @keyframes mflick { 0%,100% { opacity: .55; } 45% { opacity: .95; } }
+    @keyframes mdrift { from { transform: translate3d(0,10px,0) rotate(-3deg); } to { transform: translate3d(18px,-16px,0) rotate(-3deg); } }
+
+    .m-breathe { animation: mbreathe 18s ease-in-out infinite alternate; }
+    .m-kb { animation: mkb 24s ease-in-out infinite alternate; }
+    .m-flick { animation: mflick 5.5s ease-in-out infinite; }
+    .m-drift { animation: mdrift 32s ease-in-out infinite alternate; }
+  </style>
+</helmet>
+
+<div class="body" style="width: 390px; background: #efe6d4; color: #1b1611; overflow: hidden;">
+
+  <!-- первый экран -->
+  <section style="position: relative; overflow: hidden; padding-bottom: 34px;">
+    <img src="parchment.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .92;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(110% 70% at 60% 30%, rgba(255,250,238,.5) 0%, rgba(233,220,196,0) 55%, rgba(84,66,40,.24) 100%);"></div>
+    <div class="scriptf m-drift" style="position: absolute; left: -20px; top: 300px; width: 420px; font-size: 30px; line-height: 1.5; color: #6b5a3c; opacity: .07; pointer-events: none;">Я памятник себе воздвиг нерукотворный, к нему не зарастёт народная тропа</div>
+
+    <div style="position: relative;">
+      <!-- шапка -->
+      <div class="pad" style="padding-top: 22px; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: baseline; gap: 9px;">
+          <span class="disp" style="font-size: 20px; letter-spacing: .04em;">R&#8239;·&#8239;ART</span>
+        </div>
+        <button style="width: 46px; height: 46px; border: 1px solid rgba(27,22,17,.4); background: transparent; display: flex; align-items: center; justify-content: center; padding: 0;">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="#1b1611" stroke-width="1.5"><path d="M0 1h20M0 7h20M0 13h20"/></svg>
+        </button>
+      </div>
+
+      <div class="pad" style="padding-top: 40px;">
+        <div class="eyebrow" style="color: {{accent}}; margin-bottom: 18px;">27 января 1837 · мгновение до выстрела</div>
+        <h1 class="disp" style="position: relative; z-index: 1; margin: 0; font-size: 68px; line-height: .88; letter-spacing: -.015em;">ПУШКИН.</h1>
+        <div class="scriptf" style="position: relative; z-index: 2; margin: 2px 0 0 -2px; font-size: 72px; line-height: .92; color: {{accent}};">Живой</div>
+        <div style="width: 64px; height: 1px; background: #1b1611; opacity: .5; margin: 22px 0 18px;"></div>
+        <p style="margin: 0; font-size: 17px; line-height: 1.58; color: #38301f; text-wrap: pretty;">Мультимедийный фильм на трёх экранах. Сорок минут, десять эпизодов и сто оживлённых картин.</p>
+      </div>
+
+      <div style="position: relative; margin: 30px 24px 0;">
+        <div style="position: relative; height: 400px; overflow: hidden; border-radius: 171px 171px 6px 6px; box-shadow: 0 22px 46px -22px rgba(40,28,10,.6), 0 0 0 1px rgba(179,132,47,.5);">
+          <img src="pushkin-hero.jpg" alt="Александр Пушкин, оживлённый портрет" class="m-breathe" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,14,6,0) 55%, rgba(20,14,6,.66) 100%);"></div>
+          <div class="scriptf" style="position: absolute; left: 20px; right: 20px; bottom: 18px; font-size: 22px; line-height: 1.25; color: #f0e2c4;">И с отвращением читая жизнь мою, я трепещу и проклинаю…</div>
+        </div>
+      </div>
+
+      <div class="pad" style="padding-top: 30px;">
+        <div class="num" style="font-size: 30px; line-height: 1.1;">5 октября — 29 ноября 2026</div>
+        <div class="eyebrow" style="color: #6d5d45; margin-top: 9px;">Свердловская киностудия · Екатеринбург</div>
+        <a href="#" class="eyebrow" style="display: block; text-align: center; background: #1b1611; color: #f4ecd9; padding: 20px; margin-top: 24px; letter-spacing: .18em;">Купить билет</a>
+      </div>
+
+      <div class="pad" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(27,22,17,.2);">
+        <div><div class="num" style="font-size: 25px; color: {{accent}};">40</div><div class="eyebrow" style="color: #6d5d45; margin-top: 3px; letter-spacing: .08em;">минут</div></div>
+        <div><div class="num" style="font-size: 25px; color: {{accent}};">3</div><div class="eyebrow" style="color: #6d5d45; margin-top: 3px; letter-spacing: .08em;">экрана</div></div>
+        <div><div class="num" style="font-size: 25px; color: {{accent}};">10</div><div class="eyebrow" style="color: #6d5d45; margin-top: 3px; letter-spacing: .08em;">эпизодов</div></div>
+        <div><div class="num" style="font-size: 25px; color: {{accent}};">100+</div><div class="eyebrow" style="color: #6d5d45; margin-top: 3px; letter-spacing: .08em;">картин</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- пролог -->
+  <section style="position: relative; background: #14120f; color: #ece2cc; padding: 56px 0 58px; overflow: hidden;">
+    <img src="p-winter.jpg" alt="" class="m-kb" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .3;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #14120f 0%, rgba(20,18,15,.78) 42%, #14120f 100%);"></div>
+    <div class="pad" style="position: relative;">
+      <div class="eyebrow" style="color: {{accent}}; margin-bottom: 14px;">Пролог · 27 января 1837</div>
+      <h2 class="disp" style="margin: 0 0 18px; font-size: 36px; line-height: 1.1; color: #f2e9d5;">Выставка начинается за час до выстрела</h2>
+      <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.64; color: #c9bda3; text-wrap: pretty;">Из черноты медленно проступает белизна метели. Тёмный экипаж идёт по зимнему Петербургу — только колесо, обледенелый бок, рывок лошади.</p>
+      <p class="scriptf" style="margin: 0 0 20px; font-size: 27px; line-height: 1.35; color: {{accent}};">«О люди! жалкий род, достойный слёз и смеха!»</p>
+      <p style="margin: 0; font-size: 16px; line-height: 1.64; color: #c9bda3; text-wrap: pretty;">Мы заканчиваем не выстрелом. Мы заканчиваем тем, что он остаётся живым.</p>
+    </div>
+  </section>
+
+  <!-- три экрана -->
+  <section class="pad" style="padding-top: 58px; padding-bottom: 58px; background: #efe6d4;">
+    <div class="eyebrow" style="color: {{accent}}; margin-bottom: 14px;">Как устроен фильм</div>
+    <h2 class="disp" style="margin: 0 0 14px; font-size: 38px; line-height: 1.06;">Три экрана как одно пространство</h2>
+    <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.6; color: #4a4034; text-wrap: pretty;">Левый экран подаёт линию, центр втягивает, правый продолжает. В финале весь зал становится единым круговоротом.</p>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: #e5d9bf; padding: 22px 20px 24px; border-top: 2px solid rgba(27,22,17,.7);">
+        <div class="num" style="font-size: 22px; color: {{accent}}; margin-bottom: 10px;">ЛЕВЫЙ · ДЕТАЛЬ</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4f4535;">Рука в перчатке. Облако пара от дыхания. Колесо в снегу.</p>
+      </div>
+      <div style="background: #1b1611; padding: 22px 20px 24px; border-top: 2px solid #b3842f;">
+        <div class="num" style="font-size: 22px; color: {{accent}}; margin-bottom: 10px;">ЦЕНТР · СЦЕНА</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #b8ac93;">Оживлённая картина целиком: Москва, лицейский зал, болдинская осень.</p>
+      </div>
+      <div style="background: #e5d9bf; padding: 22px 20px 24px; border-top: 2px solid rgba(27,22,17,.7);">
+        <div class="num" style="font-size: 22px; color: {{accent}}; margin-bottom: 10px;">ПРАВЫЙ · ДОКУМЕНТ</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4f4535;">Письмо, страница дневника, анонимный пасквиль. Настоящий почерк.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- оживление -->
+  <section style="background: #1d1a15; color: #ece2cc; padding: 58px 0 58px;">
+    <div class="pad">
+      <div class="eyebrow" style="color: {{accent}}; margin-bottom: 14px;">Оживление</div>
+      <h2 class="disp" style="margin: 0 0 14px; font-size: 38px; line-height: 1.06; color: #f2e9d5;">Сто картин, которые начинают двигаться</h2>
+      <p style="margin: 0 0 26px; font-size: 16px; line-height: 1.62; color: #c0b499; text-wrap: pretty;">Полотна Беггрова, Брюллова, Кипренского и Белюкина приходят в движение: падает снег, дрожит пламя, ветер листает рукопись.</p>
+    </div>
+    <div style="position: relative; height: 300px; overflow: hidden;">
+      <img src="nevsky-gold.jpg" alt="Осенняя набережная Петербурга" class="m-kb" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,15,10,0) 44%, rgba(18,15,10,.86) 100%);"></div>
+      <div style="position: absolute; left: 24px; right: 24px; bottom: 20px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <span class="m-flick" style="width: 6px; height: 6px; border-radius: 50%; background: #e0b45f;"></span>
+          <span class="eyebrow" style="color: #e7d6b2;">в движении</span>
+        </div>
+        <div class="disp" style="font-size: 22px; color: #f4ecd9;">Набережная. Листья, вода, свет фонаря</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; margin-top: 3px;">
+      <div style="position: relative; height: 170px; overflow: hidden;">
+        <img src="p-nevsky.jpg" alt="Невский проспект" class="m-kb" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="position: relative; height: 170px; overflow: hidden;">
+        <img src="p-duel.jpg" alt="Чёрная речка" class="m-kb" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- эпизоды -->
+  <section class="pad" style="padding-top: 58px; padding-bottom: 58px; background: #efe6d4;">
+    <div class="eyebrow" style="color: {{accent}}; margin-bottom: 14px;">Десять эпизодов</div>
+    <h2 class="disp" style="margin: 0 0 26px; font-size: 38px; line-height: 1.06;">Вся жизнь — за сорок минут</h2>
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">00</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Мгновение до выстрела</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">Пролог · 1837</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">01</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Детство</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">Москва · 1799–1811</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">02</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Лицейское братство</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">Царское Село · 1811–1817</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">03</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Петербург цитирует Пушкина</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1817–1820</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">04</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Юг. Изгнание как свобода</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1820–1824</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">05</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Михайловское</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1824–1826</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">06</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Поэт и император</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1826–1830</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">07</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Болдино</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1830</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">08</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Натали</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1830–1836</div></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 17px 0; border-top: 1px solid rgba(27,22,17,.2); border-bottom: 1px solid rgba(27,22,17,.2);">
+        <div class="num" style="width: 34px; flex-shrink: 0; font-size: 20px; color: {{accent}};">09</div>
+        <div><div class="disp" style="font-size: 21px; line-height: 1.2;">Финал</div><div class="eyebrow" style="color: #6d5d45; margin-top: 5px;">1837</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- зал -->
+  <section style="background: #e5d9bf; padding: 58px 0 58px;">
+    <div class="pad">
+      <div class="eyebrow" style="color: {{accent}}; margin-bottom: 14px;">Зал</div>
+      <h2 class="disp" style="margin: 0 0 14px; font-size: 38px; line-height: 1.06;">Как выглядит мультимедийная выставка</h2>
+      <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.6; color: #4a4034; text-wrap: pretty;">Панорамные экраны во всю стену и мягкие места в темноте. Кадры с прошлых проектов студии R&#8239;·&#8239;ART.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px;">
+      <div style="grid-column: span 2; height: 210px; overflow: hidden;"><img src="hall-1.jpg" alt="Зал выставки" class="m-kb" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div style="height: 150px; overflow: hidden;"><img src="hall-2.jpg" alt="Портрет на экране" class="m-kb" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div style="height: 150px; overflow: hidden;"><img src="hall-3.jpg" alt="Интерактивный экран" class="m-kb" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+    </div>
+  </section>
+
+  <!-- как прийти -->
+  <section class="pad" style="background: #14120f; color: #ece2cc; padding-top: 58px; padding-bottom: 58px;">
+    <div class="eyebrow" style="color: {{accent}}; margin-bottom: 14px;">Как прийти</div>
+    <h2 class="disp" style="margin: 0 0 30px; font-size: 38px; line-height: 1.06; color: #f2e9d5;">Екатеринбург, Свердловская киностудия</h2>
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <div style="padding-top: 18px; border-top: 1px solid rgba(236,226,204,.24);">
+        <div class="eyebrow" style="color: #8f8268; margin-bottom: 8px;">Даты</div>
+        <div class="num" style="font-size: 25px; color: #f2e9d5;">5 октября — 29 ноября 2026</div>
+      </div>
+      <div style="padding-top: 18px; border-top: 1px solid rgba(236,226,204,.24);">
+        <div class="eyebrow" style="color: #8f8268; margin-bottom: 8px;">Адрес и сеансы</div>
+        <div style="font-size: 16px; line-height: 1.55; color: #d6c9ac;">[АДРЕС ПЛОЩАДКИ]<br>[РАСПИСАНИЕ СЕАНСОВ] · 40 минут · 6+</div>
+      </div>
+      <div style="padding-top: 18px; border-top: 1px solid rgba(236,226,204,.24);">
+        <div class="eyebrow" style="color: #8f8268; margin-bottom: 8px;">Билет</div>
+        <div class="num" style="font-size: 25px; color: {{accent}};">[ЦЕНА] ₽</div>
+        <div style="font-size: 15px; line-height: 1.5; color: #a2957b; margin-top: 6px;">Школьникам и студентам — [ЛЬГОТНАЯ ЦЕНА] ₽. Группам: [ТЕЛЕФОН]</div>
+      </div>
+    </div>
+    <a href="#" class="eyebrow" style="display: block; text-align: center; background: {{accent}}; color: #14120f; padding: 20px; margin-top: 30px; letter-spacing: .18em;">Купить билет</a>
+  </section>
+
+  <!-- финал -->
+  <section style="position: relative; padding: 62px 0 58px; background: #efe6d4; overflow: hidden;">
+    <img src="parchment.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .9;">
+    <div class="pad" style="position: relative; text-align: center;">
+      <div class="scriptf" style="font-size: 46px; line-height: 1.22; margin-bottom: 12px;">Пушкин вечен. Пушкин живой.</div>
+      <div class="eyebrow" style="color: #7d6c52;">Муза · финальный кадр фильма</div>
+    </div>
+  </section>
+
+  <footer class="pad" style="background: #14120f; color: #8f8268; padding-top: 34px; padding-bottom: 38px;">
+    <div class="disp" style="font-size: 21px; color: #ece2cc; letter-spacing: .04em; margin-bottom: 9px;">R&#8239;·&#8239;ART</div>
+    <div style="font-size: 15px; line-height: 1.6;">Креативная студия — организатор выставки «Пушкин. Живой», Екатеринбург, 2026</div>
+    <div style="display: flex; gap: 22px; margin-top: 18px;">
+      <a href="#" style="font-size: 15px; color: #b8ac93;">Билеты</a>
+      <a href="#" style="font-size: 15px; color: #b8ac93;">Группам</a>
+      <a href="#" style="font-size: 15px; color: #b8ac93;">Прессе</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#b3842f","options":["#b3842f","#8c3a24","#3f5d52","#1b1611"],"section":"Тема"},"$preview":{"width":390,"height":6220}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#b3842f' };
+  }
+}
+</script>
+</body>
+</html>

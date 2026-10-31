@@ -1,0 +1,26 @@
+<!-- ============================================================
+     «Пушкин. Живой» — код для вставки в HEAD
+     Tilda: Настройки сайта → Ещё → HTML-код для вставки внутрь HEAD
+     ============================================================
+
+     Шрифты раздаются через jsDelivr — CDN, отдающий файлы из GitHub.
+     Ссылка запинена на коммит, поэтому кешируется навсегда.
+
+     Если не хотите зависеть от стороннего CDN — возьмите вместо этого
+     файла 01-head-embedded.html: там те же шрифты вшиты в base64
+     и ничего не загружается.
+-->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/troover.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/monplesir.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/akrobat-regular.woff2">
+<style>
+@font-face{font-family:'Troover';font-weight:400;font-style:normal;font-display:swap;src:url('https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/troover.woff2') format('woff2')}
+@font-face{font-family:'Monplesir';font-weight:400;font-style:normal;font-display:swap;src:url('https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/monplesir.woff2') format('woff2')}
+@font-face{font-family:'Inserat';font-weight:400;font-style:normal;font-display:swap;src:url('https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/inserat.woff2') format('woff2')}
+@font-face{font-family:'Akrobat';font-weight:400;font-style:normal;font-display:swap;src:url('https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/akrobat-regular.woff2') format('woff2')}
+@font-face{font-family:'Akrobat';font-weight:600;font-style:normal;font-display:swap;src:url('https://cdn.jsdelivr.net/gh/dimrurnd-cell/Pushekb@6759bc79de70b93ecab46ae0270f3e118852ef08/landing/fonts/akrobat-semibold.woff2') format('woff2')}
+</style>
